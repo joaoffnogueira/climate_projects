@@ -55,14 +55,13 @@ class _FormScreenState extends State<FormScreen> {
                           ?.length,
                       shrinkWrap: true,
                       itemBuilder: (context, index) {
-                        return Visibility(
-                          visible: controller.state.formDatabinding.defaultForm
-                                  .firstWhere((element) =>
-                                      element.id ==
-                                      controller.state.currentQuestionId)
-                                  .type ==
-                              QuestionTypeEnum.multipleChoice,
-                          replacement: CheckboxListTile(
+                        if (controller.state.formDatabinding.defaultForm
+                                .firstWhere((element) =>
+                                    element.id ==
+                                    controller.state.currentQuestionId)
+                                .type ==
+                            QuestionTypeEnum.multipleResponse) {
+                          return CheckboxListTile(
                             value: controller.state.answers
                                 .firstWhere((element) =>
                                     element.questionId ==
@@ -90,8 +89,15 @@ class _FormScreenState extends State<FormScreen> {
                                     controller.state.currentQuestionId)
                                 .options![index]
                                 .option),
-                          ),
-                          child: RadioListTile<int>(
+                          );
+                        }
+                        if (controller.state.formDatabinding.defaultForm
+                                .firstWhere((element) =>
+                                    element.id ==
+                                    controller.state.currentQuestionId)
+                                .type ==
+                            QuestionTypeEnum.multipleChoice) {
+                          return RadioListTile<int>(
                             title: Text(controller
                                 .state.formDatabinding.defaultForm
                                 .firstWhere((element) =>
@@ -112,12 +118,30 @@ class _FormScreenState extends State<FormScreen> {
                                 .answers
                                 .first,
                             onChanged: controller.onChangeRadio,
-                          ),
-                        );
+                          );
+                        }
+                        return const SizedBox();
                       },
                     ),
                     ElevatedButton(
-                      onPressed: controller.nextQuestion,
+                      onPressed: () {
+                        controller.state.answers
+                                    .where((element) =>
+                                        element.questionId ==
+                                        controller.state.currentQuestionId)
+                                    .first
+                                    .answers
+                                    .contains(0) ||
+                                controller.state.answers
+                                    .where((element) =>
+                                        element.questionId ==
+                                        controller.state.currentQuestionId)
+                                    .first
+                                    .answers
+                                    .isEmpty
+                            ? null
+                            : controller.nextQuestion();
+                      },
                       child: const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
