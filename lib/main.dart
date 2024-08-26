@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+
+import 'features/form/presentation/screens/form_screen.dart';
+import 'l10n/app_localizations.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class NavigationKeys {
-  static final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+  static final GlobalKey<NavigatorState> navigatorKey =
+      GlobalKey<NavigatorState>();
 }
 
 class MyApp extends StatelessWidget {
@@ -16,6 +21,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'App Fer',
       navigatorKey: NavigationKeys.navigatorKey,
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: AppLocalizations.supportedLocales.first,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
@@ -35,14 +48,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,19 +57,11 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: [
           IconButton(
             icon: const Icon(Icons.info_outline),
-            onPressed: () {
-              setState(() {
-                _counter = 0;
-              });
-            },
+            onPressed: () {},
           ),
           IconButton(
             icon: const Icon(Icons.book),
-            onPressed: () {
-              setState(() {
-                _counter = 0;
-              });
-            },
+            onPressed: () {},
           ),
         ],
       ),
@@ -89,13 +86,19 @@ class _MyHomePageState extends State<MyHomePage> {
               'Loren ipsum dolor sit amet',
             ),
             Text(
-              '$_counter',
+              '_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             SizedBox(
               width: 350,
               child: ElevatedButton(
-                onPressed: _incrementCounter,
+                onPressed: () {
+                  Navigator.of(context, rootNavigator: true).push(
+                    MaterialPageRoute(
+                      builder: (context) => const FormScreen(),
+                    ),
+                  );
+                },
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
