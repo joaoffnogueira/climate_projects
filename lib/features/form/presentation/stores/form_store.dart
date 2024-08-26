@@ -40,6 +40,11 @@ class FormStore extends NotifyBaseStore<FormState> {
           .answers
           .remove(value);
     }
+    state.answers
+        .where((element) => element.questionId == state.currentQuestionId)
+        .first
+        .answers
+        .remove(0);
     setState(
       state.copyWith(
         answers: state.answers,
@@ -54,6 +59,7 @@ class FormStore extends NotifyBaseStore<FormState> {
         null) {
       setState(
         state.copyWith(
+          questionTense: state.formDatabinding.questionTense,
           currentQuestionId:
               state.formDatabinding.defaultForm
                       .firstWhere(
