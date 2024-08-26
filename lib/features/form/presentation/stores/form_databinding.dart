@@ -33,6 +33,12 @@ class FormDatabinding {
         id: 2,
         question: Localization.tr.question2,
         type: QuestionTypeEnum.multipleChoice,
+        nextQuestion: (value) {
+          if (value.first == 2) {
+            return 7;
+          }
+          return 3;
+        },
         options: [
           OptionsModel(id: 1, option: Localization.tr.option2_1),
           OptionsModel(id: 2, option: Localization.tr.option2_2),
@@ -109,6 +115,12 @@ class FormDatabinding {
         id: 9,
         question: Localization.tr.question9,
         type: QuestionTypeEnum.multipleChoice,
+        nextQuestion: (value) {
+          if (value.first == 2) {
+            return 15;
+          }
+          return 10;
+        },
         options: [
           OptionsModel(id: 1, option: Localization.tr.option9_1),
           OptionsModel(id: 2, option: Localization.tr.option9_2),
@@ -155,6 +167,12 @@ class FormDatabinding {
         id: 13,
         question: Localization.tr.question13,
         type: QuestionTypeEnum.multipleChoice,
+        nextQuestion: (value) {
+          if (value.first == 1) {
+            return 15;
+          }
+          return 14;
+        },
         options: [
           OptionsModel(id: 1, option: Localization.tr.option13_1),
           OptionsModel(id: 2, option: Localization.tr.option13_2),
@@ -314,6 +332,12 @@ class FormDatabinding {
         id: 27,
         question: Localization.tr.question27,
         type: QuestionTypeEnum.multipleChoice,
+        nextQuestion: (value) {
+          if (value.first == 2) {
+            return 29;
+          }
+          return 28;
+        },
         options: [
           OptionsModel(id: 1, option: Localization.tr.option27_1),
           OptionsModel(id: 2, option: Localization.tr.option27_2),
@@ -345,6 +369,12 @@ class FormDatabinding {
         id: 30,
         question: Localization.tr.question30,
         type: QuestionTypeEnum.multipleChoice,
+        nextQuestion: (value) {
+          if (value.first == 2) {
+            return 32;
+          }
+          return 31;
+        },
         options: [
           OptionsModel(id: 1, option: Localization.tr.option30_1),
           OptionsModel(id: 2, option: Localization.tr.option30_2),
@@ -390,6 +420,12 @@ class FormDatabinding {
         id: 34,
         question: Localization.tr.question34,
         type: QuestionTypeEnum.multipleChoice,
+        nextQuestion: (value) {
+          if (value.first == 2) {
+            return 36;
+          }
+          return 35;
+        },
         options: [
           OptionsModel(id: 1, option: Localization.tr.option34_1),
           OptionsModel(id: 2, option: Localization.tr.option34_2),
@@ -436,6 +472,12 @@ class FormDatabinding {
         id: 38,
         question: Localization.tr.question38,
         type: QuestionTypeEnum.multipleChoice,
+        nextQuestion: (value) {
+          if (value.first == 2) {
+            return 40;
+          }
+          return 39;
+        },
         options: [
           OptionsModel(id: 1, option: Localization.tr.option38_1),
           OptionsModel(id: 2, option: Localization.tr.option38_2),
