@@ -1,5 +1,5 @@
-import 'package:appea/models/options_model.dart';
-import 'package:appea/models/question_type_enum.dart';
+import 'package:appea/features/form/data/models/options_model.dart';
+import 'package:appea/features/form/data/models/question_type_enum.dart';
 
 class QuestionModel {
   final int id;
