@@ -1,3 +1,4 @@
+import 'package:appea/features/form/data/models/question_type_enum.dart';
 import 'package:flutter/material.dart';
 
 import '../stores/form_store.dart';
@@ -23,27 +24,17 @@ class _FormScreenState extends State<FormScreen> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text('widget.title'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.info_outline),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: const Icon(Icons.book),
-            onPressed: () {},
-          ),
-        ],
       ),
       body: ValueListenableBuilder(
           valueListenable: controller.valueListenable,
           builder: (context, state, __) {
             return Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  SizedBox(
-                    width: 350,
-                    child: Card(
+              child: SizedBox(
+                width: 350,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    Card(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
@@ -56,18 +47,77 @@ class _FormScreenState extends State<FormScreen> {
                         ),
                       ),
                     ),
-                  ),
-                  const Text(
-                    'Loren ipsum dolor sit amet',
-                  ),
-                  Text(
-                    '_counter',
-                    style: Theme.of(context).textTheme.headlineMedium,
-                  ),
-                  SizedBox(
-                    width: 350,
-                    child: ElevatedButton(
-                      onPressed: () {},
+                    ListView.builder(
+                      itemCount: controller.state.formDatabinding.defaultForm
+                          .firstWhere((element) =>
+                              element.id == controller.state.currentQuestionId)
+                          .options
+                          ?.length,
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) {
+                        return Visibility(
+                          visible: controller.state.formDatabinding.defaultForm
+                                  .firstWhere((element) =>
+                                      element.id ==
+                                      controller.state.currentQuestionId)
+                                  .type ==
+                              QuestionTypeEnum.multipleChoice,
+                          replacement: CheckboxListTile(
+                            value: controller.state.answers
+                                .firstWhere((element) =>
+                                    element.questionId ==
+                                    controller.state.currentQuestionId)
+                                .answers
+                                .contains(
+                                  controller.state.formDatabinding.defaultForm
+                                      .firstWhere((element) =>
+                                          element.id ==
+                                          controller.state.currentQuestionId)
+                                      .options![index]
+                                      .id,
+                                ),
+                            onChanged: (value) => controller.onChangeCheckbox(
+                                controller.state.formDatabinding.defaultForm
+                                    .firstWhere((element) =>
+                                        element.id ==
+                                        controller.state.currentQuestionId)
+                                    .options![index]
+                                    .id),
+                            title: Text(controller
+                                .state.formDatabinding.defaultForm
+                                .firstWhere((element) =>
+                                    element.id ==
+                                    controller.state.currentQuestionId)
+                                .options![index]
+                                .option),
+                          ),
+                          child: RadioListTile<int>(
+                            title: Text(controller
+                                .state.formDatabinding.defaultForm
+                                .firstWhere((element) =>
+                                    element.id ==
+                                    controller.state.currentQuestionId)
+                                .options![index]
+                                .option),
+                            value: controller.state.formDatabinding.defaultForm
+                                .firstWhere((element) =>
+                                    element.id ==
+                                    controller.state.currentQuestionId)
+                                .options![index]
+                                .id,
+                            groupValue: controller.state.answers
+                                .firstWhere((element) =>
+                                    element.questionId ==
+                                    controller.state.currentQuestionId)
+                                .answers
+                                .first,
+                            onChanged: controller.onChangeRadio,
+                          ),
+                        );
+                      },
+                    ),
+                    ElevatedButton(
+                      onPressed: controller.nextQuestion,
                       child: const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -76,8 +126,8 @@ class _FormScreenState extends State<FormScreen> {
                         ],
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             );
           }),
