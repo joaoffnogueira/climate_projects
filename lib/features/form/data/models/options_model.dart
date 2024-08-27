@@ -1,4 +1,4 @@
-import 'package:climate_change_projects/models/suggestion_model.dart';
+import '../../../../models/suggestion_model.dart';
 
 class OptionsModel {
   final int id;

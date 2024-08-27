@@ -1,5 +1,5 @@
-import 'package:climate_change_projects/features/form/data/models/options_model.dart';
-import 'package:climate_change_projects/features/form/data/models/question_type_enum.dart';
+import 'options_model.dart';
+import 'question_type_enum.dart';
 
 class QuestionModel {
   final int id;
