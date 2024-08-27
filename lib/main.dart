@@ -71,26 +71,6 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             SizedBox(
               width: 350,
-              height: 100,
-              child: Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    'This is a card',
-                    style: Theme.of(context).textTheme.headlineMedium,
-                  ),
-                ),
-              ),
-            ),
-            const Text(
-              'Loren ipsum dolor sit amet',
-            ),
-            Text(
-              '_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            SizedBox(
-              width: 350,
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.of(context, rootNavigator: true).push(
@@ -103,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(Icons.add),
-                    Text('Increment'),
+                    Text('Nova análise'),
                   ],
                 ),
               ),
