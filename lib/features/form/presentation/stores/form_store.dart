@@ -1,4 +1,4 @@
-import 'package:appea/helpers/base_store.dart';
+import '../../../../helpers/base_store.dart';
 import 'form_state.dart';
 
 class FormStore extends NotifyBaseStore<FormState> {

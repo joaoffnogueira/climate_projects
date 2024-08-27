@@ -1,8 +1,8 @@
-import 'package:appea/features/form/data/models/tense_enum.dart';
-import 'package:appea/l10n/localization_context.dart';
-import 'package:appea/features/form/data/models/options_model.dart';
-import 'package:appea/features/form/data/models/question_model.dart';
-import 'package:appea/features/form/data/models/question_type_enum.dart';
+import '../../data/models/tense_enum.dart';
+import '../../../../l10n/localization_context.dart';
+import '../../data/models/options_model.dart';
+import '../../data/models/question_model.dart';
+import '../../data/models/question_type_enum.dart';
 
 class FormDatabinding {
   TenseEnum questionTense = TenseEnum.future;

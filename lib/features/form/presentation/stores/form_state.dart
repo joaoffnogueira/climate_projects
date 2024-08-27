@@ -1,6 +1,6 @@
-import 'package:appea/features/form/data/models/tense_enum.dart';
-import 'package:appea/features/form/presentation/stores/form_databinding.dart';
-import 'package:appea/features/form/data/models/answer_model.dart';
+import '../../data/models/tense_enum.dart';
+import 'form_databinding.dart';
+import '../../data/models/answer_model.dart';
 
 import '../../../../helpers/base_state.dart';
 

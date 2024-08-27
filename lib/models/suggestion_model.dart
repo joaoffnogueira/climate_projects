@@ -1,5 +1,5 @@
-import 'package:appea/models/suggestion_lang_enum.dart';
-import 'package:appea/models/suggestion_type_enum.dart';
+import 'package:climate_change_projects/models/suggestion_lang_enum.dart';
+import 'package:climate_change_projects/models/suggestion_type_enum.dart';
 
 class SuggestionModel {
   final String title;

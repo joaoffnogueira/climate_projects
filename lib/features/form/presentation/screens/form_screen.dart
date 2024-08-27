@@ -1,4 +1,4 @@
-import 'package:appea/features/form/data/models/question_type_enum.dart';
+import '../../data/models/question_type_enum.dart';
 import 'package:flutter/material.dart';
 
 import '../stores/form_store.dart';
