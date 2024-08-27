@@ -1,3 +1,4 @@
+import '../../../results/presentation/results_screen.dart';
 import '../../data/models/question_type_enum.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,7 @@ class _FormScreenState extends State<FormScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text('widget.title'),
+        title: Text('App da Fer'),
       ),
       body: ValueListenableBuilder(
           valueListenable: controller.valueListenable,
@@ -140,13 +141,21 @@ class _FormScreenState extends State<FormScreen> {
                                     .answers
                                     .isEmpty
                             ? null
-                            : controller.nextQuestion();
+                            : controller.state.currentQuestionId == 45
+                                ? Navigator.of(context, rootNavigator: true)
+                                    .push(
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          const ResultsScreen(),
+                                    ),
+                                  )
+                                : controller.nextQuestion();
                       },
                       child: const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.add),
-                          Text('Increment'),
+                          Text('Próxima pergunta'),
+                          Icon(Icons.skip_next_rounded),
                         ],
                       ),
                     ),
