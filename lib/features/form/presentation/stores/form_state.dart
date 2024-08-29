@@ -22,7 +22,7 @@ class FormState extends BaseState {
     return FormState(
       errorMessage: null,
       loading: BaseLoadingState.initial,
-      formDatabinding: FormDatabinding(),
+      formDatabinding: FormDatabinding(TenseEnum.future),
       currentQuestionId: 1,
       answers: List.generate(
           46, (index) => AnswerModel(questionId: index, answers: [0]),

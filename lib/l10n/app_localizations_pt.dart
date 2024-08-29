@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 /// The translations for Portuguese (`pt`).
@@ -20,13 +22,40 @@ class AppLocalizationsPt extends AppLocalizations {
   String get question2 => 'O projeto surgiu a partir de uma necessidade real da comunidade identificada através de um diagnóstico prévio?';
 
   @override
-  String get option2_1 => 'Sim foi/será realizado um diagnóstico prévio';
+  String option2_1(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Sim, foi realizado um diagnóstico prévio',
+        'other': 'Sim, será realizado um diagnóstico prévio',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
-  String get option2_2 => 'Não não foi/será realizado um diagnóstico prévio';
+  String option2_2(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Não, não foi realizado um diagnóstico prévio',
+        'other': 'Não será realizado um diagnóstico prévio',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
-  String get question3 => 'Com quem foi/será realizado o diagnóstico prévio?';
+  String question3(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Com quem foi realizado o diagnóstico prévio?',
+        'other': 'Com quem será realizado o diagnóstico prévio?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option3_1 => 'Alunos';
@@ -44,7 +73,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option3_5 => 'Outros';
 
   @override
-  String get question4 => 'Quais métodos foram/serão utilizados para realizar o diagnóstico?';
+  String question4(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Quais métodos foram utilizados para realizar o diagnóstico?',
+        'other': 'Quais métodos serão utilizados para realizar o diagnóstico?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option4_1 => 'Observações de campo em reuniões comunitárias';
@@ -62,7 +100,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option4_5 => 'Outros';
 
   @override
-  String get question5 => 'Qual foi/será o principal foco do diagnóstico?';
+  String question5(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Qual foi o principal foco do diagnóstico?',
+        'other': 'Qual será o principal foco do diagnóstico?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option5_1 => 'Identificação de problemas ambientais locais';
@@ -77,16 +124,52 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option5_4 => 'Outros';
 
   @override
-  String get question6 => 'Os resultados do diagnóstico foram/serão incorporados no planejamento do projeto?';
+  String question6(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Os resultados do diagnóstico foram incorporados no planejamento do projeto?',
+        'other': 'Os resultados do diagnóstico serão incorporados no planejamento do projeto?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
-  String get option6_1 => 'Os resultados do diagnóstico guiaram/guiarão todas as fases do projeto';
+  String option6_1(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Os resultados do diagnóstico guiaram todas as fases do projeto',
+        'other': 'Os resultados do diagnóstico guiarão todas as fases do projeto',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
-  String get option6_2 => 'Os resultados do diagnóstico guiaram/guiarão algumas atividades dentro do projeto';
+  String option6_2(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Os resultados do diagnóstico guiaram algumas atividades dentro do projeto',
+        'other': 'Os resultados do diagnóstico guiarão algumas atividades dentro do projeto',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
-  String get option6_3 => 'Os resultados do diagnóstico não foram/serão incorporados no projeto';
+  String option6_3(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Os resultados do diagnóstico não foram incorporados no projeto',
+        'other': 'Os resultados do diagnóstico não serão incorporados no projeto',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get question7 => 'Os participantes do projeto possuem algum envolvimento prévio com a temática?';
@@ -119,7 +202,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option8_6 => 'Outros';
 
   @override
-  String get question9 => 'O projeto promoveu/promoverá colaboração entre diferentes setores da sociedade?';
+  String question9(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'O projeto promoveu colaboração entre diferentes setores da sociedade?',
+        'other': 'O projeto promoverá colaboração entre diferentes setores da sociedade?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option9_1 => 'Sim';
@@ -167,7 +259,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option11_2 => 'Em momentos específicos';
 
   @override
-  String get question12 => 'De que maneira foi/será essa participação?';
+  String question12(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'De que maneira foi essa participação?',
+        'other': 'De que maneira será essa participação?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option12_1 => 'A partir de dicas e auxílio em análises';
@@ -212,7 +313,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option14_5 => 'Outros';
 
   @override
-  String get question15 => 'Com relação à Emergência Climática, quais os temas que foram/serão abordados no projeto?';
+  String question15(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Com relação à Emergência Climática, quais os temas que foram abordados no projeto?',
+        'other': 'Com relação à Emergência Climática, quais os temas que serão abordados no projeto?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option15_1 => 'Causas e consequências';
@@ -230,7 +340,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option15_5 => 'Outros';
 
   @override
-  String get question16 => 'Quais dimensões abaixo você abordou/abordará em seu projeto?';
+  String question16(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Quais dimensões abaixo você abordou em seu projeto?',
+        'other': 'Quais dimensões abaixo você abordará em seu projeto?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option16_1 => 'Política';
@@ -260,7 +379,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option16_9 => 'Históricos';
 
   @override
-  String get question17 => 'Quais aspectos políticos você abordou/abordará?';
+  String question17(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Quais aspectos políticos você abordou?',
+        'other': 'Quais aspectos políticos você abordará?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option17_1 => 'Políticas públicas ambientais';
@@ -272,7 +400,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option17_3 => 'Governança e tomada de decisão';
 
   @override
-  String get question18 => 'Quais aspectos econômicos você abordou/abordará?';
+  String question18(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Quais aspectos econômicos você abordou?',
+        'other': 'Quais aspectos econômicos você abordará?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option18_1 => 'Alternativas econômicas em relação ao modelo vigente';
@@ -287,7 +424,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option18_4 => 'Modelo econômico vigente';
 
   @override
-  String get question19 => 'Quais aspectos sociais você abordou/abordará?';
+  String question19(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Quais aspectos sociais você abordou?',
+        'other': 'Quais aspectos sociais você abordará?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option19_1 => 'Equidade';
@@ -299,7 +445,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option19_3 => 'Ações comunitárias e engajamento social';
 
   @override
-  String get question20 => 'Quais aspectos culturais você abordou/abordará?';
+  String question20(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Quais aspectos culturais você abordou?',
+        'other': 'Quais aspectos culturais você abordará?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option20_1 => 'Valorização da diversidade cultural local';
@@ -311,7 +466,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option20_3 => 'Práticas culturais locais e sua relação com o ambiente';
 
   @override
-  String get question21 => 'Quais aspectos éticos você abordou/abordará?';
+  String question21(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Quais aspectos éticos você abordou?',
+        'other': 'Quais aspectos éticos você abordará?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option21_1 => 'Ética ambiental e responsabilidade ecológica';
@@ -341,7 +505,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option22_6 => 'Desastres ambientais';
 
   @override
-  String get question23 => 'Quais aspectos do indivíduo você abordou/abordará?';
+  String question23(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Quais aspectos do indivíduo você abordou?',
+        'other': 'Quais aspectos do indivíduo você abordará?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option23_1 => 'Autoconhecimento/autocrítica';
@@ -359,7 +532,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option23_5 => 'Saúde mental';
 
   @override
-  String get question24 => 'Quais aspectos artísticos você abordou/abordará?';
+  String question24(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Quais aspectos artísticos você abordou?',
+        'other': 'Quais aspectos artísticos você abordará?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option24_1 => 'Arte para expressar e comunicar temas ambientais';
@@ -371,7 +553,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option24_3 => 'Produção artística';
 
   @override
-  String get question25 => 'Quais aspectos históricos você abordou/abordará?';
+  String question25(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Quais aspectos históricos você abordou?',
+        'other': 'Quais aspectos históricos você abordará?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option25_1 => 'Contextualização histórica das mudanças climáticas';
@@ -383,7 +574,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option25_3 => 'História local';
 
   @override
-  String get question26 => 'Quais valores foram trabalhados durante o desenvolvimento do projeto?';
+  String question26(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Quais valores foram trabalhados durante o desenvolvimento do projeto?',
+        'other': 'Quais valores serão trabalhados durante o desenvolvimento do projeto?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option26_1 => 'Respeito ao meio ambiente';
@@ -410,7 +610,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option26_8 => 'Outros';
 
   @override
-  String get question27 => 'O projeto trabalhou/trabalhará as questões emocionais dos participantes durante o projeto?';
+  String question27(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'O projeto trabalhou as questões emocionais dos participantes durante o projeto?',
+        'other': 'O projeto trabalhará as questões emocionais dos participantes durante o projeto?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option27_1 => 'Sim';
@@ -419,7 +628,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option27_2 => 'Não';
 
   @override
-  String get question28 => 'Se sim, de que maneira o projeto buscou/buscará considerar as questões emocionais?';
+  String question28(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Se sim, de que maneira o projeto buscou considerar as questões emocionais?',
+        'other': 'Se sim, de que maneira o projeto buscará considerar as questões emocionais?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option28_1 => 'Atividades de expressão emocional por meio da arte';
@@ -449,7 +667,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option29_4 => 'Esperança';
 
   @override
-  String get question30 => 'O projeto buscou/buscará incentivar os participantes a desenvolverem uma conexão emocional com o ambiente?';
+  String question30(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'O projeto buscou incentivar os participantes a desenvolverem uma conexão emocional com o ambiente?',
+        'other': 'O projeto buscará incentivar os participantes a desenvolverem uma conexão emocional com o ambiente?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option30_1 => 'Sim';
@@ -476,7 +703,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option31_5 => 'Outros';
 
   @override
-  String get question32 => 'Quais instrumentos foram/serão utilizados para abordar a temática?';
+  String question32(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Quais instrumentos foram utilizados para abordar a temática?',
+        'other': 'Quais instrumentos serão utilizados para abordar a temática?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option32_1 => 'Materiais didáticos (livros, artigos, vídeos)';
@@ -494,7 +730,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option32_5 => 'Outros';
 
   @override
-  String get question33 => 'De que maneira ocorreram/ocorrerão as atividades desenvolvidas no projeto?';
+  String question33(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'De que maneira ocorreram as atividades desenvolvidas no projeto?',
+        'other': 'De que maneira ocorrerão as atividades desenvolvidas no projeto?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option33_1 => 'Debate e discussão aberta';
@@ -533,7 +778,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option35_3 => 'Reconhecer a problemática no contexto local';
 
   @override
-  String get question36 => 'Indique qual/quais áreas do conhecimento foram/serão contempladas durante a realização do projeto:';
+  String question36(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Indique qual/quais áreas do conhecimento foram contempladas durante a realização do projeto:',
+        'other': 'Indique qual/quais áreas do conhecimento serão contempladas durante a realização do projeto:',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option36_1 => 'Ciências Exatas';
@@ -566,7 +820,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option36_10 => 'Artes';
 
   @override
-  String get question37 => 'De que maneira ocorreu/ocorrerá a integração entre as áreas?';
+  String question37(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'De que maneira ocorreu a integração entre as áreas?',
+        'other': 'De que maneira ocorrerá a integração entre as áreas?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option37_1 => 'Discussões teóricas';
@@ -611,7 +874,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option39_7 => 'Outros';
 
   @override
-  String get question40 => 'Foram/serão realizadas avaliações durante o andamento do projeto?';
+  String question40(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Foram realizadas avaliações durante o andamento do projeto?',
+        'other': 'Serão realizadas avaliações durante o andamento do projeto?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option40_1 => 'Sim';
@@ -620,7 +892,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option40_2 => 'Não apenas no final do projeto';
 
   @override
-  String get question41 => 'Houve/haverá um momento destinado para a autoavaliação dos participantes?';
+  String question41(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'Houve um momento destinado para a autoavaliação dos participantes?',
+        'other': 'Haverá um momento destinado para a autoavaliação dos participantes?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option41_1 => 'Sim';
@@ -629,7 +910,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option41_2 => 'Não';
 
   @override
-  String get question42 => 'O feedback dos participantes foi/será utilizado para ajustar o projeto?';
+  String question42(String tense) {
+    String _temp0 = intl.Intl.selectLogic(
+      tense,
+      {
+        'past': 'O feedback dos participantes foi utilizado para ajustar o projeto?',
+        'other': 'O feedback dos participantes será utilizado para ajustar o projeto?',
+      },
+    );
+    return '$_temp0';
+  }
 
   @override
   String get option42_1 => 'Sim';

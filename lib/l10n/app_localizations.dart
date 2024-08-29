@@ -124,20 +124,20 @@ abstract class AppLocalizations {
   /// No description provided for @option2_1.
   ///
   /// In pt, this message translates to:
-  /// **'Sim foi/será realizado um diagnóstico prévio'**
-  String get option2_1;
+  /// **'{tense, select, past{Sim, foi realizado um diagnóstico prévio} other{Sim, será realizado um diagnóstico prévio}}'**
+  String option2_1(String tense);
 
   /// No description provided for @option2_2.
   ///
   /// In pt, this message translates to:
-  /// **'Não não foi/será realizado um diagnóstico prévio'**
-  String get option2_2;
+  /// **'{tense, select, past{Não, não foi realizado um diagnóstico prévio} other{Não será realizado um diagnóstico prévio}}'**
+  String option2_2(String tense);
 
   /// No description provided for @question3.
   ///
   /// In pt, this message translates to:
-  /// **'Com quem foi/será realizado o diagnóstico prévio?'**
-  String get question3;
+  /// **'{tense, select, past{Com quem foi realizado o diagnóstico prévio?} other{Com quem será realizado o diagnóstico prévio?}}'**
+  String question3(String tense);
 
   /// No description provided for @option3_1.
   ///
@@ -172,8 +172,8 @@ abstract class AppLocalizations {
   /// No description provided for @question4.
   ///
   /// In pt, this message translates to:
-  /// **'Quais métodos foram/serão utilizados para realizar o diagnóstico?'**
-  String get question4;
+  /// **'{tense, select, past{Quais métodos foram utilizados para realizar o diagnóstico?} other{Quais métodos serão utilizados para realizar o diagnóstico?}}'**
+  String question4(String tense);
 
   /// No description provided for @option4_1.
   ///
@@ -208,8 +208,8 @@ abstract class AppLocalizations {
   /// No description provided for @question5.
   ///
   /// In pt, this message translates to:
-  /// **'Qual foi/será o principal foco do diagnóstico?'**
-  String get question5;
+  /// **'{tense, select, past{Qual foi o principal foco do diagnóstico?} other{Qual será o principal foco do diagnóstico?}}'**
+  String question5(String tense);
 
   /// No description provided for @option5_1.
   ///
@@ -238,26 +238,26 @@ abstract class AppLocalizations {
   /// No description provided for @question6.
   ///
   /// In pt, this message translates to:
-  /// **'Os resultados do diagnóstico foram/serão incorporados no planejamento do projeto?'**
-  String get question6;
+  /// **'{tense, select, past{Os resultados do diagnóstico foram incorporados no planejamento do projeto?} other{Os resultados do diagnóstico serão incorporados no planejamento do projeto?}}'**
+  String question6(String tense);
 
   /// No description provided for @option6_1.
   ///
   /// In pt, this message translates to:
-  /// **'Os resultados do diagnóstico guiaram/guiarão todas as fases do projeto'**
-  String get option6_1;
+  /// **'{tense, select, past{Os resultados do diagnóstico guiaram todas as fases do projeto} other{Os resultados do diagnóstico guiarão todas as fases do projeto}}'**
+  String option6_1(String tense);
 
   /// No description provided for @option6_2.
   ///
   /// In pt, this message translates to:
-  /// **'Os resultados do diagnóstico guiaram/guiarão algumas atividades dentro do projeto'**
-  String get option6_2;
+  /// **'{tense, select, past{Os resultados do diagnóstico guiaram algumas atividades dentro do projeto} other{Os resultados do diagnóstico guiarão algumas atividades dentro do projeto}}'**
+  String option6_2(String tense);
 
   /// No description provided for @option6_3.
   ///
   /// In pt, this message translates to:
-  /// **'Os resultados do diagnóstico não foram/serão incorporados no projeto'**
-  String get option6_3;
+  /// **'{tense, select, past{Os resultados do diagnóstico não foram incorporados no projeto} other{Os resultados do diagnóstico não serão incorporados no projeto}}'**
+  String option6_3(String tense);
 
   /// No description provided for @question7.
   ///
@@ -322,8 +322,8 @@ abstract class AppLocalizations {
   /// No description provided for @question9.
   ///
   /// In pt, this message translates to:
-  /// **'O projeto promoveu/promoverá colaboração entre diferentes setores da sociedade?'**
-  String get question9;
+  /// **'{tense, select, past{O projeto promoveu colaboração entre diferentes setores da sociedade?} other{O projeto promoverá colaboração entre diferentes setores da sociedade?}}'**
+  String question9(String tense);
 
   /// No description provided for @option9_1.
   ///
@@ -418,8 +418,8 @@ abstract class AppLocalizations {
   /// No description provided for @question12.
   ///
   /// In pt, this message translates to:
-  /// **'De que maneira foi/será essa participação?'**
-  String get question12;
+  /// **'{tense, select, past{De que maneira foi essa participação?} other{De que maneira será essa participação?}}'**
+  String question12(String tense);
 
   /// No description provided for @option12_1.
   ///
@@ -508,8 +508,8 @@ abstract class AppLocalizations {
   /// No description provided for @question15.
   ///
   /// In pt, this message translates to:
-  /// **'Com relação à Emergência Climática, quais os temas que foram/serão abordados no projeto?'**
-  String get question15;
+  /// **'{tense, select, past{Com relação à Emergência Climática, quais os temas que foram abordados no projeto?} other{Com relação à Emergência Climática, quais os temas que serão abordados no projeto?}}'**
+  String question15(String tense);
 
   /// No description provided for @option15_1.
   ///
@@ -544,8 +544,8 @@ abstract class AppLocalizations {
   /// No description provided for @question16.
   ///
   /// In pt, this message translates to:
-  /// **'Quais dimensões abaixo você abordou/abordará em seu projeto?'**
-  String get question16;
+  /// **'{tense, select, past{Quais dimensões abaixo você abordou em seu projeto?} other{Quais dimensões abaixo você abordará em seu projeto?}}'**
+  String question16(String tense);
 
   /// No description provided for @option16_1.
   ///
@@ -604,8 +604,8 @@ abstract class AppLocalizations {
   /// No description provided for @question17.
   ///
   /// In pt, this message translates to:
-  /// **'Quais aspectos políticos você abordou/abordará?'**
-  String get question17;
+  /// **'{tense, select, past{Quais aspectos políticos você abordou?} other{Quais aspectos políticos você abordará?}}'**
+  String question17(String tense);
 
   /// No description provided for @option17_1.
   ///
@@ -628,8 +628,8 @@ abstract class AppLocalizations {
   /// No description provided for @question18.
   ///
   /// In pt, this message translates to:
-  /// **'Quais aspectos econômicos você abordou/abordará?'**
-  String get question18;
+  /// **'{tense, select, past{Quais aspectos econômicos você abordou?} other{Quais aspectos econômicos você abordará?}}'**
+  String question18(String tense);
 
   /// No description provided for @option18_1.
   ///
@@ -658,8 +658,8 @@ abstract class AppLocalizations {
   /// No description provided for @question19.
   ///
   /// In pt, this message translates to:
-  /// **'Quais aspectos sociais você abordou/abordará?'**
-  String get question19;
+  /// **'{tense, select, past{Quais aspectos sociais você abordou?} other{Quais aspectos sociais você abordará?}}'**
+  String question19(String tense);
 
   /// No description provided for @option19_1.
   ///
@@ -682,8 +682,8 @@ abstract class AppLocalizations {
   /// No description provided for @question20.
   ///
   /// In pt, this message translates to:
-  /// **'Quais aspectos culturais você abordou/abordará?'**
-  String get question20;
+  /// **'{tense, select, past{Quais aspectos culturais você abordou?} other{Quais aspectos culturais você abordará?}}'**
+  String question20(String tense);
 
   /// No description provided for @option20_1.
   ///
@@ -706,8 +706,8 @@ abstract class AppLocalizations {
   /// No description provided for @question21.
   ///
   /// In pt, this message translates to:
-  /// **'Quais aspectos éticos você abordou/abordará?'**
-  String get question21;
+  /// **'{tense, select, past{Quais aspectos éticos você abordou?} other{Quais aspectos éticos você abordará?}}'**
+  String question21(String tense);
 
   /// No description provided for @option21_1.
   ///
@@ -766,8 +766,8 @@ abstract class AppLocalizations {
   /// No description provided for @question23.
   ///
   /// In pt, this message translates to:
-  /// **'Quais aspectos do indivíduo você abordou/abordará?'**
-  String get question23;
+  /// **'{tense, select, past{Quais aspectos do indivíduo você abordou?} other{Quais aspectos do indivíduo você abordará?}}'**
+  String question23(String tense);
 
   /// No description provided for @option23_1.
   ///
@@ -802,8 +802,8 @@ abstract class AppLocalizations {
   /// No description provided for @question24.
   ///
   /// In pt, this message translates to:
-  /// **'Quais aspectos artísticos você abordou/abordará?'**
-  String get question24;
+  /// **'{tense, select, past{Quais aspectos artísticos você abordou?} other{Quais aspectos artísticos você abordará?}}'**
+  String question24(String tense);
 
   /// No description provided for @option24_1.
   ///
@@ -826,8 +826,8 @@ abstract class AppLocalizations {
   /// No description provided for @question25.
   ///
   /// In pt, this message translates to:
-  /// **'Quais aspectos históricos você abordou/abordará?'**
-  String get question25;
+  /// **'{tense, select, past{Quais aspectos históricos você abordou?} other{Quais aspectos históricos você abordará?}}'**
+  String question25(String tense);
 
   /// No description provided for @option25_1.
   ///
@@ -850,8 +850,8 @@ abstract class AppLocalizations {
   /// No description provided for @question26.
   ///
   /// In pt, this message translates to:
-  /// **'Quais valores foram trabalhados durante o desenvolvimento do projeto?'**
-  String get question26;
+  /// **'{tense, select, past{Quais valores foram trabalhados durante o desenvolvimento do projeto?} other{Quais valores serão trabalhados durante o desenvolvimento do projeto?}}'**
+  String question26(String tense);
 
   /// No description provided for @option26_1.
   ///
@@ -904,8 +904,8 @@ abstract class AppLocalizations {
   /// No description provided for @question27.
   ///
   /// In pt, this message translates to:
-  /// **'O projeto trabalhou/trabalhará as questões emocionais dos participantes durante o projeto?'**
-  String get question27;
+  /// **'{tense, select, past{O projeto trabalhou as questões emocionais dos participantes durante o projeto?} other{O projeto trabalhará as questões emocionais dos participantes durante o projeto?}}'**
+  String question27(String tense);
 
   /// No description provided for @option27_1.
   ///
@@ -922,8 +922,8 @@ abstract class AppLocalizations {
   /// No description provided for @question28.
   ///
   /// In pt, this message translates to:
-  /// **'Se sim, de que maneira o projeto buscou/buscará considerar as questões emocionais?'**
-  String get question28;
+  /// **'{tense, select, past{Se sim, de que maneira o projeto buscou considerar as questões emocionais?} other{Se sim, de que maneira o projeto buscará considerar as questões emocionais?}}'**
+  String question28(String tense);
 
   /// No description provided for @option28_1.
   ///
@@ -982,8 +982,8 @@ abstract class AppLocalizations {
   /// No description provided for @question30.
   ///
   /// In pt, this message translates to:
-  /// **'O projeto buscou/buscará incentivar os participantes a desenvolverem uma conexão emocional com o ambiente?'**
-  String get question30;
+  /// **'{tense, select, past{O projeto buscou incentivar os participantes a desenvolverem uma conexão emocional com o ambiente?} other{O projeto buscará incentivar os participantes a desenvolverem uma conexão emocional com o ambiente?}}'**
+  String question30(String tense);
 
   /// No description provided for @option30_1.
   ///
@@ -1036,8 +1036,8 @@ abstract class AppLocalizations {
   /// No description provided for @question32.
   ///
   /// In pt, this message translates to:
-  /// **'Quais instrumentos foram/serão utilizados para abordar a temática?'**
-  String get question32;
+  /// **'{tense, select, past{Quais instrumentos foram utilizados para abordar a temática?} other{Quais instrumentos serão utilizados para abordar a temática?}}'**
+  String question32(String tense);
 
   /// No description provided for @option32_1.
   ///
@@ -1072,8 +1072,8 @@ abstract class AppLocalizations {
   /// No description provided for @question33.
   ///
   /// In pt, this message translates to:
-  /// **'De que maneira ocorreram/ocorrerão as atividades desenvolvidas no projeto?'**
-  String get question33;
+  /// **'{tense, select, past{De que maneira ocorreram as atividades desenvolvidas no projeto?} other{De que maneira ocorrerão as atividades desenvolvidas no projeto?}}'**
+  String question33(String tense);
 
   /// No description provided for @option33_1.
   ///
@@ -1150,8 +1150,8 @@ abstract class AppLocalizations {
   /// No description provided for @question36.
   ///
   /// In pt, this message translates to:
-  /// **'Indique qual/quais áreas do conhecimento foram/serão contempladas durante a realização do projeto:'**
-  String get question36;
+  /// **'{tense, select, past{Indique qual/quais áreas do conhecimento foram contempladas durante a realização do projeto:} other{Indique qual/quais áreas do conhecimento serão contempladas durante a realização do projeto:}}'**
+  String question36(String tense);
 
   /// No description provided for @option36_1.
   ///
@@ -1216,8 +1216,8 @@ abstract class AppLocalizations {
   /// No description provided for @question37.
   ///
   /// In pt, this message translates to:
-  /// **'De que maneira ocorreu/ocorrerá a integração entre as áreas?'**
-  String get question37;
+  /// **'{tense, select, past{De que maneira ocorreu a integração entre as áreas?} other{De que maneira ocorrerá a integração entre as áreas?}}'**
+  String question37(String tense);
 
   /// No description provided for @option37_1.
   ///
@@ -1306,8 +1306,8 @@ abstract class AppLocalizations {
   /// No description provided for @question40.
   ///
   /// In pt, this message translates to:
-  /// **'Foram/serão realizadas avaliações durante o andamento do projeto?'**
-  String get question40;
+  /// **'{tense, select, past{Foram realizadas avaliações durante o andamento do projeto?} other{Serão realizadas avaliações durante o andamento do projeto?}}'**
+  String question40(String tense);
 
   /// No description provided for @option40_1.
   ///
@@ -1324,8 +1324,8 @@ abstract class AppLocalizations {
   /// No description provided for @question41.
   ///
   /// In pt, this message translates to:
-  /// **'Houve/haverá um momento destinado para a autoavaliação dos participantes?'**
-  String get question41;
+  /// **'{tense, select, past{Houve um momento destinado para a autoavaliação dos participantes?} other{Haverá um momento destinado para a autoavaliação dos participantes?}}'**
+  String question41(String tense);
 
   /// No description provided for @option41_1.
   ///
@@ -1342,8 +1342,8 @@ abstract class AppLocalizations {
   /// No description provided for @question42.
   ///
   /// In pt, this message translates to:
-  /// **'O feedback dos participantes foi/será utilizado para ajustar o projeto?'**
-  String get question42;
+  /// **'{tense, select, past{O feedback dos participantes foi utilizado para ajustar o projeto?} other{O feedback dos participantes será utilizado para ajustar o projeto?}}'**
+  String question42(String tense);
 
   /// No description provided for @option42_1.
   ///

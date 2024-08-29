@@ -10,10 +10,12 @@ class FormDatabinding {
   void changeTense(List<int> value) {
     if (value.first == 3) {
       questionTense = TenseEnum.past;
+      defaultForm = FormDatabinding(TenseEnum.past).defaultForm;
     }
   }
 
-  FormDatabinding() {
+  FormDatabinding(TenseEnum questionTense) {
+    this.questionTense;
     defaultForm = [
       QuestionModel(
         id: 1,
@@ -40,13 +42,15 @@ class FormDatabinding {
           return 3;
         },
         options: [
-          OptionsModel(id: 1, option: Localization.tr.option2_1),
-          OptionsModel(id: 2, option: Localization.tr.option2_2),
+          OptionsModel(
+              id: 1, option: Localization.tr.option2_1(questionTense.name)),
+          OptionsModel(
+              id: 2, option: Localization.tr.option2_2(questionTense.name)),
         ],
       ),
       QuestionModel(
         id: 3,
-        question: Localization.tr.question3,
+        question: Localization.tr.question3(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
           OptionsModel(id: 1, option: Localization.tr.option3_1),
@@ -58,7 +62,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 4,
-        question: Localization.tr.question4,
+        question: Localization.tr.question4(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
           OptionsModel(id: 1, option: Localization.tr.option4_1),
@@ -70,7 +74,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 5,
-        question: Localization.tr.question5,
+        question: Localization.tr.question5(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
           OptionsModel(id: 1, option: Localization.tr.option5_1),
@@ -81,12 +85,15 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 6,
-        question: Localization.tr.question6,
+        question: Localization.tr.question6(questionTense.name),
         type: QuestionTypeEnum.multipleChoice,
         options: [
-          OptionsModel(id: 1, option: Localization.tr.option6_1),
-          OptionsModel(id: 2, option: Localization.tr.option6_2),
-          OptionsModel(id: 3, option: Localization.tr.option6_3),
+          OptionsModel(
+              id: 1, option: Localization.tr.option6_1(questionTense.name)),
+          OptionsModel(
+              id: 2, option: Localization.tr.option6_2(questionTense.name)),
+          OptionsModel(
+              id: 3, option: Localization.tr.option6_3(questionTense.name)),
         ],
       ),
       QuestionModel(
@@ -113,7 +120,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 9,
-        question: Localization.tr.question9,
+        question: Localization.tr.question9(questionTense.name),
         type: QuestionTypeEnum.multipleChoice,
         nextQuestion: (value) {
           if (value.first == 2) {
@@ -153,7 +160,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 12,
-        question: Localization.tr.question12,
+        question: Localization.tr.question12(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
           OptionsModel(id: 1, option: Localization.tr.option12_1),
@@ -192,7 +199,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 15,
-        question: Localization.tr.question15,
+        question: Localization.tr.question15(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
           OptionsModel(id: 1, option: Localization.tr.option15_1),
@@ -204,7 +211,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 16,
-        question: Localization.tr.question16,
+        question: Localization.tr.question16(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
           OptionsModel(id: 1, option: Localization.tr.option16_1),
@@ -220,7 +227,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 17,
-        question: Localization.tr.question17,
+        question: Localization.tr.question17(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
           OptionsModel(id: 1, option: Localization.tr.option17_1),
@@ -230,7 +237,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 18,
-        question: Localization.tr.question18,
+        question: Localization.tr.question18(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
           OptionsModel(id: 1, option: Localization.tr.option18_1),
@@ -241,7 +248,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 19,
-        question: Localization.tr.question19,
+        question: Localization.tr.question19(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
           OptionsModel(id: 1, option: Localization.tr.option19_1),
@@ -251,7 +258,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 20,
-        question: Localization.tr.question20,
+        question: Localization.tr.question20(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
           OptionsModel(id: 1, option: Localization.tr.option20_1),
@@ -261,7 +268,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 21,
-        question: Localization.tr.question21,
+        question: Localization.tr.question21(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
           OptionsModel(id: 1, option: Localization.tr.option21_1),
@@ -283,7 +290,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 23,
-        question: Localization.tr.question23,
+        question: Localization.tr.question23(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
           OptionsModel(id: 1, option: Localization.tr.option23_1),
@@ -295,7 +302,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 24,
-        question: Localization.tr.question24,
+        question: Localization.tr.question24(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
           OptionsModel(id: 1, option: Localization.tr.option24_1),
@@ -305,7 +312,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 25,
-        question: Localization.tr.question25,
+        question: Localization.tr.question25(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
           OptionsModel(id: 1, option: Localization.tr.option25_1),
@@ -315,7 +322,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 26,
-        question: Localization.tr.question26,
+        question: Localization.tr.question26(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
           OptionsModel(id: 1, option: Localization.tr.option26_1),
@@ -330,7 +337,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 27,
-        question: Localization.tr.question27,
+        question: Localization.tr.question27(questionTense.name),
         type: QuestionTypeEnum.multipleChoice,
         nextQuestion: (value) {
           if (value.first == 2) {
@@ -345,7 +352,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 28,
-        question: Localization.tr.question28,
+        question: Localization.tr.question28(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
           OptionsModel(id: 1, option: Localization.tr.option28_1),
@@ -367,7 +374,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 30,
-        question: Localization.tr.question30,
+        question: Localization.tr.question30(questionTense.name),
         type: QuestionTypeEnum.multipleChoice,
         nextQuestion: (value) {
           if (value.first == 2) {
@@ -394,7 +401,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 32,
-        question: Localization.tr.question32,
+        question: Localization.tr.question32(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
           OptionsModel(id: 1, option: Localization.tr.option32_1),
@@ -406,7 +413,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 33,
-        question: Localization.tr.question33,
+        question: Localization.tr.question33(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
           OptionsModel(id: 1, option: Localization.tr.option33_1),
@@ -443,7 +450,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 36,
-        question: Localization.tr.question36,
+        question: Localization.tr.question36(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
           OptionsModel(id: 1, option: Localization.tr.option36_1),
@@ -460,7 +467,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 37,
-        question: Localization.tr.question37,
+        question: Localization.tr.question37(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
           OptionsModel(id: 1, option: Localization.tr.option37_1),
@@ -499,7 +506,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 40,
-        question: Localization.tr.question40,
+        question: Localization.tr.question40(questionTense.name),
         type: QuestionTypeEnum.multipleChoice,
         options: [
           OptionsModel(id: 1, option: Localization.tr.option40_1),
@@ -508,7 +515,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 41,
-        question: Localization.tr.question41,
+        question: Localization.tr.question41(questionTense.name),
         type: QuestionTypeEnum.multipleChoice,
         options: [
           OptionsModel(id: 1, option: Localization.tr.option41_1),
@@ -517,7 +524,7 @@ class FormDatabinding {
       ),
       QuestionModel(
         id: 42,
-        question: Localization.tr.question42,
+        question: Localization.tr.question42(questionTense.name),
         type: QuestionTypeEnum.multipleChoice,
         options: [
           OptionsModel(id: 1, option: Localization.tr.option42_1),
