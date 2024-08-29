@@ -28,6 +28,8 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+  assets:
+    - assets/
 
 scripts:
   run: "fvm flutter gen-l10n && fvm flutter pub get"
