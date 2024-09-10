@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class ThemeHelper {
   int? theme;
   randomTheme() {
-    theme = Random().nextInt(5);
+    theme = Random().nextInt(10);
   }
 
   Color get primaryColor =>
@@ -54,6 +54,42 @@ class ThemeHelper {
       backgroundColor: const Color(0xff8587F6),
       image: 'assets/back5.jpg',
       credit: 'Overconsumption - Vanessa Pesarini for ArtistsForClimate.org',
+    ),
+    MyThemes(
+      id: 5,
+      primaryColor: Colors.pink,
+      backgroundColor: const Color(0xffE4EEF2),
+      image: 'assets/back6.jpg',
+      credit: 'Cohesive Living - Preeti Singh for ArtistsForClimate.org',
+    ),
+    MyThemes(
+      id: 6,
+      primaryColor: Colors.white,
+      backgroundColor: const Color(0xff8DA9BB),
+      image: 'assets/back7.jpg',
+      credit: 'Reuse Reduce - Tengwan Quek for ArtistsForClimate.org',
+    ),
+    MyThemes(
+      id: 7,
+      primaryColor: Colors.green,
+      backgroundColor: const Color(0xffFAF4E0),
+      image: 'assets/back8.jpg',
+      credit:
+          'Plant A Tree, Breathe Free - Laura Valdés González for ArtistsForClimate.org',
+    ),
+    MyThemes(
+      id: 8,
+      primaryColor: Colors.green,
+      backgroundColor: const Color(0xffE7BCAF),
+      image: 'assets/back9.jpg',
+      credit: 'Love Earth - Tengwan Quek for ArtistsForClimate.org',
+    ),
+    MyThemes(
+      id: 9,
+      primaryColor: Colors.orange,
+      backgroundColor: const Color(0xff685CF3),
+      image: 'assets/back10.jpg',
+      credit: 'Energy Consumption - Tengwan Quek for ArtistsForClimate.org',
     ),
   ];
 }
