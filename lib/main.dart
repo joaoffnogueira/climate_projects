@@ -22,8 +22,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     themeHelper.randomTheme();
     return MaterialApp(
-      title: 'App Fer',
+      title: 'Refletir Ações pelo clima',
       navigatorKey: NavigationKeys.navigatorKey,
+      debugShowCheckedModeBanner: false,
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: themeHelper.primaryColor),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'App Fer'),
+      home: const MyHomePage(title: 'Refletir Ações pelo clima'),
     );
   }
 }
@@ -53,52 +54,63 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: MyApp.themeHelper.backgroundColor,
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.info_outline),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: const Icon(Icons.book),
-            onPressed: () {},
-          ),
-        ],
-      ),
-      body: Stack(
-        children: [
-          BackgroundWidget(image: MyApp.themeHelper.image, credit: MyApp.themeHelper.credit),
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                SizedBox(
-                  width: 350,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context, rootNavigator: true).push(
-                        MaterialPageRoute(
-                          builder: (context) => const FormScreen(),
-                        ),
-                      );
-                    },
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Icons.add),
-                        Text('Nova análise'),
-                      ],
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: MyApp.themeHelper.backgroundColor,
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          title: Text(widget.title),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.info_outline),
+              onPressed: () {},
+            ),
+            const SizedBox(width: 10),
+            IconButton(
+              icon: const Icon(Icons.book),
+              onPressed: () {},
+            ),
+            const SizedBox(width: 10),
+            IconButton(
+              icon: const Icon(Icons.history),
+              onPressed: () {},
+            ),
+            const SizedBox(width: 10),
+          ],
+        ),
+        body: Stack(
+          children: [
+            BackgroundWidget(
+                image: MyApp.themeHelper.image,
+                credit: MyApp.themeHelper.credit),
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  SizedBox(
+                    width: 350,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context, rootNavigator: true).push(
+                          MaterialPageRoute(
+                            builder: (context) => const FormScreen(),
+                          ),
+                        );
+                      },
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.add),
+                          Text('Nova reflexão'),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
