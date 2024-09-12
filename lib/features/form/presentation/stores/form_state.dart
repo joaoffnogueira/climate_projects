@@ -7,7 +7,6 @@ import '../../../../helpers/base_state.dart';
 class FormState extends BaseState {
   final FormDatabinding formDatabinding;
   final int currentQuestionId;
-  List<int> questionsQueue = [];
   final List<AnswerModel> answers;
   final TenseEnum questionTense;
   FormState({
@@ -15,7 +14,6 @@ class FormState extends BaseState {
     required super.errorMessage,
     required this.formDatabinding,
     required this.currentQuestionId,
-    required this.questionsQueue,
     required this.answers,
     required this.questionTense,
   });
@@ -26,7 +24,6 @@ class FormState extends BaseState {
       loading: BaseLoadingState.initial,
       formDatabinding: FormDatabinding(TenseEnum.future),
       currentQuestionId: 1,
-      questionsQueue: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       answers: List.generate(
           46, (index) => AnswerModel(questionId: index, answers: [0]),
           growable: false),
@@ -39,7 +36,6 @@ class FormState extends BaseState {
     String? errorMessage,
     FormDatabinding? formDatabinding,
     int? currentQuestionId,
-    List<int>? questionsQueue,
     List<AnswerModel>? answers,
     TenseEnum? questionTense,
   }) {
@@ -48,7 +44,6 @@ class FormState extends BaseState {
       loading: loading ?? this.loading,
       formDatabinding: formDatabinding ?? this.formDatabinding,
       currentQuestionId: currentQuestionId ?? this.currentQuestionId,
-      questionsQueue: questionsQueue ?? this.questionsQueue,
       answers: answers ?? this.answers,
       questionTense: questionTense ?? this.questionTense,
     );
