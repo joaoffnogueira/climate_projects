@@ -1,3 +1,5 @@
+import 'package:climate_change_projects/features/form/data/models/question_topic_enum.dart';
+
 import '../../data/models/tense_enum.dart';
 import '../../../../l10n/localization_context.dart';
 import '../../data/models/options_model.dart';
@@ -18,7 +20,7 @@ class FormDatabinding {
     this.questionTense;
     defaultForm = [
       QuestionModel(
-        id: 1,
+        id: QuestionTopicEnum.projectPhase.id,
         question: Localization.tr.question1,
         type: QuestionTypeEnum.multipleChoice,
         nextQuestion: (value) {
@@ -32,15 +34,9 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 2,
+        id: QuestionTopicEnum.communityDiagnosis.id,
         question: Localization.tr.question2,
         type: QuestionTypeEnum.multipleChoice,
-        nextQuestion: (value) {
-          if (value.first == 2) {
-            return 7;
-          }
-          return 3;
-        },
         options: [
           OptionsModel(
               id: 1, option: Localization.tr.option2_1(questionTense.name)),
@@ -49,7 +45,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 3,
+        id: QuestionTopicEnum.whoConductedDiagnosis.id,
         question: Localization.tr.question3(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -61,7 +57,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 4,
+        id: QuestionTopicEnum.diagnosisMethods.id,
         question: Localization.tr.question4(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -73,7 +69,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 5,
+        id: QuestionTopicEnum.diagnosisFocus.id,
         question: Localization.tr.question5(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -84,7 +80,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 6,
+        id: QuestionTopicEnum.diagnosisIncorporation.id,
         question: Localization.tr.question6(questionTense.name),
         type: QuestionTypeEnum.multipleChoice,
         options: [
@@ -97,7 +93,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 7,
+        id: QuestionTopicEnum.participantsPreviousInvolvement.id,
         question: Localization.tr.question7,
         type: QuestionTypeEnum.multipleChoice,
         options: [
@@ -106,7 +102,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 8,
+        id: QuestionTopicEnum.projectParticipants.id,
         question: Localization.tr.question8,
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -119,7 +115,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 9,
+        id: QuestionTopicEnum.intersectoralCollaboration.id,
         question: Localization.tr.question9(questionTense.name),
         type: QuestionTypeEnum.multipleChoice,
         nextQuestion: (value) {
@@ -134,7 +130,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 10,
+        id: QuestionTopicEnum.collaborationParticipants.id,
         question: Localization.tr.question10,
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -150,7 +146,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 11,
+        id: QuestionTopicEnum.collaborationTiming.id,
         question: Localization.tr.question11,
         type: QuestionTypeEnum.multipleChoice,
         options: [
@@ -159,7 +155,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 12,
+        id: QuestionTopicEnum.participationMethods.id,
         question: Localization.tr.question12(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -171,7 +167,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 13,
+        id: QuestionTopicEnum.integrationDifficulties.id,
         question: Localization.tr.question13,
         type: QuestionTypeEnum.multipleChoice,
         nextQuestion: (value) {
@@ -186,7 +182,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 14,
+        id: QuestionTopicEnum.sectorIntegrationDifficulties.id,
         question: Localization.tr.question14,
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -198,7 +194,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 15,
+        id: QuestionTopicEnum.climateEmergencyThemes.id,
         question: Localization.tr.question15(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -210,7 +206,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 16,
+        id: QuestionTopicEnum.projectDimensions.id,
         question: Localization.tr.question16(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -226,7 +222,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 17,
+        id: QuestionTopicEnum.politicalAspects.id,
         question: Localization.tr.question17(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -236,7 +232,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 18,
+        id: QuestionTopicEnum.economicAspects.id,
         question: Localization.tr.question18(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -247,7 +243,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 19,
+        id: QuestionTopicEnum.socialAspects.id,
         question: Localization.tr.question19(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -257,7 +253,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 20,
+        id: QuestionTopicEnum.culturalAspects.id,
         question: Localization.tr.question20(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -267,7 +263,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 21,
+        id: QuestionTopicEnum.ethicalAspects.id,
         question: Localization.tr.question21(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -276,7 +272,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 22,
+        id: QuestionTopicEnum.naturalAspects.id,
         question: Localization.tr.question22,
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -289,7 +285,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 23,
+        id: QuestionTopicEnum.individualAspects.id,
         question: Localization.tr.question23(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -301,7 +297,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 24,
+        id: QuestionTopicEnum.artisticAspects.id,
         question: Localization.tr.question24(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -311,7 +307,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 25,
+        id: QuestionTopicEnum.historicalAspects.id,
         question: Localization.tr.question25(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -321,7 +317,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 26,
+        id: QuestionTopicEnum.valuesAddressed.id,
         question: Localization.tr.question26(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -336,7 +332,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 27,
+        id: QuestionTopicEnum.emotionalIssues.id,
         question: Localization.tr.question27(questionTense.name),
         type: QuestionTypeEnum.multipleChoice,
         nextQuestion: (value) {
@@ -351,7 +347,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 28,
+        id: QuestionTopicEnum.howEmotionalIssues.id,
         question: Localization.tr.question28(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -362,7 +358,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 29,
+        id: QuestionTopicEnum.prevailingEmotions.id,
         question: Localization.tr.question29,
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -373,7 +369,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 30,
+        id: QuestionTopicEnum.environmentalConnection.id,
         question: Localization.tr.question30(questionTense.name),
         type: QuestionTypeEnum.multipleChoice,
         nextQuestion: (value) {
@@ -388,7 +384,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 31,
+        id: QuestionTopicEnum.howEnvironmentalConnection.id,
         question: Localization.tr.question31,
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -400,7 +396,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 32,
+        id: QuestionTopicEnum.toolsUsed.id,
         question: Localization.tr.question32(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -412,7 +408,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 33,
+        id: QuestionTopicEnum.projectActivities.id,
         question: Localization.tr.question33(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -424,7 +420,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 34,
+        id: QuestionTopicEnum.climateDifficulties.id,
         question: Localization.tr.question34,
         type: QuestionTypeEnum.multipleChoice,
         nextQuestion: (value) {
@@ -439,7 +435,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 35,
+        id: QuestionTopicEnum.projectContentDifficulties.id,
         question: Localization.tr.question35,
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -449,7 +445,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 36,
+        id: QuestionTopicEnum.knowledgeAreas.id,
         question: Localization.tr.question36(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -466,7 +462,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 37,
+        id: QuestionTopicEnum.integrationMethods.id,
         question: Localization.tr.question37(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -476,7 +472,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 38,
+        id: QuestionTopicEnum.projectDifficulties.id,
         question: Localization.tr.question38,
         type: QuestionTypeEnum.multipleChoice,
         nextQuestion: (value) {
@@ -491,7 +487,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 39,
+        id: QuestionTopicEnum.specificProjectDifficulties.id,
         question: Localization.tr.question39,
         type: QuestionTypeEnum.multipleResponse,
         options: [
@@ -505,7 +501,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 40,
+        id: QuestionTopicEnum.evaluationsConducted.id,
         question: Localization.tr.question40(questionTense.name),
         type: QuestionTypeEnum.multipleChoice,
         options: [
@@ -514,7 +510,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 41,
+        id: QuestionTopicEnum.selfEvaluation.id,
         question: Localization.tr.question41(questionTense.name),
         type: QuestionTypeEnum.multipleChoice,
         options: [
@@ -523,7 +519,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 42,
+        id: QuestionTopicEnum.participantsFeedback.id,
         question: Localization.tr.question42(questionTense.name),
         type: QuestionTypeEnum.multipleChoice,
         options: [
@@ -532,7 +528,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 43,
+        id: QuestionTopicEnum.newIdeas.id,
         question: Localization.tr.question43,
         type: QuestionTypeEnum.multipleChoice,
         options: [
@@ -541,7 +537,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 44,
+        id: QuestionTopicEnum.contributionOfForm.id,
         question: Localization.tr.question44,
         type: QuestionTypeEnum.multipleChoice,
         options: [
@@ -551,7 +547,7 @@ class FormDatabinding {
         ],
       ),
       QuestionModel(
-        id: 45,
+        id: QuestionTopicEnum.shareResponses.id,
         question: Localization.tr.question45,
         type: QuestionTypeEnum.multipleChoice,
         options: [
