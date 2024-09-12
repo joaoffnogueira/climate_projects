@@ -5,16 +5,8 @@ class FormStore extends NotifyBaseStore<FormState> {
   FormStore() : super(FormState.initial());
 
   void onChangeRadio(int? value) {
-    state.answers
-        .where((element) => element.questionId == state.currentQuestionId)
-        .first
-        .answers
-        .clear();
-    state.answers
-        .where((element) => element.questionId == state.currentQuestionId)
-        .first
-        .answers
-        .add(value!);
+    state.answers[state.currentQuestionId - 1].answers.clear();
+    state.answers[state.currentQuestionId - 1].answers.add(value!);
     setState(
       state.copyWith(
         answers: state.answers,
@@ -23,28 +15,12 @@ class FormStore extends NotifyBaseStore<FormState> {
   }
 
   void onChangeCheckbox(int value) {
-    if (!state.answers
-        .where((element) => element.questionId == state.currentQuestionId)
-        .first
-        .answers
-        .contains(value)) {
-      state.answers
-          .where((element) => element.questionId == state.currentQuestionId)
-          .first
-          .answers
-          .add(value);
+    state.answers[state.currentQuestionId - 1].answers.remove(0);
+    if (state.answers[state.currentQuestionId - 1].answers.contains(value)) {
+      state.answers[state.currentQuestionId - 1].answers.remove(value);
     } else {
-      state.answers
-          .where((element) => element.questionId == state.currentQuestionId)
-          .first
-          .answers
-          .remove(value);
+      state.answers[state.currentQuestionId - 1].answers.add(value);
     }
-    state.answers
-        .where((element) => element.questionId == state.currentQuestionId)
-        .first
-        .answers
-        .remove(0);
     setState(
       state.copyWith(
         answers: state.answers,
@@ -53,30 +29,22 @@ class FormStore extends NotifyBaseStore<FormState> {
   }
 
   void nextQuestion() {
-    if (state.formDatabinding.defaultForm
-            .firstWhere((element) => element.id == state.currentQuestionId)
-            .nextQuestion !=
-        null) {
-      setState(
-        state.copyWith(
-          questionTense: state.formDatabinding.questionTense,
-          currentQuestionId:
-              state.formDatabinding.defaultForm
-                      .firstWhere(
-                          (element) => element.id == state.currentQuestionId)
-                      .nextQuestion!(
-                  state.answers
-                      .firstWhere((element) =>
-                          element.questionId == state.currentQuestionId)
-                      .answers),
-        ),
-      );
-    } else {
-      setState(
-        state.copyWith(
-          currentQuestionId: state.currentQuestionId + 1,
-        ),
-      );
+    int nextQuestionId;
+    switch (state.currentQuestionId) {
+      case 2:
+        if (state.answers[1].answers.contains(2)) {
+          nextQuestionId = 7;
+        } else {
+          nextQuestionId = 3;
+        }
+        break;
+      default:
+        nextQuestionId = state.currentQuestionId + 1;
     }
+    setState(
+      state.copyWith(
+        currentQuestionId: nextQuestionId,
+      ),
+    );
   }
 }
