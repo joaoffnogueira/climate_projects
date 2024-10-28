@@ -5,8 +5,8 @@
     "option1_1": "Planejamento",
     "option1_2": "Em andamento",
     "option1_3": "Concluído",
-    "question2": "O projeto surgiu a partir de uma necessidade real da comunidade identificada através de um diagnóstico prévio?",
-    "option2_1": "{tense, select, past{Sim, foi realizado um diagnóstico prévio} other{Sim, será realizado um diagnóstico prévio}}",
+    "question2": "O projeto surgiu a partir de uma necessidade real da comunidade, identificada através de um diagnóstico prévio?",
+    "option2_1": "{tense, select, past{Sim, foi realizado um diagnóstico prévio} present{Sim, está sendo realizado um diagnóstico prévio} other{Sim, será realizado um diagnóstico prévio}}",
     "@option2_1": {
         "placeholders": {
             "tense": {
@@ -14,7 +14,7 @@
             }
         }
     },
-    "option2_2": "{tense, select, past{Não, não foi realizado um diagnóstico prévio} other{Não será realizado um diagnóstico prévio}}",
+    "option2_2": "{tense, select, past{Não, não foi realizado um diagnóstico prévio} present{Não, não está sendo realizado um diagnóstico prévio} other{Não será realizado um diagnóstico prévio}}",
     "@option2_2": {
         "placeholders": {
             "tense": {
@@ -22,7 +22,7 @@
             }
         }
     },
-    "question3": "{tense, select, past{Com quem foi realizado o diagnóstico prévio?} other{Com quem será realizado o diagnóstico prévio?}}",
+    "question3": "{tense, select, past{Com quem foi realizado o diagnóstico prévio?} present{Com quem está sendo realizado o diagnóstico prévio?} other{Com quem será realizado o diagnóstico prévio?}}",
     "@question3": {
         "placeholders": {
             "tense": {
@@ -32,10 +32,10 @@
     },
     "option3_1": "Alunos",
     "option3_2": "Professores",
-    "option3_3": "Funcionários (limpeza cantina secretaria)",
+    "option3_3": "Funcionários (limpeza, cantina, secretaria)",
     "option3_4": "Gestores (diretoria e pedagogos)",
     "option3_5": "Outros",
-    "question4": "{tense, select, past{Quais métodos foram utilizados para realizar o diagnóstico?} other{Quais métodos serão utilizados para realizar o diagnóstico?}}",
+    "question4": "{tense, select, past{Quais métodos foram utilizados para realizar o diagnóstico?} present{Quais métodos são utilizados para realizar o diagnóstico?} other{Quais métodos serão utilizados para realizar o diagnóstico?}}",
     "@question4": {
         "placeholders": {
             "tense": {
@@ -48,7 +48,7 @@
     "option4_3": "Análise de informações e relatórios existentes",
     "option4_4": "Consultoria com especialistas",
     "option4_5": "Outros",
-    "question5": "{tense, select, past{Qual foi o principal foco do diagnóstico?} other{Qual será o principal foco do diagnóstico?}}",
+    "question5": "{tense, select, past{Qual foi o principal objetivo do diagnóstico?} present{Qual é o principal objetivo do diagnóstico?} other{Qual será o principal objetivo do diagnóstico?}}",
     "@question5": {
         "placeholders": {
             "tense": {
@@ -60,7 +60,7 @@
     "option5_2": "Mapeamento de recursos e necessidades da comunidade",
     "option5_3": "Avaliação das percepções e conhecimentos dos atores locais sobre as mudanças climáticas",
     "option5_4": "Outros",
-    "question6": "{tense, select, past{Os resultados do diagnóstico foram incorporados no planejamento do projeto?} other{Os resultados do diagnóstico serão incorporados no planejamento do projeto?}}",
+    "question6": "{tense, select, past{Os resultados do diagnóstico foram incorporados no planejamento do projeto?} present{Os resultados do diagnóstico estão sendo incorporados no planejamento do projeto?} other{Os resultados do diagnóstico serão incorporados no planejamento do projeto?}}",
     "@question6": {
         "placeholders": {
             "tense": {
@@ -68,7 +68,7 @@
             }
         }
     },
-    "option6_1": "{tense, select, past{Os resultados do diagnóstico guiaram todas as fases do projeto} other{Os resultados do diagnóstico guiarão todas as fases do projeto}}",
+    "option6_1": "{tense, select, past{Os resultados do diagnóstico guiaram todas as fases do projeto} present{Os resultados do diagnóstico guiam todas as fases do projeto} other{Os resultados do diagnóstico guiarão todas as fases do projeto}}",
     "@option6_1": {
         "placeholders": {
             "tense": {
@@ -76,7 +76,7 @@
             }
         }
     },
-    "option6_2": "{tense, select, past{Os resultados do diagnóstico guiaram algumas atividades dentro do projeto} other{Os resultados do diagnóstico guiarão algumas atividades dentro do projeto}}",
+    "option6_2": "{tense, select, past{Os resultados do diagnóstico guiaram algumas atividades dentro do projeto} present{Os resultados do diagnóstico guiam algumas atividades dentro do projeto} other{Os resultados do diagnóstico guiarão algumas atividades dentro do projeto}}",
     "@option6_2": {
         "placeholders": {
             "tense": {
@@ -84,7 +84,7 @@
             }
         }
     },
-    "option6_3": "{tense, select, past{Os resultados do diagnóstico não foram incorporados no projeto} other{Os resultados do diagnóstico não serão incorporados no projeto}}",
+    "option6_3": "{tense, select, past{Os resultados do diagnóstico não foram incorporados no projeto} present{Os resultados do diagnóstico não estão sendo incorporados no projeto} other{Os resultados do diagnóstico não serão incorporados no projeto}}",
     "@option6_3": {
         "placeholders": {
             "tense": {
@@ -92,17 +92,31 @@
             }
         }
     },
-    "question7": "Os participantes do projeto possuem algum envolvimento prévio com a temática?",
-    "option7_1": "Sim",
-    "option7_2": "Não",
-    "question8": "Quem participará do projeto?",
-    "option8_1": "Alunos",
-    "option8_2": "Professores",
-    "option8_3": "Funcionários (limpeza cantina secretaria)",
-    "option8_4": "Gestores (diretoria e pedagogos)",
-    "option8_5": "Moradores da comunidade",
-    "option8_6": "Outros",
-    "question9": "{tense, select, past{O projeto promoveu colaboração entre diferentes setores da sociedade?} other{O projeto promoverá colaboração entre diferentes setores da sociedade?}}",
+    "question7": "{tense, select, past{Quem participou do projeto?} present{Quem participa do projeto?} other{Quem participará do projeto?}}",
+    "@question7": {
+        "placeholders": {
+            "tense": {
+                "type": "String"
+            }
+        }
+    },
+    "option7_1": "Alunos",
+    "option7_2": "Professores",
+    "option7_3": "Funcionários (limpeza cantina secretaria)",
+    "option7_4": "Gestores (diretoria e pedagogos)",
+    "option7_5": "Moradores da comunidade",
+    "option7_6": "Outros",
+    "question8": "{tense, select, past{O projeto promoveu colaboração entre diferentes setores da sociedade?} present{O projeto promove colaboração entre diferentes setores da sociedade?} other{O projeto promoverá colaboração entre diferentes setores da sociedade?}}",
+    "@question8": {
+        "placeholders": {
+            "tense": {
+                "type": "String"
+            }
+        }
+    },
+    "option8_1": "Sim",
+    "option8_2": "Não",
+    "question9": "{tense, select, past{Se sim, quem participou?} present{Se sim, quem participa?} other{Se sim, quem participará?}}",
     "@question9": {
         "placeholders": {
             "tense": {
@@ -110,22 +124,42 @@
             }
         }
     },
-    "option9_1": "Sim",
-    "option9_2": "Não",
-    "question10": "Se sim, quem participou?",
-    "option10_1": "Empresas",
-    "option10_2": "Pais e responsáveis",
-    "option10_3": "Comunidade local",
-    "option10_4": "Organizações Não Governamentais (ONGs)",
-    "option10_5": "Instituições de ensino superior",
-    "option10_6": "Empresas privadas",
-    "option10_7": "Órgãos governamentais",
-    "option10_8": "Especialistas (cientistas, ambientalistas, etc_)",
-    "option10_9": "Outros",
-    "question11": "Em que momento se deu essa colaboração?",
-    "option11_1": "Em todas as etapas",
-    "option11_2": "Em momentos específicos",
-    "question12": "{tense, select, past{De que maneira foi essa participação?} other{De que maneira será essa participação?}}",
+    "option9_1": "Empresas",
+    "option9_2": "Pais e responsáveis",
+    "option9_3": "Comunidade local",
+    "option9_4": "Organizações Não Governamentais (ONGs)",
+    "option9_5": "Instituições de ensino superior",
+    "option9_6": "Empresas privadas",
+    "option9_7": "Órgãos governamentais",
+    "option9_8": "Especialistas (cientistas, ambientalistas, etc_)",
+    "option9_9": "Outros",
+    "question10": "{tense, select, past{De que maneira foi essa participação?} present{De que maneira é essa participação?} other{De que maneira será essa participação?}}",
+    "@question10": {
+        "placeholders": {
+            "tense": {
+                "type": "String"
+            }
+        }
+    },
+    "option10_1": "A partir de dicas e auxílio em análises",
+    "option10_2": "Consultas durante o diagnóstico prévio",
+    "option10_3": "Realização de palestras e workshops para formação",
+    "option10_4": "Com apoio logístico e/ou financeiro",
+    "option10_5": "Outros",
+    "question11": "{tense, select, past{Com relação à Emergência Climática, quais os temas que foram abordados no projeto?} present{Com relação à Emergência Climática, quais os temas que são abordados no projeto?} other{Com relação à Emergência Climática, quais os temas que serão abordados no projeto?}}",
+    "@question11": {
+        "placeholders": {
+            "tense": {
+                "type": "String"
+            }
+        }
+    },
+    "option11_1": "Causas e consequências",
+    "option11_2": "Formas de enfrentamento",
+    "option11_3": "Políticas públicas sobre mudanças climáticas",
+    "option11_4": "Educação e conscientização ambiental",
+    "option11_5": "Outros",
+    "question12": "{tense, select, past{Quais dimensões abaixo você abordou em seu projeto?} present{Quais dimensões abaixo você aborda em seu projeto?} other{Quais dimensões abaixo você abordará em seu projeto?}}",
     "@question12": {
         "placeholders": {
             "tense": {
@@ -133,21 +167,39 @@
             }
         }
     },
-    "option12_1": "A partir de dicas e auxílio em análises",
-    "option12_2": "Consultas durante o diagnóstico prévio",
-    "option12_3": "Realização de palestras e workshops para formação",
-    "option12_4": "Com apoio logístico e/ou financeiro",
-    "option12_5": "Outros",
-    "question13": "Houve alguma dificuldade durante a integração dos setores?",
-    "option13_1": "Não houve dificuldade",
-    "option13_2": "Sim houve dificuldade",
-    "question14": "Se sim, quais foram as dificuldades encontradas na integração de diferentes setores?",
-    "option14_1": "Falta de tempo e disponibilidade",
-    "option14_2": "Dificuldade de comunicação",
-    "option14_3": "Diferenças de interesse e objetivos",
-    "option14_4": "Limitação de recursos financeiros",
-    "option14_5": "Outros",
-    "question15": "{tense, select, past{Com relação à Emergência Climática, quais os temas que foram abordados no projeto?} other{Com relação à Emergência Climática, quais os temas que serão abordados no projeto?}}",
+    "option12_1": "Política",
+    "option12_2": "Econômica",
+    "option12_3": "Social",
+    "option12_4": "Cultural",
+    "option12_5": "Ética",
+    "option12_6": "Ecológica/Natural",
+    "option12_7": "do Indivíduo",
+    "option12_8": "Artísticos",
+    "option12_9": "Históricos",
+    "question13": "{tense, select, past{Quais aspectos políticos você abordou?} present{Quais aspectos políticos você aborda?} other{Quais aspectos políticos você abordará?}}",
+    "@question13": {
+        "placeholders": {
+            "tense": {
+                "type": "String"
+            }
+        }
+    },
+    "option13_1": "Políticas públicas ambientais",
+    "option13_2": "Legislação e acordos internacionais sobre mudanças climáticas",
+    "option13_3": "Governança e tomada de decisão",
+    "question14": "{tense, select, past{Quais aspectos econômicos você abordou?} present{Quais aspectos econômicos você aborda?} other{Quais aspectos econômicos você abordará?}}",
+    "@question14": {
+        "placeholders": {
+            "tense": {
+                "type": "String"
+            }
+        }
+    },
+    "option14_1": "Alternativas econômicas em relação ao modelo vigente",
+    "option14_2": "Impactos econômicos das mudanças climáticas",
+    "option14_3": "Práticas econômicas locais e globais",
+    "option14_4": "Modelo econômico vigente",
+    "question15": "{tense, select, past{Quais aspectos sociais você abordou?} present{Quais aspectos sociais você aborda?} other{Quais aspectos sociais você abordará?}}",
     "@question15": {
         "placeholders": {
             "tense": {
@@ -155,12 +207,10 @@
             }
         }
     },
-    "option15_1": "Causas e consequências",
-    "option15_2": "Formas de enfrentamento",
-    "option15_3": "Políticas públicas sobre mudanças climáticas",
-    "option15_4": "Educação e conscientização ambiental",
-    "option15_5": "Outros",
-    "question16": "{tense, select, past{Quais dimensões abaixo você abordou em seu projeto?} other{Quais dimensões abaixo você abordará em seu projeto?}}",
+    "option15_1": "Equidade",
+    "option15_2": "Vulnerabilidade social",
+    "option15_3": "Ações comunitárias e engajamento social",
+    "question16": "{tense, select, past{Quais aspectos culturais você abordou?} present{Quais aspectos culturais você aborda?} other{Quais aspectos culturais você abordará?}}",
     "@question16": {
         "placeholders": {
             "tense": {
@@ -168,16 +218,10 @@
             }
         }
     },
-    "option16_1": "Política",
-    "option16_2": "Econômica",
-    "option16_3": "Social",
-    "option16_4": "Cultural",
-    "option16_5": "Ética",
-    "option16_6": "Ecológica/Natural",
-    "option16_7": "do Indivíduo",
-    "option16_8": "Artísticos",
-    "option16_9": "Históricos",
-    "question17": "{tense, select, past{Quais aspectos políticos você abordou?} other{Quais aspectos políticos você abordará?}}",
+    "option16_1": "Valorização da diversidade cultural local",
+    "option16_2": "Diálogo entre diferentes culturas",
+    "option16_3": "Práticas culturais locais e sua relação com o ambiente",
+    "question17": "{tense, select, past{Quais aspectos éticos você abordou?} present{Quais aspectos éticos você aborda?} other{Quais aspectos éticos você abordará?}}",
     "@question17": {
         "placeholders": {
             "tense": {
@@ -185,10 +229,9 @@
             }
         }
     },
-    "option17_1": "Políticas públicas ambientais",
-    "option17_2": "Legislação e acordos internacionais sobre mudanças climáticas",
-    "option17_3": "Governança e tomada de decisão",
-    "question18": "{tense, select, past{Quais aspectos econômicos você abordou?} other{Quais aspectos econômicos você abordará?}}",
+    "option17_1": "Ética ambiental e responsabilidade ecológica",
+    "option17_2": "Dilemas entre atitudes individuais e sociais",
+    "question18": "{tense, select, past{Quais aspectos naturais você abordou?} present{Quais aspectos naturais você aborda?} other{Quais aspectos naturais você abordará?}}",
     "@question18": {
         "placeholders": {
             "tense": {
@@ -196,11 +239,13 @@
             }
         }
     },
-    "option18_1": "Alternativas econômicas em relação ao modelo vigente",
-    "option18_2": "Impactos econômicos das mudanças climáticas",
-    "option18_3": "Práticas econômicas locais e globais",
-    "option18_4": "Modelo econômico vigente",
-    "question19": "{tense, select, past{Quais aspectos sociais você abordou?} other{Quais aspectos sociais você abordará?}}",
+    "option18_1": "Biodiversidade",
+    "option18_2": "Vegetação",
+    "option18_3": "Água",
+    "option18_4": "Solo",
+    "option18_5": "Ar",
+    "option18_6": "Desastres ambientais",
+    "question19": "{tense, select, past{Quais aspectos do indivíduo você abordou?} present{Quais aspectos do indivíduo você aborda?} other{Quais aspectos do indivíduo você abordará?}}",
     "@question19": {
         "placeholders": {
             "tense": {
@@ -208,10 +253,12 @@
             }
         }
     },
-    "option19_1": "Equidade",
-    "option19_2": "Vulnerabilidade social",
-    "option19_3": "Ações comunitárias e engajamento social",
-    "question20": "{tense, select, past{Quais aspectos culturais você abordou?} other{Quais aspectos culturais você abordará?}}",
+    "option19_1": "Autoconhecimento/autocrítica",
+    "option19_2": "Mudança de comportamento",
+    "option19_3": "Valorização das experiências individuais",
+    "option19_4": "Saúde física",
+    "option19_5": "Saúde mental",
+    "question20": "{tense, select, past{Quais aspectos artísticos você abordou?} present{Quais aspectos artísticos você aborda?} other{Quais aspectos artísticos você abordará?}}",
     "@question20": {
         "placeholders": {
             "tense": {
@@ -219,10 +266,10 @@
             }
         }
     },
-    "option20_1": "Valorização da diversidade cultural local",
-    "option20_2": "Diálogo entre diferentes culturas",
-    "option20_3": "Práticas culturais locais e sua relação com o ambiente",
-    "question21": "{tense, select, past{Quais aspectos éticos você abordou?} other{Quais aspectos éticos você abordará?}}",
+    "option20_1": "Arte para expressar e comunicar temas ambientais",
+    "option20_2": "Projetos colaborativos com artistas locais",
+    "option20_3": "Produção artística",
+    "question21": "{tense, select, past{Quais aspectos históricos você abordou?} present{Quais aspectos históricos você aborda?} other{Quais aspectos históricos você abordará?}}",
     "@question21": {
         "placeholders": {
             "tense": {
@@ -230,29 +277,40 @@
             }
         }
     },
-    "option21_1": "Ética ambiental e responsabilidade ecológica",
-    "option21_2": "Dilemas entre atitudes individuais e sociais",
-    "question22": "Quais aspectos naturais você considera importante de serem abordados em um projeto com essa temática?",
-    "option22_1": "Biodiversidade",
-    "option22_2": "Vegetação",
-    "option22_3": "Água",
-    "option22_4": "Solo",
-    "option22_5": "Ar",
-    "option22_6": "Desastres ambientais",
-    "question23": "{tense, select, past{Quais aspectos do indivíduo você abordou?} other{Quais aspectos do indivíduo você abordará?}}",
-    "@question23": {
+    "option21_1": "Contextualização histórica das mudanças climáticas",
+    "option21_2": "Eventos históricos relacionados ao ambiente",
+    "option21_3": "História local",
+    "question22": "{tense, select, past{Quais valores foram trabalhados durante o desenvolvimento do projeto?} present{Quais valores são trabalhados durante o desenvolvimento do projeto?} other{Quais valores serão trabalhados durante o desenvolvimento do projeto?}}",
+    "@question22": {
         "placeholders": {
             "tense": {
                 "type": "String"
             }
         }
     },
-    "option23_1": "Autoconhecimento/autocrítica",
-    "option23_2": "Mudança de comportamento",
-    "option23_3": "Valorização das experiências individuais",
-    "option23_4": "Saúde física",
-    "option23_5": "Saúde mental",
-    "question24": "{tense, select, past{Quais aspectos artísticos você abordou?} other{Quais aspectos artísticos você abordará?}}",
+    "option22_1": "Respeito ao meio ambiente",
+    "option22_2": "Solidariedade e cooperação",
+    "option22_3": "Justiça social e equidade",
+    "option22_4": "Sustentabilidade",
+    "option22_5": "Consumo consciente",
+    "option22_6": "Responsabilidade",
+    "option22_7": "Cidadania",
+    "option22_8": "Outros",
+    "option22_9": "Não pensei nisso",
+    "question23": "Quais emoções emergiram entre os participantes durante a realização do projeto com relação à temática Emergência Climática?",
+    "option23_1": "Ansiedade",
+    "option23_2": "Medo",
+    "option23_3": "Frustração",
+    "option23_4": "Esperança",
+    "option23_5": "Empatia",
+    "option23_6": "Dúvida",
+    "option23_7": "Surpresa",
+    "option23_8": "Interesse",
+    "option23_9": "Alegria",
+    "option23_10": "Outros",
+    "option23_11": "Não pensei nisso",
+    "option23_12": "Não é possível responder pois o projeto ainda está em andamento",
+    "question24": "{tense, select, past{O projeto buscou incentivar os participantes a desenvolverem uma conexão emocional com o ambiente?} present{O projeto busca incentivar os participantes a desenvolverem uma conexão emocional com o ambiente?} other{O projeto buscará incentivar os participantes a desenvolverem uma conexão emocional com o ambiente?}}",
     "@question24": {
         "placeholders": {
             "tense": {
@@ -260,10 +318,9 @@
             }
         }
     },
-    "option24_1": "Arte para expressar e comunicar temas ambientais",
-    "option24_2": "Projetos colaborativos com artistas locais",
-    "option24_3": "Produção artística",
-    "question25": "{tense, select, past{Quais aspectos históricos você abordou?} other{Quais aspectos históricos você abordará?}}",
+    "option24_1": "Sim",
+    "option24_2": "Não",
+    "question25": "{tense, select, past{De que maneira o projeto incentivou essa conexão?} present{De que maneira o projeto incentiva essa conexão?} other{De que maneira o projeto incentivará essa conexão?}}",
     "@question25": {
         "placeholders": {
             "tense": {
@@ -271,10 +328,12 @@
             }
         }
     },
-    "option25_1": "Contextualização histórica das mudanças climáticas",
-    "option25_2": "Eventos históricos relacionados ao ambiente",
-    "option25_3": "História local",
-    "question26": "{tense, select, past{Quais valores foram trabalhados durante o desenvolvimento do projeto?} other{Quais valores serão trabalhados durante o desenvolvimento do projeto?}}",
+    "option25_1": "Experiências diretas na natureza",
+    "option25_2": "Narrativas e histórias inspiradoras",
+    "option25_3": "Atividades de voluntariado e serviço comunitário",
+    "option25_4": "Reflexões pessoais e compartilhamento de experiências emocionais",
+    "option25_5": "Outros",
+    "question26": "{tense, select, past{Quais instrumentos foram utilizados para abordar a temática?} present{Quais instrumentos estão sendo utilizados para abordar a temática?} other{Quais instrumentos serão utilizados para abordar a temática?}}",
     "@question26": {
         "placeholders": {
             "tense": {
@@ -282,15 +341,12 @@
             }
         }
     },
-    "option26_1": "Respeito ao meio ambiente",
-    "option26_2": "Solidariedade e cooperação",
-    "option26_3": "Justiça social e equidade",
-    "option26_4": "Sustentabilidade",
-    "option26_5": "Consumo consciente",
-    "option26_6": "Responsabilidade",
-    "option26_7": "Cidadania",
-    "option26_8": "Outros",
-    "question27": "{tense, select, past{O projeto trabalhou as questões emocionais dos participantes durante o projeto?} other{O projeto trabalhará as questões emocionais dos participantes durante o projeto?}}",
+    "option26_1": "Materiais didáticos (livros, artigos, vídeos)",
+    "option26_2": "Atividades práticas (experimentos, projetos de campo)",
+    "option26_3": "Tecnologias digitais (software, simulações, aplicativos)",
+    "option26_4": "Colaborações com especialistas e instituições",
+    "option26_5": "Outros",
+    "question27": "{tense, select, past{De que maneira ocorreram as atividades desenvolvidas no projeto?} present{De que maneira estão ocorrendo as atividades desenvolvidas no projeto?} other{De que maneira ocorrerão as atividades desenvolvidas no projeto?}}",
     "@question27": {
         "placeholders": {
             "tense": {
@@ -298,9 +354,12 @@
             }
         }
     },
-    "option27_1": "Sim",
-    "option27_2": "Não",
-    "question28": "{tense, select, past{Se sim, de que maneira o projeto buscou considerar as questões emocionais?} other{Se sim, de que maneira o projeto buscará considerar as questões emocionais?}}",
+    "option27_1": "Debate e discussão aberta",
+    "option27_2": "Análise de informações e fontes diversas",
+    "option27_3": "Reflexão individual e autoavaliação",
+    "option27_4": "Realização de oficinas e/ou atividades previamente planejadas",
+    "option27_5": "Outros",
+    "question28": "{tense, select, past{Indique qual/quais áreas do conhecimento foram contempladas durante a realização do projeto:} present{Indique qual/quais áreas do conhecimento estão sendo contempladas durante a realização do projeto:} other{Indique qual/quais áreas do conhecimento serão contempladas durante a realização do projeto:}}",
     "@question28": {
         "placeholders": {
             "tense": {
@@ -308,32 +367,48 @@
             }
         }
     },
-    "option28_1": "Atividades de expressão emocional por meio da arte",
-    "option28_2": "Discussões sobre sentimentos e práticas de bem-estar emocional",
-    "option28_3": "Apoio emocional e aconselhamento",
-    "option28_4": "Outros",
-    "question29": "Quais emoções prevaleceram entre os participantes durante o projeto?",
-    "option29_1": "Ansiedade",
-    "option29_2": "Medo",
-    "option29_3": "Frustração",
-    "option29_4": "Esperança",
-    "question30": "{tense, select, past{O projeto buscou incentivar os participantes a desenvolverem uma conexão emocional com o ambiente?} other{O projeto buscará incentivar os participantes a desenvolverem uma conexão emocional com o ambiente?}}",
-    "@question30": {
+    "option28_1": "Ciências Exatas",
+    "option28_2": "Ciências da Terra",
+    "option28_3": "Ciências Biológicas",
+    "option28_4": "Engenharia/Tecnologia",
+    "option28_5": "Ciências da Saúde",
+    "option28_6": "Ciências Agrárias",
+    "option28_7": "Ciências Sociais",
+    "option28_8": "Ciências Humanas",
+    "option28_9": "Letras",
+    "option28_10": "Artes",
+    "question29": "{tense, select, past{De que maneira ocorreu a integração entre as áreas?} present{De que maneira ocorre a integração entre as áreas?} other{De que maneira ocorrerá a integração entre as áreas?}}",
+    "@question29": {
         "placeholders": {
             "tense": {
                 "type": "String"
             }
         }
     },
-    "option30_1": "Sim",
-    "option30_2": "Não",
-    "question31": "Se sim, de que maneira o projeto incentiva essa conexão?",
-    "option31_1": "Experiências diretas na natureza",
-    "option31_2": "Narrativas e histórias inspiradoras",
-    "option31_3": "Atividades de voluntariado e serviço comunitário",
-    "option31_4": "Reflexões pessoais e compartilhamento de experiências emocionais",
-    "option31_5": "Outros",
-    "question32": "{tense, select, past{Quais instrumentos foram utilizados para abordar a temática?} other{Quais instrumentos serão utilizados para abordar a temática?}}",
+    "option29_1": "Discussões teóricas",
+    "option29_2": "Exemplos práticos",
+    "option29_3": "Participação de outros profissionais",
+    "question30": "Selecione as dificuldades encontradas ao longo do projeto:",
+    "option30_1": "Conteúdo",
+    "option30_2": "Integração do conteúdo ao currículo",
+    "option30_3": "Financeiro",
+    "option30_4": "Logístico",
+    "option30_5": "Administrativo",
+    "option30_6": "Engajamento e participação",
+    "option30_7": "Outros",
+    "option30_8": "Não houveram dificuldades na realização do projeto",
+    "option30_9": "Não é possível responder pois o projeto ainda está em andamento",
+    "question31": "{tense, select, past{Foram realizadas avaliações durante o andamento do projeto?} present{São realizadas avaliações durante o andamento do projeto?} other{Serão realizadas avaliações durante o andamento do projeto?}}",
+    "@question31": {
+        "placeholders": {
+            "tense": {
+                "type": "String"
+            }
+        }
+    },
+    "option31_1": "Sim",
+    "option31_2": "Não apenas no final do projeto",
+    "question32": "{tense, select, past{Houve um momento destinado para a autoavaliação dos participantes?} present{Há um momento destinado para a autoavaliação dos participantes?} other{Haverá um momento destinado para a autoavaliação dos participantes?}}",
     "@question32": {
         "placeholders": {
             "tense": {
@@ -341,109 +416,13 @@
             }
         }
     },
-    "option32_1": "Materiais didáticos (livros, artigos, vídeos)",
-    "option32_2": "Atividades práticas (experimentos, projetos de campo)",
-    "option32_3": "Tecnologias digitais (software, simulações, aplicativos)",
-    "option32_4": "Colaborações com especialistas e instituições",
-    "option32_5": "Outros",
-    "question33": "{tense, select, past{De que maneira ocorreram as atividades desenvolvidas no projeto?} other{De que maneira ocorrerão as atividades desenvolvidas no projeto?}}",
-    "@question33": {
-        "placeholders": {
-            "tense": {
-                "type": "String"
-            }
-        }
-    },
-    "option33_1": "Debate e discussão aberta",
-    "option33_2": "Análise de informações e fontes diversas",
-    "option33_3": "Reflexão individual e autoavaliação",
-    "option33_4": "Realização de oficinas e/ou atividades previamente planejadas",
-    "option33_5": "Outros",
-    "question34": "Os participantes encontraram dificuldades em relação à problemática da Emergência Climática?",
+    "option32_1": "Sim",
+    "option32_2": "Não",
+    "question33": "Durante o preenchimento deste formulário, você teve novas ideias ou se deparou com questões que não havia imaginado para o seu projeto?",
+    "option33_1": "Sim",
+    "option33_2": "Não",
+    "question34": "Você gostaria de compartilhar as respostas de seu questionário com os autores de forma a auxiliar nas pesquisas de melhoria do aplicativo?",
     "option34_1": "Sim",
     "option34_2": "Não",
-    "question35": "Se sim, quais foram as dificuldades referente ao conteúdo do projeto?",
-    "option35_1": "Estabelecer conexões entre as dimensões da problemática",
-    "option35_2": "Desinformação",
-    "option35_3": "Reconhecer a problemática no contexto local",
-    "question36": "{tense, select, past{Indique qual/quais áreas do conhecimento foram contempladas durante a realização do projeto:} other{Indique qual/quais áreas do conhecimento serão contempladas durante a realização do projeto:}}",
-    "@question36": {
-        "placeholders": {
-            "tense": {
-                "type": "String"
-            }
-        }
-    },
-    "option36_1": "Ciências Exatas",
-    "option36_2": "Ciências da Terra",
-    "option36_3": "Ciências Biológicas",
-    "option36_4": "Engenharia/Tecnologia",
-    "option36_5": "Ciências da Saúde",
-    "option36_6": "Ciências Agrárias",
-    "option36_7": "Ciências Sociais",
-    "option36_8": "Ciências Humanas",
-    "option36_9": "Letras",
-    "option36_10": "Artes",
-    "question37": "{tense, select, past{De que maneira ocorreu a integração entre as áreas?} other{De que maneira ocorrerá a integração entre as áreas?}}",
-    "@question37": {
-        "placeholders": {
-            "tense": {
-                "type": "String"
-            }
-        }
-    },
-    "option37_1": "Discussões teóricas",
-    "option37_2": "Exemplos práticos",
-    "option37_3": "Participação de outros profissionais",
-    "question38": "Foram encontradas dificuldades durante alguma etapa do projeto?",
-    "option38_1": "Sim",
-    "option38_2": "Não",
-    "question39": "Se sim, selecione as dificuldades encontradas:",
-    "option39_1": "Conteúdo",
-    "option39_2": "Integração do conteúdo ao currículo",
-    "option39_3": "Financeiro",
-    "option39_4": "Logístico",
-    "option39_5": "Administrativo",
-    "option39_6": "Engajamento e participação",
-    "option39_7": "Outros",
-    "question40": "{tense, select, past{Foram realizadas avaliações durante o andamento do projeto?} other{Serão realizadas avaliações durante o andamento do projeto?}}",
-    "@question40": {
-        "placeholders": {
-            "tense": {
-                "type": "String"
-            }
-        }
-    },
-    "option40_1": "Sim",
-    "option40_2": "Não apenas no final do projeto",
-    "question41": "{tense, select, past{Houve um momento destinado para a autoavaliação dos participantes?} other{Haverá um momento destinado para a autoavaliação dos participantes?}}",
-    "@question41": {
-        "placeholders": {
-            "tense": {
-                "type": "String"
-            }
-        }
-    },
-    "option41_1": "Sim",
-    "option41_2": "Não",
-    "question42": "{tense, select, past{O feedback dos participantes foi utilizado para ajustar o projeto?} other{O feedback dos participantes será utilizado para ajustar o projeto?}}",
-    "@question42": {
-        "placeholders": {
-            "tense": {
-                "type": "String"
-            }
-        }
-    },
-    "option42_1": "Sim",
-    "option42_2": "Não",
-    "question43": "Durante o preenchimento deste formulário você teve novas ideias ou se deparou com questões que não havia imaginado para o seu projeto?",
-    "option43_1": "Sim",
-    "option43_2": "Não",
-    "question44": "Este questionário ofereceu contribuições para melhorar o seu projeto?",
-    "option44_1": "Sim contribuiu significativamente",
-    "option44_2": "Sim contribuiu de forma moderada",
-    "option44_3": "Não, não contribuiu",
-    "question45": "Você gostaria de compartilhar as respostas de seu questionário com os autores de forma a auxiliar nas pesquisas de melhoria do aplicativo?",
-    "option45_1": "Sim",
-    "option45_2": "Não"
+    "question35": "OPCIONAL: Deixe abaixo seus comentários, críticas, sugestões, elogios, sobre o questionário."
 }
