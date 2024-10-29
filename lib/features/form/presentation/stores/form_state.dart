@@ -25,7 +25,7 @@ class FormState extends BaseState {
       formDatabinding: FormDatabinding(TenseEnum.future),
       currentQuestionId: 1,
       answers: List.generate(
-          46, (index) => AnswerModel(questionId: index, answers: [0]),
+          36, (index) => AnswerModel(questionId: index, answers: [0]),
           growable: false),
       questionTense: TenseEnum.future,
     );
