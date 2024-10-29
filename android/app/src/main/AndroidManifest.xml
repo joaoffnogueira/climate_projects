@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="appea"
+        android:label="EmergeClima"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity
