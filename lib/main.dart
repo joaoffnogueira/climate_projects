@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     themeHelper.randomTheme();
     return MaterialApp(
-      title: 'Refletir ações pelo clima',
+      title: 'EmergeClima',
       navigatorKey: NavigationKeys.navigatorKey,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: const [
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: themeHelper.primaryColor),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Refletir ações pelo clima'),
+      home: const MyHomePage(title: 'EmergeClima'),
     );
   }
 }
