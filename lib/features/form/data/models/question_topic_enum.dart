@@ -32,7 +32,8 @@ enum QuestionTopicEnum {
   evaluationsConducted(31),
   selfEvaluation(32),
   newIdeas(33),
-  shareResponses(34);
+  shareResponses(34),
+  suggestions(35);
 
   final int id;
   const QuestionTopicEnum(this.id);
