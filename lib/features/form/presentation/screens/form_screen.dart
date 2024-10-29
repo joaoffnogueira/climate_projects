@@ -94,6 +94,7 @@ class _FormScreenState extends State<FormScreen> {
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: ListView.builder(
+                                primary: false,
                                 itemCount: controller
                                     .state.formDatabinding.defaultForm
                                     .firstWhere((element) =>
