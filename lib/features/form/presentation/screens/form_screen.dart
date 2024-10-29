@@ -23,6 +23,7 @@ class _FormScreenState extends State<FormScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
     return Scaffold(
       backgroundColor: MyApp.themeHelper.backgroundColor,
       appBar: AppBar(
@@ -33,13 +34,41 @@ class _FormScreenState extends State<FormScreen> {
         children: [
           BackgroundWidget(
               image: MyApp.themeHelper.image, credit: MyApp.themeHelper.credit),
+          Positioned(
+            top: 0,
+            width: size.width,
+            height: 5,
+            child: ValueListenableBuilder(
+              valueListenable: controller.valueListenable,
+              builder: (context, state, __) {
+                return TweenAnimationBuilder<double>(
+                  tween: Tween<double>(
+                      begin: 0, end: state.currentQuestionId / 36),
+                  duration: const Duration(milliseconds: 500),
+                  builder: (context, value, child) {
+                    return LinearProgressIndicator(
+                      value: value,
+                      valueColor:
+                          controller.valueListenable.value.currentQuestionId %
+                                      2 ==
+                                  0
+                              ? AlwaysStoppedAnimation(
+                                  Theme.of(context).colorScheme.primary)
+                              : AlwaysStoppedAnimation(
+                                  Theme.of(context).colorScheme.secondary),
+                    );
+                  },
+                );
+              },
+            ),
+          ),
           ValueListenableBuilder(
               valueListenable: controller.valueListenable,
               builder: (context, state, __) {
                 return Center(
                   child: SingleChildScrollView(
                     child: SizedBox(
-                      width: 350,
+                      width: size.width * 0.9,
                       child: Column(
                         children: <Widget>[
                           Card(
