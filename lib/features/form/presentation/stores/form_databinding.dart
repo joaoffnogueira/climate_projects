@@ -13,6 +13,9 @@ class FormDatabinding {
     if (value.first == 3) {
       questionTense = TenseEnum.past;
       defaultForm = FormDatabinding(TenseEnum.past).defaultForm;
+    } else if (value.first == 2) {
+      questionTense = TenseEnum.present;
+      defaultForm = FormDatabinding(TenseEnum.present).defaultForm;
     }
   }
 
@@ -159,12 +162,6 @@ class FormDatabinding {
         id: QuestionTopicEnum.intersectoralCollaboration.id,
         question: Localization.tr.question8(questionTense.name),
         type: QuestionTypeEnum.multipleChoice,
-        nextQuestion: (value) {
-          if (value.first == 2) {
-            return 15;
-          }
-          return 10;
-        },
         options: [
           OptionsModel(
               id: 1,
@@ -510,12 +507,6 @@ class FormDatabinding {
         id: QuestionTopicEnum.environmentalConnection.id,
         question: Localization.tr.question24(questionTense.name),
         type: QuestionTypeEnum.multipleChoice,
-        nextQuestion: (value) {
-          if (value.first == 2) {
-            return 32;
-          }
-          return 31;
-        },
         options: [
           OptionsModel(id: 1, option: Localization.tr.option24_1, keywords: [
             'Conexão',
@@ -728,6 +719,12 @@ class FormDatabinding {
           OptionsModel(id: 1, option: Localization.tr.option34_1),
           OptionsModel(id: 2, option: Localization.tr.option34_2),
         ],
+      ),
+      QuestionModel(
+        id: QuestionTopicEnum.suggestions.id,
+        question: Localization.tr.question35,
+        type: QuestionTypeEnum.text,
+        options: [OptionsModel(id: 1, option: '')],
       ),
     ];
   }
