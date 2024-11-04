@@ -22,6 +22,12 @@ class _FormScreenState extends State<FormScreen> {
   }
 
   @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
     return Scaffold(
@@ -128,14 +134,23 @@ class _FormScreenState extends State<FormScreen> {
                                             .id,
                                       ),
                                       onChanged: (value) =>
-                                          controller.onChangeCheckbox(controller
-                                              .state.formDatabinding.defaultForm
-                                              .firstWhere((element) =>
-                                                  element.id ==
-                                                  controller
-                                                      .state.currentQuestionId)
-                                              .options![index]
-                                              .id),
+                                          controller.onChangeCheckbox(
+                                              controller.state.formDatabinding
+                                                  .defaultForm
+                                                  .firstWhere((element) =>
+                                                      element.id ==
+                                                      controller.state
+                                                          .currentQuestionId)
+                                                  .options![index]
+                                                  .id,
+                                              controller.state.formDatabinding
+                                                  .defaultForm
+                                                  .firstWhere((element) =>
+                                                      element.id ==
+                                                      controller.state
+                                                          .currentQuestionId)
+                                                  .options![index]
+                                                  .keywords),
                                       title: Text(controller
                                           .state.formDatabinding.defaultForm
                                           .firstWhere((element) =>
@@ -176,7 +191,17 @@ class _FormScreenState extends State<FormScreen> {
                                           .answers[state.currentQuestionId - 1]
                                           .answers
                                           .first,
-                                      onChanged: controller.onChangeRadio,
+                                      onChanged: (value) =>
+                                          controller.onChangeRadio(
+                                              value,
+                                              controller.state.formDatabinding
+                                                  .defaultForm
+                                                  .firstWhere((element) =>
+                                                      element.id ==
+                                                      controller.state
+                                                          .currentQuestionId)
+                                                  .options![index]
+                                                  .keywords),
                                     );
                                   }
                                   if (controller
@@ -216,8 +241,9 @@ class _FormScreenState extends State<FormScreen> {
                                               rootNavigator: true)
                                           .push(
                                           MaterialPageRoute(
-                                            builder: (context) =>
-                                                const ResultsScreen(),
+                                            builder: (context) => ResultsScreen(
+                                              keywords: controller.getResults(),
+                                            ),
                                           ),
                                         )
                                       : controller.nextQuestion();
