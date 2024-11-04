@@ -4,9 +4,10 @@ import 'form_state.dart';
 class FormStore extends NotifyBaseStore<FormState> {
   FormStore() : super(FormState.initial());
 
-  void onChangeRadio(int? value) {
+  void onChangeRadio(int? value, List<String>? keywords) {
     state.answers[state.currentQuestionId - 1].answers.clear();
     state.answers[state.currentQuestionId - 1].answers.add(value!);
+    state.answers[state.currentQuestionId - 1].keywords.addAll(keywords ?? []);
     setState(
       state.copyWith(
         answers: state.answers,
@@ -14,12 +15,19 @@ class FormStore extends NotifyBaseStore<FormState> {
     );
   }
 
-  void onChangeCheckbox(int value) {
+  void onChangeCheckbox(int value, List<String>? keywords) {
     state.answers[state.currentQuestionId - 1].answers.remove(0);
     if (state.answers[state.currentQuestionId - 1].answers.contains(value)) {
       state.answers[state.currentQuestionId - 1].answers.remove(value);
+      state.answers[state.currentQuestionId - 1].keywords.removeWhere(
+          (element) =>
+              element ==
+              state.answers[state.currentQuestionId - 1].keywords
+                  .firstWhere((element) => element == keywords?.first));
     } else {
       state.answers[state.currentQuestionId - 1].answers.add(value);
+      state.answers[state.currentQuestionId - 1].keywords
+          .addAll(keywords ?? []);
     }
     setState(
       state.copyWith(
@@ -65,6 +73,11 @@ class FormStore extends NotifyBaseStore<FormState> {
         } else {
           nextQuestionId = 25;
         }
+        break;
+      case 34:
+        state.answers[34].answers.remove(0);
+        state.answers[34].answers.add(1);
+        nextQuestionId = 35;
         break;
       default:
         nextQuestionId = state
@@ -119,5 +132,28 @@ class FormStore extends NotifyBaseStore<FormState> {
       state.formDatabinding.defaultForm
           .removeWhere((element) => element.id == 21);
     }
+  }
+
+  Map<String, dynamic> getResults() {
+    final Map<String, dynamic> results = {};
+    final uniqueWords = state.answers
+        .map((element) => element.keywords)
+        .expand((element) => element)
+        .toSet();
+
+    for (final word in uniqueWords) {
+      int count = state.answers
+          .map((element) => element.keywords)
+          .expand((element) => element)
+          .where((keyword) => keyword == word)
+          .length;
+      results[word] = count;
+    }
+
+    return results;
+  }
+
+  void dispose() {
+    state.dispose();
   }
 }
