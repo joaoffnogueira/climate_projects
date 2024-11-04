@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import '../../data/models/tense_enum.dart';
 import 'form_databinding.dart';
 import '../../data/models/answer_model.dart';
@@ -9,6 +10,7 @@ class FormState extends BaseState {
   final int currentQuestionId;
   final List<AnswerModel> answers;
   final TenseEnum questionTense;
+  final TextEditingController finalSuggestionsController;
   FormState({
     required super.loading,
     required super.errorMessage,
@@ -16,6 +18,7 @@ class FormState extends BaseState {
     required this.currentQuestionId,
     required this.answers,
     required this.questionTense,
+    required this.finalSuggestionsController,
   });
 
   factory FormState.initial() {
@@ -25,9 +28,14 @@ class FormState extends BaseState {
       formDatabinding: FormDatabinding(TenseEnum.future),
       currentQuestionId: 1,
       answers: List.generate(
-          36, (index) => AnswerModel(questionId: index, answers: [0]),
+          36,
+          (index) => AnswerModel(
+              questionId: index,
+              answers: [0],
+              keywords: List.empty(growable: true)),
           growable: false),
       questionTense: TenseEnum.future,
+      finalSuggestionsController: TextEditingController(),
     );
   }
 
@@ -38,6 +46,7 @@ class FormState extends BaseState {
     int? currentQuestionId,
     List<AnswerModel>? answers,
     TenseEnum? questionTense,
+    TextEditingController? finalSuggestionsController,
   }) {
     return FormState(
       errorMessage: errorMessage ?? this.errorMessage,
@@ -46,6 +55,12 @@ class FormState extends BaseState {
       currentQuestionId: currentQuestionId ?? this.currentQuestionId,
       answers: answers ?? this.answers,
       questionTense: questionTense ?? this.questionTense,
+      finalSuggestionsController:
+          finalSuggestionsController ?? this.finalSuggestionsController,
     );
+  }
+
+  void dispose() {
+    finalSuggestionsController.dispose();
   }
 }
