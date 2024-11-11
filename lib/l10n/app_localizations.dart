@@ -1250,6 +1250,48 @@ abstract class AppLocalizations {
   /// In pt, this message translates to:
   /// **'OPCIONAL: Deixe abaixo seus comentários, críticas, sugestões, elogios, sobre o questionário.'**
   String get question35;
+
+  /// No description provided for @result1.
+  ///
+  /// In pt, this message translates to:
+  /// **'    Não há fenômeno no mundo que possua uma causa única, algo que pode ser claramente observado na Emergência Climática. Essa problemática resulta de uma combinação de fatores e eventos ocorridos ao longo de um extenso período, envolvendo dimensões naturais, históricas, sociais, políticas e econômicas. A Revolução Industrial, iniciada em 1760, marcou uma mudança profunda em nossa relação com o meio ambiente, as interferências antrópicas no ambiente  subsequentes a esse evento se ampliaram demasiadamente, gerando consequências inesperadas. A complexidade nos ensina que, uma vez desencadeadas as ações, também se dá início a circuitos que envolvem incerteza e imprevisibilidade do ambiente natural e cultural.  Nós agimos sobre o ambiente, constantemente alterando-o conforme nossas necessidades e desejos, mas como em um circuito de retroalimentação  essa ação retorna na  forma de  consequências desagradáveis ou muitas vezes catastrófica como temos presenciado.'**
+  String get result1;
+
+  /// No description provided for @result2.
+  ///
+  /// In pt, this message translates to:
+  /// **'    A  fragmentação do conhecimento nos levou a acreditar que estamos separados da natureza, reduzindo muitas vezes a compreensão do ambiente a natureza ou a sociedade. Da mesma forma reduzindo o ser humano a sua dimensão racional.  Urge compreendermos que tanto o ambiente é complexo, envolvendo dimensão física, biológica e social, assim como o ser humano é biológico, social, e como indivíduo é racional, emocional, objetivo e subjetivo.'**
+  String get result2;
+
+  /// No description provided for @result3.
+  ///
+  /// In pt, this message translates to:
+  /// **'    Entender que vivemos em um mundo complexo é essencial para debatermos e buscarmos formas de enfrentar a Emergência Climática. Esse debate, porém, é desafiador devido às múltiplas dimensões envolvidas. Apoiar-se nas bases teóricas da Educação Ambiental é crucial para compreender profundamente o tema, além de permitir uma abordagem mais adequada ao contexto específico. A Educação Ambiental, como campo de conhecimento, busca oferecer uma nova concepção da relação entre seres humanos e ambiente. Ao aproximá-la do pensamento complexo, ampliamos nossa compreensão da realidade, necessária para a transformação social e pessoal. Transformação que leve a construção de um mundo mais justo, sustentável, solidário e pacífico. Compreender a complexidade que permeia o mundo implica em superar os limites e barreiras entre as diferentes áreas do saber, promovendo um diálogo contínuo.'**
+  String get result3;
+
+  /// No description provided for @result4.
+  ///
+  /// In pt, this message translates to:
+  /// **'    Diante das dificuldades em abordar esse tema e sua complexidade, criamos uma biblioteca de informações para auxiliar no aprofundamento sobre a Emergência Climática. Com sugestões de leituras, vídeos, músicas, jogos e notícias, essa biblioteca foi elaborada com o objetivo de fornecer materiais que auxiliem na abordagem da Emergência Climática, abrangendo as várias dimensões e setores envolvidos, tanto nas causas quanto no enfrentamento da questão. Além disso, disponibilizamos materiais que podem auxiliar você no planejamento de projetos, incluindo orientações sobre a realização de diagnósticos prévios e a elaboração de propostas de Educação Ambiental.'**
+  String get result4;
+
+  /// No description provided for @result_question.
+  ///
+  /// In pt, this message translates to:
+  /// **'Você gostaria de acessar a biblioteca de conteúdo?'**
+  String get result_question;
+
+  /// No description provided for @result_option1.
+  ///
+  /// In pt, this message translates to:
+  /// **'Sim!'**
+  String get result_option1;
+
+  /// No description provided for @result_option2.
+  ///
+  /// In pt, this message translates to:
+  /// **'Não, acessarei depois.'**
+  String get result_option2;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
