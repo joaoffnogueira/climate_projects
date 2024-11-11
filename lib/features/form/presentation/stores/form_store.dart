@@ -134,7 +134,7 @@ class FormStore extends NotifyBaseStore<FormState> {
     }
   }
 
-  Map<String, dynamic> getResults() {
+  List<Map> getResults() {
     final Map<String, dynamic> results = {};
     final uniqueWords = state.answers
         .map((element) => element.keywords)
@@ -149,8 +149,11 @@ class FormStore extends NotifyBaseStore<FormState> {
           .length;
       results[word] = count;
     }
-
-    return results;
+    final List<Map> data = [];
+    for (final key in results.keys) {
+        data.add({"word": key, "value": results[key]});
+      }
+    return data;
   }
 
   void dispose() {
