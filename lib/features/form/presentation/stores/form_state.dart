@@ -1,3 +1,4 @@
+import 'package:climate_change_projects/features/form/presentation/stores/tips_databinding.dart';
 import 'package:flutter/material.dart';
 import '../../data/models/tense_enum.dart';
 import 'form_databinding.dart';
@@ -7,6 +8,7 @@ import '../../../../helpers/base_state.dart';
 
 class FormState extends BaseState {
   final FormDatabinding formDatabinding;
+  final TipsDatabinding tipsDatabinding;
   final int currentQuestionId;
   final List<AnswerModel> answers;
   final TenseEnum questionTense;
@@ -15,6 +17,7 @@ class FormState extends BaseState {
     required super.loading,
     required super.errorMessage,
     required this.formDatabinding,
+    required this.tipsDatabinding,
     required this.currentQuestionId,
     required this.answers,
     required this.questionTense,
@@ -26,6 +29,7 @@ class FormState extends BaseState {
       errorMessage: null,
       loading: BaseLoadingState.initial,
       formDatabinding: FormDatabinding(TenseEnum.future),
+      tipsDatabinding: TipsDatabinding(),
       currentQuestionId: 1,
       answers: List.generate(
           36,
@@ -43,6 +47,7 @@ class FormState extends BaseState {
     BaseLoadingState? loading,
     String? errorMessage,
     FormDatabinding? formDatabinding,
+    TipsDatabinding? tipsDatabinding,
     int? currentQuestionId,
     List<AnswerModel>? answers,
     TenseEnum? questionTense,
@@ -52,6 +57,7 @@ class FormState extends BaseState {
       errorMessage: errorMessage ?? this.errorMessage,
       loading: loading ?? this.loading,
       formDatabinding: formDatabinding ?? this.formDatabinding,
+      tipsDatabinding: tipsDatabinding ?? this.tipsDatabinding,
       currentQuestionId: currentQuestionId ?? this.currentQuestionId,
       answers: answers ?? this.answers,
       questionTense: questionTense ?? this.questionTense,

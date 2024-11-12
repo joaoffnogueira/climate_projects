@@ -86,8 +86,7 @@ class _FormScreenState extends State<FormScreen> {
                               padding: const EdgeInsets.all(8.0),
                               child: Text(
                                 '${controller.state.formDatabinding.defaultForm.firstWhere((element) => element.id == state.currentQuestionId).id} - ${controller.state.formDatabinding.defaultForm.firstWhere((element) => element.id == state.currentQuestionId).question}',
-                                style:
-                                    Theme.of(context).textTheme.headlineSmall,
+                                style: Theme.of(context).textTheme.titleLarge,
                               ),
                             ),
                           ),
@@ -159,6 +158,15 @@ class _FormScreenState extends State<FormScreen> {
                                                   .state.currentQuestionId)
                                           .options![index]
                                           .option),
+                                      subtitle: Text(controller
+                                              .state.formDatabinding.defaultForm
+                                              .firstWhere((element) =>
+                                                  element.id ==
+                                                  controller
+                                                      .state.currentQuestionId)
+                                              .options![index]
+                                              .optionTip ??
+                                          ''),
                                     );
                                   }
                                   if (controller
@@ -246,7 +254,46 @@ class _FormScreenState extends State<FormScreen> {
                                             ),
                                           ),
                                         )
-                                      : controller.nextQuestion();
+                                      : controller
+                                              .state.tipsDatabinding.tips.keys
+                                              .contains(controller
+                                                  .state.currentQuestionId)
+                                          ? showDialog(
+                                              context: context,
+                                              builder: (context) => Dialog(
+                                                child: Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(8.0),
+                                                  child: Column(
+                                                    children: [
+                                                      Text(controller
+                                                          .state
+                                                          .tipsDatabinding
+                                                          .tips[controller.state
+                                                              .currentQuestionId]!
+                                                          .text),
+                                                      ElevatedButton(
+                                                        onPressed: () {
+                                                          controller
+                                                              .nextQuestion();
+                                                          Navigator.of(context)
+                                                              .pop();
+                                                        },
+                                                        child: Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Text('Continuar'),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            )
+                                          : controller.nextQuestion();
                             },
                             child: const Row(
                               mainAxisAlignment: MainAxisAlignment.center,

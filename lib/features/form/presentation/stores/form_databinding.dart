@@ -317,14 +317,26 @@ class FormDatabinding {
         question: Localization.tr.question14(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
-          OptionsModel(id: 1, option: Localization.tr.option14_1, keywords: [
-            'Alternativas econômicas',
-          ]),
+          OptionsModel(
+              id: 1,
+              option: Localization.tr.option14_1,
+              optionTip: Localization.tr.option_tip_14_1,
+              keywords: [
+                'Alternativas econômicas',
+              ]),
           OptionsModel(id: 2, option: Localization.tr.option14_2, keywords: [
             'Impactos econômicos',
           ]),
-          OptionsModel(id: 3, option: Localization.tr.option14_3),
-          OptionsModel(id: 4, option: Localization.tr.option14_4),
+          OptionsModel(
+            id: 3,
+            option: Localization.tr.option14_3,
+            optionTip: Localization.tr.option_tip_14_2,
+          ),
+          OptionsModel(
+            id: 4,
+            option: Localization.tr.option14_4,
+            optionTip: Localization.tr.option_tip_14_3,
+          ),
         ],
       ),
       QuestionModel(
@@ -332,9 +344,13 @@ class FormDatabinding {
         question: Localization.tr.question15(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
         options: [
-          OptionsModel(id: 1, option: Localization.tr.option15_1, keywords: [
-            'Equidade',
-          ]),
+          OptionsModel(
+              id: 1,
+              option: Localization.tr.option15_1,
+              optionTip: Localization.tr.option_tip_15,
+              keywords: [
+                'Equidade',
+              ]),
           OptionsModel(id: 2, option: Localization.tr.option15_2, keywords: [
             'Vulnerabilidade',
           ]),
@@ -380,9 +396,13 @@ class FormDatabinding {
           OptionsModel(id: 3, option: Localization.tr.option18_3),
           OptionsModel(id: 4, option: Localization.tr.option18_4),
           OptionsModel(id: 5, option: Localization.tr.option18_5),
-          OptionsModel(id: 6, option: Localization.tr.option18_6, keywords: [
-            'Desastres',
-          ]),
+          OptionsModel(
+              id: 6,
+              option: Localization.tr.option18_6,
+              optionTip: Localization.tr.option_tip_18,
+              keywords: [
+                'Desastres',
+              ]),
         ],
       ),
       QuestionModel(

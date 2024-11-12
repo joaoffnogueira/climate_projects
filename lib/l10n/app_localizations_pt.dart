@@ -937,4 +937,37 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get result_option2 => 'Não, acessarei depois.';
+
+  @override
+  String get option_tip_14_1 => 'Economia verde\nEcossocialismo\nEcodesenvolvimento ou bioeconomia\nEconomia solidária\nBem-viver dos povos andinos';
+
+  @override
+  String get option_tip_14_2 => 'As práticas locais estão conectadas às tradições e modos de vida das comunidades, envolvendo a valorização de técnicas sustentáveis e fortalecimento da economia local, como a agricultura familiar e orgânica, a produção e venda de artesanatos, turismo comunitário e a realização de feiras. Já no cenário global, as práticas econômicas refletem o impacto da globalização e a integração das economias. As empresas multinacionais produzem os componentes de um produto em diferentes países, reduzindo custos da produção e investindo capital em países estrangeiros para a construção fábricas. Utilizam, também, de sites para a venda em massa para qualquer local do mundo.';
+
+  @override
+  String get option_tip_14_3 => 'Atualmente, o modelo econômico presente na maioria dos países é o capitalismo. Esse sistema visa o lucro e a acumulação das riquezas, e está baseado na propriedade privada dos meios de produção. A busca pelo lucro máximo acarreta na desigualdade social, além de crises econômicas e efeitos negativos sobre o ambiente.';
+
+  @override
+  String get option_tip_15 => 'Equidade e igualdade são termos diferentes. A igualdade é entendida como a aplicação das mesmas regras para todos, assegurando direitos e deveres iguais. Já a equidade reconhece as diferenças e desequilíbrios presentes na sociedade, valorizando a singularidade de cada pessoa e defendendo que todos sejam tratados de acordo com suas necessidades específicas, de modo a garantir o acesso justo às mesmas oportunidades.';
+
+  @override
+  String get option_tip_18 => 'Os desastres ambientais são eventos catastróficos provocados por fenômenos naturais e, muitas vezes, amplificados pelas ações humanas. Como exemplos de desastres, podemos mencionar os terremotos, tsunamis, furacões, tempestades, tornados, secas e inundações. Temos, ainda, desastres que são resultados apenas da ação humana, como é o caso do derramamento de óleo, desmatamento, poluição, acidentes nucleares e incêndios florestais.';
+
+  @override
+  String get tip2 => 'O diagnóstico prévio possibilita ajustar um projeto à realidade local, identificando fragilidades, potencialidades e lacunas de conhecimento da comunidade. Com essas informações, é possível priorizar ações que atendam de maneira mais eficaz às necessidades reais do território.';
+
+  @override
+  String get tip8 => 'Enfrentar problemas socioambientais requer o engajamento de toda a sociedade. A ação coletiva fortalece o senso de comunidade e promove mudanças positivas, unindo diferentes perspectivas e habilidades para gerar soluções mais eficazes.';
+
+  @override
+  String get tip12 => 'A emergência climática é uma questão complexa e global que exige compreensão em várias dimensões. Um projeto que integre diferentes perspectivas oferece uma abordagem mais completa e eficaz para enfrentar esse desafio.';
+
+  @override
+  String get tip23 => 'Os problemas vivenciados pela sociedade despertam fortes emoções, que podem influenciar as ações. Sentimentos negativos podem paralisar, enquanto emoções positivas, como esperança e otimismo, podem incentivar o engajamento e ações eficazes no enfrentamento da emergência climática.';
+
+  @override
+  String get tip24 => 'As emoções são fundamentais para a conservação ambiental, pois despertam interesse e engajamento. Uma conexão emocional com o ambiente incentiva comportamentos positivos, aumentando o comprometimento com sua preservação.';
+
+  @override
+  String get tip31 => 'O retorno contínuo dos participantes permite entender melhor como está sendo a experiência deles no projeto, considerando suas opiniões e sentimentos, podendo significar uma mudança no planejamento no projeto, para melhor se adequar às necessidades dos participantes.';
 }
