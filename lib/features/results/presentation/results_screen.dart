@@ -62,7 +62,7 @@ class _ResultsScreenState extends State<ResultsScreen> {
                           .surface
                           .withOpacity(0.9),
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(16.0),
                         child: Column(
                           children: [
                             Text(
@@ -98,6 +98,7 @@ class _ResultsScreenState extends State<ResultsScreen> {
                         ),
                       ),
                     ),
+                    const SizedBox(height: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
