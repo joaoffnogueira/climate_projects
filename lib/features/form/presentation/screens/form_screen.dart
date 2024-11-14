@@ -150,23 +150,49 @@ class _FormScreenState extends State<FormScreen> {
                                                           .currentQuestionId)
                                                   .options![index]
                                                   .keywords),
-                                      title: Text(controller
-                                          .state.formDatabinding.defaultForm
-                                          .firstWhere((element) =>
-                                              element.id ==
-                                              controller
-                                                  .state.currentQuestionId)
-                                          .options![index]
-                                          .option),
-                                      subtitle: Text(controller
-                                              .state.formDatabinding.defaultForm
-                                              .firstWhere((element) =>
-                                                  element.id ==
-                                                  controller
-                                                      .state.currentQuestionId)
-                                              .options![index]
-                                              .optionTip ??
-                                          ''),
+                                      subtitle: Row(
+                                        children: [
+                                          Visibility(
+                                              visible: controller
+                                                      .state
+                                                      .formDatabinding
+                                                      .defaultForm
+                                                      .firstWhere((element) =>
+                                                          element.id ==
+                                                          controller.state
+                                                              .currentQuestionId)
+                                                      .options![index]
+                                                      .optionTip !=
+                                                  null,
+                                              child: Tooltip(
+                                                  message: controller
+                                                          .state
+                                                          .formDatabinding
+                                                          .defaultForm
+                                                          .firstWhere((element) =>
+                                                              element.id ==
+                                                              controller.state.currentQuestionId)
+                                                          .options![index]
+                                                          .optionTip ??
+                                                      '',
+                                                  margin: const EdgeInsets.all(10),
+                                                  padding: const EdgeInsets.all(10),
+                                                  triggerMode: TooltipTriggerMode.tap,
+                                                  showDuration: const Duration(seconds: 30),
+                                                  child: Icon(Icons.info_outline))),
+                                        ],
+                                      ),
+                                      title: Text(
+                                        controller
+                                            .state.formDatabinding.defaultForm
+                                            .firstWhere((element) =>
+                                                element.id ==
+                                                controller
+                                                    .state.currentQuestionId)
+                                            .options![index]
+                                            .option,
+                                        softWrap: true,
+                                      ),
                                     );
                                   }
                                   if (controller
@@ -264,31 +290,63 @@ class _FormScreenState extends State<FormScreen> {
                                                 child: Padding(
                                                   padding:
                                                       const EdgeInsets.all(8.0),
-                                                  child: Column(
-                                                    children: [
-                                                      Text(controller
-                                                          .state
-                                                          .tipsDatabinding
-                                                          .tips[controller.state
-                                                              .currentQuestionId]!
-                                                          .text),
-                                                      ElevatedButton(
-                                                        onPressed: () {
-                                                          controller
-                                                              .nextQuestion();
-                                                          Navigator.of(context)
-                                                              .pop();
-                                                        },
-                                                        child: Row(
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .center,
-                                                          children: [
-                                                            Text('Continuar'),
-                                                          ],
-                                                        ),
+                                                  child: SizedBox(
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              8.0),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.min,
+                                                        children: [
+                                                          Icon(
+                                                            Icons.lightbulb,
+                                                            size: 50,
+                                                            color: Theme.of(
+                                                                    context)
+                                                                .colorScheme
+                                                                .primary,
+                                                          ),
+                                                          const SizedBox(
+                                                              height: 10),
+                                                          Text(
+                                                            controller
+                                                                .state
+                                                                .tipsDatabinding
+                                                                .tips[controller
+                                                                    .state
+                                                                    .currentQuestionId]!
+                                                                .text,
+                                                            style: Theme.of(
+                                                                    context)
+                                                                .textTheme
+                                                                .titleMedium,
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                          ),
+                                                          const SizedBox(
+                                                              height: 10),
+                                                          ElevatedButton(
+                                                            onPressed: () {
+                                                              controller
+                                                                  .nextQuestion();
+                                                              Navigator.of(
+                                                                      context)
+                                                                  .pop();
+                                                            },
+                                                            child: Row(
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .center,
+                                                              children: [
+                                                                Text(
+                                                                    'Continuar'),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                        ],
                                                       ),
-                                                    ],
+                                                    ),
                                                   ),
                                                 ),
                                               ),
