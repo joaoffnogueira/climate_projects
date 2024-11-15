@@ -1,6 +1,7 @@
 import 'package:climate_change_projects/features/library/data/models/suggestion_lang_enum.dart';
 import 'package:climate_change_projects/features/library/data/models/suggestion_type_enum.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SuggestionCard extends StatelessWidget {
   final String title;
@@ -35,6 +36,13 @@ class SuggestionCard extends StatelessWidget {
       default:
         icon = Icons.lightbulb;
     }
+    final Uri uri = Uri.parse(url);
+    Future<void> open() async {
+      if (!await launchUrl(uri)) {
+        throw Exception('Não foi possível abrir $url');
+      }
+    }
+
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 4),
       child: Card(
@@ -60,7 +68,9 @@ class SuggestionCard extends StatelessWidget {
           ),
           trailing: IconButton(
             icon: const Icon(Icons.open_in_new_rounded),
-            onPressed: () {},
+            onPressed: () {
+              open();
+            },
           ),
         ),
       ),
