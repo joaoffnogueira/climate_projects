@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../helpers/background_widget.dart';
 import '../../form/presentation/screens/form_screen.dart';
+import '../../library/presentation/library_screen.dart';
 import 'widgets/history_drawer.dart';
 import 'widgets/info_drawer.dart';
 
@@ -38,7 +39,13 @@ class _MyHomePageState extends State<MyHomePage> {
           const SizedBox(width: 10),
           IconButton(
             icon: const Icon(Icons.book),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context, rootNavigator: true).push(
+                MaterialPageRoute(
+                  builder: (context) => const LibraryScreen(),
+                ),
+              );
+            },
           ),
           const SizedBox(width: 10),
           IconButton(
