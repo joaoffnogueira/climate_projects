@@ -1,4 +1,4 @@
-import '../../../../models/suggestion_model.dart';
+import '../../../library/data/models/suggestion_model.dart';
 
 class OptionsModel {
   final int id;
