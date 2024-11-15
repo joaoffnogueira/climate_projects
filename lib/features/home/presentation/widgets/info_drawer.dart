@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../l10n/localization_context.dart';
-
 class InfoDrawer extends StatelessWidget {
   const InfoDrawer({super.key});
 
