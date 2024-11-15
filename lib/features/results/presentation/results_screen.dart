@@ -4,6 +4,7 @@ import 'package:word_cloud/word_cloud.dart';
 import '../../../helpers/background_widget.dart';
 import '../../../l10n/localization_context.dart';
 import '../../../main.dart';
+import '../../library/presentation/library_screen.dart';
 
 class ResultsScreen extends StatefulWidget {
   final List<Map<dynamic, dynamic>> keywords;
@@ -17,7 +18,6 @@ class _ResultsScreenState extends State<ResultsScreen> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
-    print(widget.keywords);
     return Scaffold(
       backgroundColor: MyApp.themeHelper.backgroundColor,
       appBar: AppBar(
@@ -103,7 +103,13 @@ class _ResultsScreenState extends State<ResultsScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context, rootNavigator: true).push(
+                              MaterialPageRoute(
+                                builder: (context) => const LibraryScreen(),
+                              ),
+                            );
+                          },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
