@@ -1,8 +1,9 @@
-import 'package:climate_change_projects/features/library/widgets/section_card.dart';
+import 'package:climate_change_projects/features/library/presentation/widgets/section_card.dart';
 import 'package:flutter/material.dart';
 
 import '../../../helpers/background_widget.dart';
 import '../../../main.dart';
+import '../data/models/suggestion_category_enum.dart';
 import 'search_screen.dart';
 
 class LibraryScreen extends StatefulWidget {
@@ -38,7 +39,9 @@ class _LibraryScreenState extends State<LibraryScreen> {
                       onPressed: () {
                         Navigator.of(context, rootNavigator: true).push(
                           MaterialPageRoute(
-                            builder: (context) => const SearchScreen(),
+                            builder: (context) => const SearchScreen(
+                              categoryFilter: SuggestionCategoryEnum.diagnosis,
+                            ),
                           ),
                         );
                       },
@@ -49,7 +52,9 @@ class _LibraryScreenState extends State<LibraryScreen> {
                       onPressed: () {
                         Navigator.of(context, rootNavigator: true).push(
                           MaterialPageRoute(
-                            builder: (context) => const SearchScreen(),
+                            builder: (context) => const SearchScreen(
+                              categoryFilter: SuggestionCategoryEnum.project,
+                            ),
                           ),
                         );
                       },
@@ -60,7 +65,10 @@ class _LibraryScreenState extends State<LibraryScreen> {
                       onPressed: () {
                         Navigator.of(context, rootNavigator: true).push(
                           MaterialPageRoute(
-                            builder: (context) => const SearchScreen(),
+                            builder: (context) => const SearchScreen(
+                              categoryFilter:
+                                  SuggestionCategoryEnum.climateEmergency,
+                            ),
                           ),
                         );
                       },
@@ -73,7 +81,9 @@ class _LibraryScreenState extends State<LibraryScreen> {
                       onPressed: () {
                         Navigator.of(context, rootNavigator: true).push(
                           MaterialPageRoute(
-                            builder: (context) => const SearchScreen(),
+                            builder: (context) => const SearchScreen(
+                              categoryFilter: SuggestionCategoryEnum.evaluation,
+                            ),
                           ),
                         );
                       },
