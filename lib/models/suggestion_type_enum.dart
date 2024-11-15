@@ -4,4 +4,5 @@ enum SuggestionTypeEnum {
   video,
   book,
   audio,
+  game,
 }
