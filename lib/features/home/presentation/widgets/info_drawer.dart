@@ -21,6 +21,11 @@ class InfoDrawer extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyMedium,
                   textAlign: TextAlign.center,
                 ),
+                Text(
+                  'Imagens de fundo: ArtistsForClimate.org',
+                  style: Theme.of(context).textTheme.bodySmall,
+                  textAlign: TextAlign.center,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
