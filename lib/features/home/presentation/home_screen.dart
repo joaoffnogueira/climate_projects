@@ -29,6 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
         automaticallyImplyLeading: false,
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
+        toolbarHeight: 65,
         actions: [
           Column(
             children: [
