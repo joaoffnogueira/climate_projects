@@ -73,9 +73,8 @@ class _LibraryScreenState extends State<LibraryScreen> {
                         );
                       },
                       title: 'Emergência Climática',
-                      titleStyle: Theme.of(context).textTheme.headlineSmall,
                       icon: Icons.thunderstorm,
-                      iconSize: 120,
+                      iconSize: 55,
                     ),
                     SectionCard(
                       onPressed: () {
