@@ -28,7 +28,7 @@ class BackgroundWidget extends StatelessWidget {
           ),
           child: Padding(
             padding:
-                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
             child: Text(
               credit,
               maxLines: 2,
