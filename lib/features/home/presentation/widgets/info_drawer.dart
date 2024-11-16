@@ -14,12 +14,69 @@ class InfoDrawer extends StatelessWidget {
           child: LicensePage(
             applicationName: 'EmergeClima',
             applicationVersion: 'Versão atual: 1.1.5+7',
-            applicationIcon: Text(
-              'Baseado na pesquisa de...',
-              style: Theme.of(context).textTheme.bodyMedium,
-              textAlign: TextAlign.justify,
+            applicationIcon: Column(
+              children: [
+                Text(
+                  'Baseado na pesquisa de Fernanda Gurgel Matakas, sob orientação das professoras Adriana Massaê Kataoka e Ana Lucia Suriani Affonso,',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                  textAlign: TextAlign.center,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Tooltip(
+                      message:
+                          'Laboratório de Educação Ambiental e Ecologia - UNICENTRO',
+                      child: Image.asset(
+                        'assets/lab.png',
+                        width: size.width * 0.25,
+                        filterQuality: FilterQuality.high,
+                      ),
+                    ),
+                    Tooltip(
+                      message: 'Núcleo de Educação Ambiental - NEA/UNICENTRO',
+                      child: Image.asset(
+                        'assets/nea.png',
+                        width: size.width * 0.25,
+                        filterQuality: FilterQuality.high,
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Tooltip(
+                      message: 'Global Youth Climate Pact',
+                      child: Image.asset(
+                        'assets/gycp.png',
+                        width: size.width * 0.25,
+                        filterQuality: FilterQuality.high,
+                      ),
+                    ),
+                    Tooltip(
+                      message:
+                          'Novos Arranjos de Pesquisa e Inovação - Emergência Climática',
+                      child: Image.asset(
+                        'assets/napi.png',
+                        width: size.width * 0.25,
+                        filterQuality: FilterQuality.high,
+                      ),
+                    ),
+                  ],
+                ),
+                Tooltip(
+                  message: 'Universidade Estadual do Centro-Oeste - UNICENTRO',
+                  child: Image.asset(
+                    'assets/unicentro.png',
+                    width: size.width * 0.25,
+                    filterQuality: FilterQuality.high,
+                  ),
+                ),
+              ],
             ),
-            applicationLegalese: 'Desenvolvido por joaonogueira.dev',
+            applicationLegalese:
+                'Desenvolvido por João Fernando Ferrari Nogueira (joaonogueira.dev)',
           ),
         ),
       ),
