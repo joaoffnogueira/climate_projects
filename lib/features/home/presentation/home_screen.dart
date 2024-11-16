@@ -30,29 +30,44 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.info_outline),
-            onPressed: () {
-              _scaffoldKey.currentState!.openDrawer();
-            },
+          Column(
+            children: [
+              IconButton(
+                icon: const Icon(Icons.info_outline),
+                onPressed: () {
+                  _scaffoldKey.currentState!.openDrawer();
+                },
+              ),
+              Text('Créditos', style: Theme.of(context).textTheme.bodySmall),
+            ],
           ),
           const SizedBox(width: 10),
-          IconButton(
-            icon: const Icon(Icons.book),
-            onPressed: () {
-              Navigator.of(context, rootNavigator: true).push(
-                MaterialPageRoute(
-                  builder: (context) => const LibraryScreen(),
-                ),
-              );
-            },
+          Column(
+            children: [
+              IconButton.outlined(
+                icon: const Icon(Icons.book),
+                onPressed: () {
+                  Navigator.of(context, rootNavigator: true).push(
+                    MaterialPageRoute(
+                      builder: (context) => const LibraryScreen(),
+                    ),
+                  );
+                },
+              ),
+              Text('Biblioteca', style: Theme.of(context).textTheme.bodySmall),
+            ],
           ),
           const SizedBox(width: 10),
-          IconButton(
-            icon: const Icon(Icons.history),
-            onPressed: () {
-              _scaffoldKey.currentState!.openEndDrawer();
-            },
+          Column(
+            children: [
+              IconButton(
+                icon: const Icon(Icons.history),
+                onPressed: () {
+                  _scaffoldKey.currentState!.openEndDrawer();
+                },
+              ),
+              Text('Histórico', style: Theme.of(context).textTheme.bodySmall),
+            ],
           ),
           const SizedBox(width: 10),
         ],
@@ -66,7 +81,8 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 SizedBox(
-                  width: 350,
+                  width: 280,
+                  height: 60,
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.of(context, rootNavigator: true).push(
@@ -75,11 +91,12 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       );
                     },
-                    child: const Row(
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.add),
-                        Text('Nova reflexão'),
+                        Icon(Icons.lightbulb_circle_outlined, size: 35),
+                        Text('Analisar projeto',
+                            style: Theme.of(context).textTheme.headlineMedium),
                       ],
                     ),
                   ),
