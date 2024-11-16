@@ -15,10 +15,11 @@ class FormScreen extends StatefulWidget {
 
 class _FormScreenState extends State<FormScreen> {
   late final FormStore controller;
-  final ScrollController _scrollController = ScrollController();
+  late final ScrollController _scrollController;
   @override
   void initState() {
     super.initState();
+    _scrollController = ScrollController();
     controller = FormStore();
   }
 
@@ -58,6 +59,7 @@ class _FormScreenState extends State<FormScreen> {
               title: Text('EmergeClima'),
             ),
             body: Stack(
+              alignment: Alignment.topCenter,
               children: [
                 BackgroundWidget(
                     image: MyApp.themeHelper.image,
@@ -85,7 +87,8 @@ class _FormScreenState extends State<FormScreen> {
                     },
                   ),
                 ),
-                Center(
+                Padding(
+                  padding: const EdgeInsets.only(top: 10.0),
                   child: Scrollbar(
                     controller: _scrollController,
                     thumbVisibility: true,
@@ -299,119 +302,123 @@ class _FormScreenState extends State<FormScreen> {
                               ),
                             ),
                             const SizedBox(height: 10),
-                            ElevatedButton(
-                              onPressed: () {
-                                controller
-                                            .state
-                                            .answers[
-                                                state.currentQuestionId - 1]
-                                            .answers
-                                            .contains(0) ||
-                                        controller
-                                            .state
-                                            .answers[
-                                                state.currentQuestionId - 1]
-                                            .answers
-                                            .isEmpty
-                                    ? null
-                                    : controller.state.currentQuestionId == 35
-                                        ? Navigator.of(context,
-                                                rootNavigator: true)
-                                            .push(
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  ResultsScreen(
-                                                keywords:
-                                                    controller.getResults(),
+                            SizedBox(
+                              width: 250,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  controller
+                                              .state
+                                              .answers[
+                                                  state.currentQuestionId - 1]
+                                              .answers
+                                              .contains(0) ||
+                                          controller
+                                              .state
+                                              .answers[
+                                                  state.currentQuestionId - 1]
+                                              .answers
+                                              .isEmpty
+                                      ? null
+                                      : controller.state.currentQuestionId == 35
+                                          ? Navigator.of(context,
+                                                  rootNavigator: true)
+                                              .push(
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    ResultsScreen(
+                                                  keywords:
+                                                      controller.getResults(),
+                                                ),
                                               ),
-                                            ),
-                                          )
-                                        : controller
-                                                .state.tipsDatabinding.tips.keys
-                                                .contains(controller
-                                                    .state.currentQuestionId)
-                                            ? showDialog(
-                                                context: context,
-                                                builder: (context) => Dialog(
-                                                  child: Padding(
-                                                    padding:
-                                                        const EdgeInsets.all(
-                                                            8.0),
-                                                    child: SizedBox(
-                                                      child: Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .all(8.0),
-                                                        child: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.min,
-                                                          children: [
-                                                            Icon(
-                                                              Icons.lightbulb,
-                                                              size: 50,
-                                                              color: Theme.of(
-                                                                      context)
-                                                                  .colorScheme
-                                                                  .primary,
-                                                            ),
-                                                            const SizedBox(
-                                                                height: 10),
-                                                            Text(
-                                                              controller
-                                                                  .state
-                                                                  .tipsDatabinding
-                                                                  .tips[controller
-                                                                      .state
-                                                                      .currentQuestionId]!
-                                                                  .text,
-                                                              style: Theme.of(
-                                                                      context)
-                                                                  .textTheme
-                                                                  .titleMedium,
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                            ),
-                                                            const SizedBox(
-                                                                height: 10),
-                                                            ElevatedButton(
-                                                              onPressed: () {
-                                                                controller
-                                                                    .nextQuestion(
-                                                                        _scrollController);
-                                                                Navigator.of(
+                                            )
+                                          : controller.state.tipsDatabinding
+                                                  .tips.keys
+                                                  .contains(controller
+                                                      .state.currentQuestionId)
+                                              ? showDialog(
+                                                  context: context,
+                                                  builder: (context) => Dialog(
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              8.0),
+                                                      child: SizedBox(
+                                                        child: Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(8.0),
+                                                          child: Column(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .min,
+                                                            children: [
+                                                              Icon(
+                                                                Icons.lightbulb,
+                                                                size: 50,
+                                                                color: Theme.of(
                                                                         context)
-                                                                    .pop();
-                                                              },
-                                                              child: Row(
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .center,
-                                                                children: [
-                                                                  Text(
-                                                                      'Continuar'),
-                                                                ],
+                                                                    .colorScheme
+                                                                    .primary,
                                                               ),
-                                                            ),
-                                                          ],
+                                                              const SizedBox(
+                                                                  height: 10),
+                                                              Text(
+                                                                controller
+                                                                    .state
+                                                                    .tipsDatabinding
+                                                                    .tips[controller
+                                                                        .state
+                                                                        .currentQuestionId]!
+                                                                    .text,
+                                                                style: Theme.of(
+                                                                        context)
+                                                                    .textTheme
+                                                                    .titleMedium,
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                              ),
+                                                              const SizedBox(
+                                                                  height: 10),
+                                                              ElevatedButton(
+                                                                onPressed: () {
+                                                                  controller
+                                                                      .nextQuestion(
+                                                                          _scrollController);
+                                                                  Navigator.of(
+                                                                          context)
+                                                                      .pop();
+                                                                },
+                                                                child: Row(
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .center,
+                                                                  children: [
+                                                                    Text(
+                                                                        'Continuar'),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
                                                   ),
-                                                ),
-                                              )
-                                            : controller.nextQuestion(
-                                                _scrollController);
-                              },
-                              child: const Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text('Próxima pergunta'),
-                                  Icon(Icons.skip_next_rounded),
-                                ],
+                                                )
+                                              : controller.nextQuestion(
+                                                  _scrollController);
+                                },
+                                child: const Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text('Próxima pergunta'),
+                                    Icon(Icons.skip_next_rounded),
+                                  ],
+                                ),
                               ),
                             ),
-                            const SizedBox(height: 30),
+                            const SizedBox(height: 50),
                           ],
                         ),
                       ),
