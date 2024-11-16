@@ -11,7 +11,7 @@ class SectionCard extends StatelessWidget {
     required this.title,
     this.titleStyle,
     required this.icon,
-    this.iconSize = 140.0,
+    this.iconSize = 85.0,
     required this.onPressed,
   });
 
@@ -23,7 +23,7 @@ class SectionCard extends StatelessWidget {
       child: ElevatedButton(
         style: ButtonStyle(
           padding:
-              WidgetStateProperty.all<EdgeInsets>(const EdgeInsets.all(9.0)),
+              WidgetStateProperty.all<EdgeInsets>(const EdgeInsets.all(8.0)),
           shape: WidgetStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16.0),
@@ -51,7 +51,7 @@ class SectionCard extends StatelessWidget {
                 Text(
                   title,
                   style:
-                      titleStyle ?? Theme.of(context).textTheme.headlineLarge,
+                      titleStyle ?? Theme.of(context).textTheme.headlineSmall,
                   textAlign: TextAlign.center,
                 ),
               ],
