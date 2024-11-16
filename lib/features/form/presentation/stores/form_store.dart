@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart' show ScrollController, Curves;
+
 import '../../../../helpers/base_store.dart';
 import 'form_state.dart';
 
@@ -36,7 +38,7 @@ class FormStore extends NotifyBaseStore<FormState> {
     );
   }
 
-  void nextQuestion() {
+  void nextQuestion(ScrollController scrollController) {
     int nextQuestionId;
     switch (state.currentQuestionId) {
       case 1:
@@ -92,6 +94,11 @@ class FormStore extends NotifyBaseStore<FormState> {
       state.copyWith(
         currentQuestionId: nextQuestionId,
       ),
+    );
+    scrollController.animateTo(
+      0.0,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeOut,
     );
   }
 
