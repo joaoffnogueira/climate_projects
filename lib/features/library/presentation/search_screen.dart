@@ -73,27 +73,30 @@ class _SearchScreenState extends State<SearchScreen> {
                                           controller:
                                               controller.state.searchController,
                                           decoration: InputDecoration(
-                                            hintText: 'Pesquisar',
+                                            labelText: 'Pesquisar',
                                             prefixIcon: Icon(Icons.search),
+                                            border: OutlineInputBorder(),
+                                            suffixIcon: Visibility(
+                                              visible: controller
+                                                      .state
+                                                      .searchController
+                                                      ?.text
+                                                      .isNotEmpty ??
+                                                  false,
+                                              child: IconButton(
+                                                icon: Icon(Icons.clear),
+                                                onPressed: () {
+                                                  controller
+                                                      .state.searchController
+                                                      ?.clear();
+                                                  controller
+                                                      .filterSuggestions();
+                                                },
+                                              ),
+                                            ),
                                           ),
                                           onChanged: (value) =>
                                               controller.filterSuggestions(),
-                                        ),
-                                      ),
-                                      Visibility(
-                                        visible: controller
-                                                .state
-                                                .searchController
-                                                ?.text
-                                                .isNotEmpty ??
-                                            false,
-                                        child: IconButton(
-                                          icon: Icon(Icons.clear),
-                                          onPressed: () {
-                                            controller.state.searchController
-                                                ?.clear();
-                                            controller.filterSuggestions();
-                                          },
                                         ),
                                       ),
                                     ],
