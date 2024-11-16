@@ -18,42 +18,62 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   late final LibraryStore controller;
+  late final ScrollController _scrollController;
 
   @override
   void initState() {
-    controller = LibraryStore(widget.categoryFilter);
     super.initState();
+    controller = LibraryStore(widget.categoryFilter);
+    _scrollController = ScrollController();
   }
 
   @override
   void dispose() {
     controller.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
-    return Scaffold(
-      backgroundColor: MyApp.themeHelper.backgroundColor,
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text('Biblioteca'),
-      ),
-      body: Stack(
-        alignment: Alignment.topCenter,
-        children: [
-          BackgroundWidget(
-              image: MyApp.themeHelper.image, credit: MyApp.themeHelper.credit),
-          Positioned(
-            top: 10,
-            child: SizedBox(
-              width: size.width * 0.95,
-              height: size.height * 0.85,
-              child: ValueListenableBuilder(
-                  valueListenable: controller.valueListenable,
-                  builder: (context, state, __) {
-                    return Column(
+    return ValueListenableBuilder(
+        valueListenable: controller.valueListenable,
+        builder: (context, state, __) {
+          return Scaffold(
+            floatingActionButtonLocation:
+                FloatingActionButtonLocation.miniStartFloat,
+            floatingActionButton: FloatingActionButton.small(
+              onPressed: () {
+                _scrollController.animateTo(
+                  _scrollController.hasClients &&
+                          _scrollController.position.pixels <
+                              _scrollController.position.maxScrollExtent
+                      ? _scrollController.position.pixels + 200
+                      : _scrollController.position.minScrollExtent,
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.easeInOut,
+                );
+              },
+              child: Icon(Icons.swipe_vertical_rounded),
+            ),
+            backgroundColor: MyApp.themeHelper.backgroundColor,
+            appBar: AppBar(
+              backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+              title: Text('Biblioteca'),
+            ),
+            body: Stack(
+              alignment: Alignment.topCenter,
+              children: [
+                BackgroundWidget(
+                    image: MyApp.themeHelper.image,
+                    credit: MyApp.themeHelper.credit),
+                Positioned(
+                  top: 10,
+                  child: SizedBox(
+                    width: size.width * 0.95,
+                    height: size.height * 0.85,
+                    child: Column(
                       children: <Widget>[
                         Card(
                           color: Theme.of(context)
@@ -107,7 +127,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text('Tipo:'),
-                                      const SizedBox(width: 10),
+                                      const SizedBox(width: 4),
                                       ChoiceChip(
                                         label: Icon(Icons.article_rounded),
                                         labelPadding: EdgeInsets.all(0),
@@ -177,7 +197,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Text('Idioma:'),
-                                      const SizedBox(width: 10),
+                                      const SizedBox(width: 4),
                                       ChoiceChip(
                                         label: Text('PT'),
                                         labelPadding: EdgeInsets.all(0),
@@ -188,7 +208,6 @@ class _SearchScreenState extends State<SearchScreen> {
                                                 SuggestionLangEnum.pt),
                                         tooltip: 'Português',
                                       ),
-                                      const SizedBox(width: 10),
                                       ChoiceChip(
                                         label: Text('EN'),
                                         labelPadding: EdgeInsets.all(0),
@@ -212,35 +231,41 @@ class _SearchScreenState extends State<SearchScreen> {
                             width: size.width * 0.95,
                             child: Padding(
                               padding: const EdgeInsets.all(10.0),
-                              child: ListView.builder(
-                                itemCount: controller.state.databinding
-                                    .filteredSuggestions.length,
-                                shrinkWrap: true,
-                                itemBuilder: (context, index) {
-                                  return SuggestionCard(
-                                    title: controller.state.databinding
-                                        .filteredSuggestions[index].title,
-                                    subtitle: controller.state.databinding
-                                        .filteredSuggestions[index].subtitle,
-                                    lang: controller.state.databinding
-                                        .filteredSuggestions[index].lang,
-                                    type: controller.state.databinding
-                                        .filteredSuggestions[index].type,
-                                    url: controller.state.databinding
-                                        .filteredSuggestions[index].url,
-                                  );
-                                },
+                              child: Scrollbar(
+                                thumbVisibility: true,
+                                trackVisibility: true,
+                                controller: _scrollController,
+                                child: ListView.builder(
+                                  controller: _scrollController,
+                                  itemCount: controller.state.databinding
+                                      .filteredSuggestions.length,
+                                  shrinkWrap: true,
+                                  itemBuilder: (context, index) {
+                                    return SuggestionCard(
+                                      title: controller.state.databinding
+                                          .filteredSuggestions[index].title,
+                                      subtitle: controller.state.databinding
+                                          .filteredSuggestions[index].subtitle,
+                                      lang: controller.state.databinding
+                                          .filteredSuggestions[index].lang,
+                                      type: controller.state.databinding
+                                          .filteredSuggestions[index].type,
+                                      url: controller.state.databinding
+                                          .filteredSuggestions[index].url,
+                                    );
+                                  },
+                                ),
                               ),
                             ),
                           ),
                         ),
                       ],
-                    );
-                  }),
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ),
-        ],
-      ),
-    );
+          );
+        });
   }
 }
