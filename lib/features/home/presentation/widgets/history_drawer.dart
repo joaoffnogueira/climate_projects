@@ -20,7 +20,7 @@ class _HistoryDrawerState extends State<HistoryDrawer> {
   void initState() {
     super.initState();
     dbLocal.openConection();
-    history = dbLocal.all<HistoryModel>();
+    history = dbLocal.all<HistoryModel>().reversed.toList();
   }
 
   @override
@@ -43,11 +43,20 @@ class _HistoryDrawerState extends State<HistoryDrawer> {
     final size = MediaQuery.sizeOf(context);
     return Material(
       child: SizedBox(
-        width: size.width * 0.5,
+        width: size.width * 0.55,
         height: size.height,
         child: Scaffold(
           appBar: AppBar(
-            title: Text('Histórico'),
+            title: Column(
+              children: [
+                Text('Histórico'),
+                Text(
+                  'Até 10 análises mais recentes',
+                  maxLines: 2,
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+              ],
+            ),
           ),
           body: ListView.builder(
             itemCount: history.length,
