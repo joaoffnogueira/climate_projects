@@ -1,3 +1,5 @@
+import 'package:climate_change_projects/helpers/base_state.dart';
+
 import '../../../../helpers/background_widget.dart';
 import '../../../../main.dart';
 import '../../../results/presentation/results_screen.dart';
@@ -36,22 +38,30 @@ class _FormScreenState extends State<FormScreen> {
     return ValueListenableBuilder(
         valueListenable: controller.valueListenable,
         builder: (context, state, __) {
+          final currentQuestion = controller
+              .state.formDatabinding.defaultForm[state.currentQuestionId]!;
+          final currentAnswer =
+              controller.state.answers[state.currentQuestionId - 1];
           return Scaffold(
             floatingActionButtonLocation:
-                FloatingActionButtonLocation.miniStartFloat,
-            floatingActionButton: FloatingActionButton.small(
-              onPressed: () {
-                _scrollController.animateTo(
-                  _scrollController.hasClients &&
-                          _scrollController.position.pixels ==
-                              _scrollController.position.minScrollExtent
-                      ? _scrollController.position.maxScrollExtent
-                      : _scrollController.position.minScrollExtent,
-                  duration: const Duration(milliseconds: 500),
-                  curve: Curves.easeInOut,
-                );
-              },
-              child: Icon(Icons.swipe_vertical_rounded),
+                FloatingActionButtonLocation.miniCenterDocked,
+            floatingActionButton: Visibility(
+              visible: _scrollController.hasClients &&
+                  _scrollController.position.maxScrollExtent > 0,
+              child: FloatingActionButton.small(
+                onPressed: () {
+                  _scrollController.animateTo(
+                    _scrollController.hasClients &&
+                            _scrollController.position.pixels ==
+                                _scrollController.position.minScrollExtent
+                        ? _scrollController.position.maxScrollExtent
+                        : _scrollController.position.minScrollExtent,
+                    duration: const Duration(milliseconds: 500),
+                    curve: Curves.easeInOut,
+                  );
+                },
+                child: Icon(Icons.swipe_vertical_rounded),
+              ),
             ),
             backgroundColor: MyApp.themeHelper.backgroundColor,
             appBar: AppBar(
@@ -109,26 +119,32 @@ class _FormScreenState extends State<FormScreen> {
                                 child: Column(
                                   children: [
                                     Text(
-                                      '${controller.state.formDatabinding.defaultForm.firstWhere((element) => element.id == state.currentQuestionId).id} - ${controller.state.formDatabinding.defaultForm.firstWhere((element) => element.id == state.currentQuestionId).question}',
+                                      currentQuestion.question,
                                       style: Theme.of(context)
                                           .textTheme
                                           .titleLarge,
                                     ),
                                     Text(
-                                        controller.state.formDatabinding
-                                                    .defaultForm
-                                                    .firstWhere((element) =>
-                                                        element.id ==
-                                                        controller.state
-                                                            .currentQuestionId)
-                                                    .type ==
+                                        currentQuestion.type ==
                                                 QuestionTypeEnum
                                                     .multipleResponse
                                             ? 'Selecione uma ou mais opções'
-                                            : 'Selecione apenas uma opção',
+                                            : currentQuestion.type ==
+                                                    QuestionTypeEnum
+                                                        .multipleChoice
+                                                ? 'Selecione apenas uma opção'
+                                                : '',
                                         style: Theme.of(context)
                                             .textTheme
-                                            .bodySmall),
+                                            .bodySmall
+                                            ?.copyWith(
+                                                color: state.isError
+                                                    ? Theme.of(context)
+                                                        .colorScheme
+                                                        .error
+                                                    : Theme.of(context)
+                                                        .colorScheme
+                                                        .onSurface)),
                                   ],
                                 ),
                               ),
@@ -143,153 +159,71 @@ class _FormScreenState extends State<FormScreen> {
                                 padding: const EdgeInsets.all(8.0),
                                 child: ListView.builder(
                                   primary: false,
-                                  itemCount: controller
-                                      .state.formDatabinding.defaultForm
-                                      .firstWhere((element) =>
-                                          element.id ==
-                                          controller.state.currentQuestionId)
-                                      .options
-                                      ?.length,
+                                  itemCount: currentQuestion.options?.length,
                                   shrinkWrap: true,
                                   itemBuilder: (context, index) {
-                                    if (controller
-                                            .state.formDatabinding.defaultForm
-                                            .firstWhere((element) =>
-                                                element.id ==
-                                                controller
-                                                    .state.currentQuestionId)
-                                            .type ==
+                                    if (currentQuestion.type ==
                                         QuestionTypeEnum.multipleResponse) {
                                       return CheckboxListTile(
-                                        value: controller
-                                            .state
-                                            .answers[
-                                                state.currentQuestionId - 1]
-                                            .answers
-                                            .contains(
-                                          controller
-                                              .state.formDatabinding.defaultForm
-                                              .firstWhere((element) =>
-                                                  element.id ==
-                                                  controller
-                                                      .state.currentQuestionId)
-                                              .options![index]
-                                              .id,
+                                        value: currentAnswer.answers.contains(
+                                          currentQuestion.options![index].id,
                                         ),
                                         onChanged: (value) =>
                                             controller.onChangeCheckbox(
-                                                controller.state.formDatabinding
-                                                    .defaultForm
-                                                    .firstWhere((element) =>
-                                                        element.id ==
-                                                        controller.state
-                                                            .currentQuestionId)
-                                                    .options![index]
-                                                    .id,
-                                                controller.state.formDatabinding
-                                                    .defaultForm
-                                                    .firstWhere((element) =>
-                                                        element.id ==
-                                                        controller.state
-                                                            .currentQuestionId)
-                                                    .options![index]
-                                                    .keywords),
+                                                currentQuestion
+                                                    .options![index].id,
+                                                currentQuestion
+                                                    .options![index].keywords),
                                         subtitle: Row(
                                           children: [
                                             Visibility(
-                                                visible: controller
-                                                        .state
-                                                        .formDatabinding
-                                                        .defaultForm
-                                                        .firstWhere((element) =>
-                                                            element.id ==
-                                                            controller.state
-                                                                .currentQuestionId)
+                                                visible: currentQuestion
                                                         .options![index]
                                                         .optionTip !=
                                                     null,
                                                 child: Tooltip(
-                                                    message: controller
-                                                            .state
-                                                            .formDatabinding
-                                                            .defaultForm
-                                                            .firstWhere((element) =>
-                                                                element.id ==
-                                                                controller.state.currentQuestionId)
+                                                    message: currentQuestion
                                                             .options![index]
                                                             .optionTip ??
                                                         '',
-                                                    margin: const EdgeInsets.all(10),
-                                                    padding: const EdgeInsets.all(10),
-                                                    triggerMode: TooltipTriggerMode.tap,
-                                                    showDuration: const Duration(seconds: 30),
-                                                    child: Icon(Icons.info_outline))),
+                                                    margin:
+                                                        const EdgeInsets.all(
+                                                            10),
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            10),
+                                                    triggerMode:
+                                                        TooltipTriggerMode.tap,
+                                                    showDuration:
+                                                        const Duration(
+                                                            seconds: 30),
+                                                    child: Icon(
+                                                        Icons.info_outline))),
                                           ],
                                         ),
                                         title: Text(
-                                          controller
-                                              .state.formDatabinding.defaultForm
-                                              .firstWhere((element) =>
-                                                  element.id ==
-                                                  controller
-                                                      .state.currentQuestionId)
-                                              .options![index]
-                                              .option,
+                                          currentQuestion
+                                              .options![index].option,
                                           softWrap: true,
                                         ),
                                       );
                                     }
-                                    if (controller
-                                            .state.formDatabinding.defaultForm
-                                            .firstWhere((element) =>
-                                                element.id ==
-                                                controller
-                                                    .state.currentQuestionId)
-                                            .type ==
+                                    if (currentQuestion.type ==
                                         QuestionTypeEnum.multipleChoice) {
                                       return RadioListTile<int>(
-                                        title: Text(controller
-                                            .state.formDatabinding.defaultForm
-                                            .firstWhere((element) =>
-                                                element.id ==
-                                                controller
-                                                    .state.currentQuestionId)
-                                            .options![index]
-                                            .option),
-                                        value: controller
-                                            .state.formDatabinding.defaultForm
-                                            .firstWhere((element) =>
-                                                element.id ==
-                                                controller
-                                                    .state.currentQuestionId)
-                                            .options![index]
-                                            .id,
-                                        groupValue: controller
-                                            .state
-                                            .answers[
-                                                state.currentQuestionId - 1]
-                                            .answers
-                                            .first,
+                                        title: Text(currentQuestion
+                                            .options![index].option),
+                                        value:
+                                            currentQuestion.options![index].id,
+                                        groupValue: currentAnswer.answers.first,
                                         onChanged: (value) =>
                                             controller.onChangeRadio(
                                                 value,
-                                                controller.state.formDatabinding
-                                                    .defaultForm
-                                                    .firstWhere((element) =>
-                                                        element.id ==
-                                                        controller.state
-                                                            .currentQuestionId)
-                                                    .options![index]
-                                                    .keywords),
+                                                currentQuestion
+                                                    .options![index].keywords),
                                       );
                                     }
-                                    if (controller
-                                            .state.formDatabinding.defaultForm
-                                            .firstWhere((element) =>
-                                                element.id ==
-                                                controller
-                                                    .state.currentQuestionId)
-                                            .type ==
+                                    if (currentQuestion.type ==
                                         QuestionTypeEnum.text) {
                                       return TextField(
                                         minLines: 1,
@@ -306,19 +240,13 @@ class _FormScreenState extends State<FormScreen> {
                               width: 250,
                               child: ElevatedButton(
                                 onPressed: () {
-                                  controller
-                                              .state
-                                              .answers[
-                                                  state.currentQuestionId - 1]
-                                              .answers
-                                              .contains(0) ||
-                                          controller
-                                              .state
-                                              .answers[
-                                                  state.currentQuestionId - 1]
-                                              .answers
-                                              .isEmpty
-                                      ? null
+                                  currentAnswer.answers.contains(0) ||
+                                          currentAnswer.answers.isEmpty
+                                      ? controller.setState(
+                                          controller.state.copyWith(
+                                            loading: BaseLoadingState.error,
+                                          ),
+                                        )
                                       : controller.state.currentQuestionId == 35
                                           ? Navigator.of(context,
                                                   rootNavigator: true)
@@ -418,7 +346,7 @@ class _FormScreenState extends State<FormScreen> {
                                 ),
                               ),
                             ),
-                            const SizedBox(height: 50),
+                            const SizedBox(height: 85),
                           ],
                         ),
                       ),
