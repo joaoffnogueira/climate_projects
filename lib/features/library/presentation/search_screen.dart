@@ -42,7 +42,7 @@ class _SearchScreenState extends State<SearchScreen> {
         builder: (context, state, __) {
           return Scaffold(
             floatingActionButtonLocation:
-                FloatingActionButtonLocation.miniStartFloat,
+                FloatingActionButtonLocation.miniEndDocked,
             floatingActionButton: FloatingActionButton.small(
               onPressed: () {
                 _scrollController.animateTo(
@@ -259,6 +259,7 @@ class _SearchScreenState extends State<SearchScreen> {
                             ),
                           ),
                         ),
+                        const SizedBox(height: 40),
                       ],
                     ),
                   ),
