@@ -8,7 +8,7 @@ import '../../data/models/question_type_enum.dart';
 
 class FormDatabinding {
   TenseEnum questionTense = TenseEnum.future;
-  List<QuestionModel> defaultForm = [];
+  Map<int, QuestionModel> defaultForm = {};
   void changeTense(List<int> value) {
     if (value.first == 3) {
       questionTense = TenseEnum.past;
@@ -21,8 +21,8 @@ class FormDatabinding {
 
   FormDatabinding(TenseEnum questionTense) {
     this.questionTense;
-    defaultForm = [
-      QuestionModel(
+    defaultForm = {
+      QuestionTopicEnum.projectPhase.id: QuestionModel(
         id: QuestionTopicEnum.projectPhase.id,
         question: Localization.tr.question1,
         type: QuestionTypeEnum.multipleChoice,
@@ -36,7 +36,7 @@ class FormDatabinding {
           OptionsModel(id: 3, option: Localization.tr.option1_3),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.communityDiagnosis.id: QuestionModel(
         id: QuestionTopicEnum.communityDiagnosis.id,
         question: Localization.tr.question2,
         type: QuestionTypeEnum.multipleChoice,
@@ -49,7 +49,7 @@ class FormDatabinding {
               id: 2, option: Localization.tr.option2_2(questionTense.name)),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.whoConductedDiagnosis.id: QuestionModel(
         id: QuestionTopicEnum.whoConductedDiagnosis.id,
         question: Localization.tr.question3(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
@@ -76,7 +76,7 @@ class FormDatabinding {
               keywords: ['Participação', 'Engajamento']),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.diagnosisMethods.id: QuestionModel(
         id: QuestionTopicEnum.diagnosisMethods.id,
         question: Localization.tr.question4(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
@@ -94,7 +94,7 @@ class FormDatabinding {
           OptionsModel(id: 5, option: Localization.tr.option4_5),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.diagnosisFocus.id: QuestionModel(
         id: QuestionTopicEnum.diagnosisFocus.id,
         question: Localization.tr.question5(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
@@ -114,7 +114,7 @@ class FormDatabinding {
           OptionsModel(id: 4, option: Localization.tr.option5_4),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.diagnosisIncorporation.id: QuestionModel(
         id: QuestionTopicEnum.diagnosisIncorporation.id,
         question: Localization.tr.question6(questionTense.name),
         type: QuestionTypeEnum.multipleChoice,
@@ -127,7 +127,7 @@ class FormDatabinding {
               id: 3, option: Localization.tr.option6_3(questionTense.name)),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.projectParticipants.id: QuestionModel(
         id: QuestionTopicEnum.projectParticipants.id,
         question: Localization.tr.question7(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
@@ -158,7 +158,7 @@ class FormDatabinding {
               keywords: ['Participação', 'Engajamento']),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.intersectoralCollaboration.id: QuestionModel(
         id: QuestionTopicEnum.intersectoralCollaboration.id,
         question: Localization.tr.question8(questionTense.name),
         type: QuestionTypeEnum.multipleChoice,
@@ -170,7 +170,7 @@ class FormDatabinding {
           OptionsModel(id: 2, option: Localization.tr.option8_2),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.collaborationParticipants.id: QuestionModel(
         id: QuestionTopicEnum.collaborationParticipants.id,
         question: Localization.tr.question9(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
@@ -213,7 +213,7 @@ class FormDatabinding {
               keywords: ['Participação', 'Engajamento', 'Colaboração']),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.participationMethods.id: QuestionModel(
         id: QuestionTopicEnum.participationMethods.id,
         question: Localization.tr.question10(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
@@ -228,7 +228,7 @@ class FormDatabinding {
           OptionsModel(id: 5, option: Localization.tr.option10_5),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.climateEmergencyThemes.id: QuestionModel(
         id: QuestionTopicEnum.climateEmergencyThemes.id,
         question: Localization.tr.question11(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
@@ -255,7 +255,7 @@ class FormDatabinding {
               keywords: ['Complexidade']),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.projectDimensions.id: QuestionModel(
         id: QuestionTopicEnum.projectDimensions.id,
         question: Localization.tr.question12(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
@@ -298,7 +298,7 @@ class FormDatabinding {
               keywords: ['Complexidade', 'História']),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.politicalAspects.id: QuestionModel(
         id: QuestionTopicEnum.politicalAspects.id,
         question: Localization.tr.question13(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
@@ -312,7 +312,7 @@ class FormDatabinding {
           ]),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.economicAspects.id: QuestionModel(
         id: QuestionTopicEnum.economicAspects.id,
         question: Localization.tr.question14(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
@@ -339,7 +339,7 @@ class FormDatabinding {
           ),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.socialAspects.id: QuestionModel(
         id: QuestionTopicEnum.socialAspects.id,
         question: Localization.tr.question15(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
@@ -359,7 +359,7 @@ class FormDatabinding {
           ]),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.culturalAspects.id: QuestionModel(
         id: QuestionTopicEnum.culturalAspects.id,
         question: Localization.tr.question16(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
@@ -371,7 +371,7 @@ class FormDatabinding {
           OptionsModel(id: 3, option: Localization.tr.option16_3),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.ethicalAspects.id: QuestionModel(
         id: QuestionTopicEnum.ethicalAspects.id,
         question: Localization.tr.question17(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
@@ -384,7 +384,7 @@ class FormDatabinding {
               id: 2, option: Localization.tr.option17_2, keywords: ['Dilemas']),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.naturalAspects.id: QuestionModel(
         id: QuestionTopicEnum.naturalAspects.id,
         question: Localization.tr.question18(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
@@ -405,7 +405,7 @@ class FormDatabinding {
               ]),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.individualAspects.id: QuestionModel(
         id: QuestionTopicEnum.individualAspects.id,
         question: Localization.tr.question19(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
@@ -425,7 +425,7 @@ class FormDatabinding {
           ]),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.artisticAspects.id: QuestionModel(
         id: QuestionTopicEnum.artisticAspects.id,
         question: Localization.tr.question20(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
@@ -437,7 +437,7 @@ class FormDatabinding {
           OptionsModel(id: 3, option: Localization.tr.option20_3),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.historicalAspects.id: QuestionModel(
         id: QuestionTopicEnum.historicalAspects.id,
         question: Localization.tr.question21(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
@@ -449,7 +449,7 @@ class FormDatabinding {
           OptionsModel(id: 3, option: Localization.tr.option21_3),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.valuesAddressed.id: QuestionModel(
         id: QuestionTopicEnum.valuesAddressed.id,
         question: Localization.tr.question22(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
@@ -480,7 +480,7 @@ class FormDatabinding {
           OptionsModel(id: 9, option: Localization.tr.option22_9),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.prevailingEmotions.id: QuestionModel(
         id: QuestionTopicEnum.prevailingEmotions.id,
         question: Localization.tr.question23,
         type: QuestionTypeEnum.multipleResponse,
@@ -523,7 +523,7 @@ class FormDatabinding {
           ]),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.environmentalConnection.id: QuestionModel(
         id: QuestionTopicEnum.environmentalConnection.id,
         question: Localization.tr.question24(questionTense.name),
         type: QuestionTypeEnum.multipleChoice,
@@ -534,7 +534,7 @@ class FormDatabinding {
           OptionsModel(id: 2, option: Localization.tr.option24_2),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.howEnvironmentalConnection.id: QuestionModel(
         id: QuestionTopicEnum.howEnvironmentalConnection.id,
         question: Localization.tr.question25(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
@@ -556,7 +556,7 @@ class FormDatabinding {
           ]),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.toolsUsed.id: QuestionModel(
         id: QuestionTopicEnum.toolsUsed.id,
         question: Localization.tr.question26(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
@@ -574,7 +574,7 @@ class FormDatabinding {
           OptionsModel(id: 5, option: Localization.tr.option26_5),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.projectActivities.id: QuestionModel(
         id: QuestionTopicEnum.projectActivities.id,
         question: Localization.tr.question27(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
@@ -590,7 +590,7 @@ class FormDatabinding {
           OptionsModel(id: 5, option: Localization.tr.option27_5),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.knowledgeAreas.id: QuestionModel(
         id: QuestionTopicEnum.knowledgeAreas.id,
         question: Localization.tr.question28(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
@@ -647,7 +647,7 @@ class FormDatabinding {
           ]),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.integrationMethods.id: QuestionModel(
         id: QuestionTopicEnum.integrationMethods.id,
         question: Localization.tr.question29(questionTense.name),
         type: QuestionTypeEnum.multipleResponse,
@@ -666,7 +666,7 @@ class FormDatabinding {
               keywords: ['Integração']),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.specificProjectDifficulties.id: QuestionModel(
         id: QuestionTopicEnum.specificProjectDifficulties.id,
         question: Localization.tr.question30,
         type: QuestionTypeEnum.multipleResponse,
@@ -700,7 +700,7 @@ class FormDatabinding {
           ]),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.evaluationsConducted.id: QuestionModel(
         id: QuestionTopicEnum.evaluationsConducted.id,
         question: Localization.tr.question31(questionTense.name),
         type: QuestionTypeEnum.multipleChoice,
@@ -711,7 +711,7 @@ class FormDatabinding {
           OptionsModel(id: 2, option: Localization.tr.option31_2),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.selfEvaluation.id: QuestionModel(
         id: QuestionTopicEnum.selfEvaluation.id,
         question: Localization.tr.question32(questionTense.name),
         type: QuestionTypeEnum.multipleChoice,
@@ -722,7 +722,7 @@ class FormDatabinding {
           OptionsModel(id: 2, option: Localization.tr.option32_2),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.newIdeas.id: QuestionModel(
         id: QuestionTopicEnum.newIdeas.id,
         question: Localization.tr.question33,
         type: QuestionTypeEnum.multipleChoice,
@@ -731,7 +731,7 @@ class FormDatabinding {
           OptionsModel(id: 2, option: Localization.tr.option33_2),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.shareResponses.id: QuestionModel(
         id: QuestionTopicEnum.shareResponses.id,
         question: Localization.tr.question34,
         type: QuestionTypeEnum.multipleChoice,
@@ -740,12 +740,12 @@ class FormDatabinding {
           OptionsModel(id: 2, option: Localization.tr.option34_2),
         ],
       ),
-      QuestionModel(
+      QuestionTopicEnum.suggestions.id: QuestionModel(
         id: QuestionTopicEnum.suggestions.id,
         question: Localization.tr.question35,
         type: QuestionTypeEnum.text,
         options: [OptionsModel(id: 1, option: '')],
       ),
-    ];
+    };
   }
 }
