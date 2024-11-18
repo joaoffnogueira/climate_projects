@@ -65,11 +65,11 @@ class FormStore extends NotifyBaseStore<FormState> {
         break;
       case 12:
         areasLogic();
-        nextQuestionId = state
-            .formDatabinding
-            .defaultForm.values
-            .toList()[(state.formDatabinding.defaultForm.values.toList().indexWhere(
-                    (element) => element.id == state.currentQuestionId) +
+        nextQuestionId = state.formDatabinding.defaultForm.values
+            .toList()[(state.formDatabinding.defaultForm.values
+                    .toList()
+                    .indexWhere(
+                        (element) => element.id == state.currentQuestionId) +
                 1)]
             .id;
         break;
@@ -86,11 +86,11 @@ class FormStore extends NotifyBaseStore<FormState> {
         nextQuestionId = 35;
         break;
       default:
-        nextQuestionId = state
-            .formDatabinding
-            .defaultForm.values
-            .toList()[(state.formDatabinding.defaultForm.values.toList().indexWhere(
-                    (element) => element.id == state.currentQuestionId) +
+        nextQuestionId = state.formDatabinding.defaultForm.values
+            .toList()[(state.formDatabinding.defaultForm.values
+                    .toList()
+                    .indexWhere(
+                        (element) => element.id == state.currentQuestionId) +
                 1)]
             .id;
     }
@@ -165,21 +165,45 @@ class FormStore extends NotifyBaseStore<FormState> {
     for (final key in results.keys) {
       data.add({"word": key, "value": results[key]});
     }
-    _saveAnswers(data);
     return data;
   }
 
-  void _saveAnswers(List<Map> keywords) {
+  Set<String> getRecommendedKeywords(List<Map> keywords) {
+    final Set<String> recommendedKeywords = {};
+    for (var recommendedKeyword in state.formDatabinding.recomendedKeywords) {
+      if (!keywords
+          .map((element) => element['word'])
+          .toList()
+          .contains(recommendedKeyword)) {
+        recommendedKeywords.add(recommendedKeyword);
+      }
+    }
+    _saveAnswers(keywords, recommendedKeywords);
+    return recommendedKeywords;
+  }
+
+  void _saveAnswers(List<Map> keywords, Set<String> recommendedKeywords) {
     dbLocal.openConection();
-    dbLocal.add(HistoryModel(DateTime.now().toString(),
-        state.answers.toString(), _keywordsString(keywords)));
+    dbLocal.add(HistoryModel(
+        DateTime.now().toString(),
+        state.answers.join('/'),
+        _keywordsString(keywords),
+        _recommendedKeywordsString(recommendedKeywords)));
     dbLocal.close();
   }
 
   String _keywordsString(List<Map> keywords) {
     String result = '';
     for (final keyword in keywords) {
-      result += '${keyword['word']} ${keyword['value']} ';
+      result += '${keyword['word']}/${keyword['value']}/';
+    }
+    return result;
+  }
+
+  String _recommendedKeywordsString(Set<String> recommendedKeywords) {
+    String result = '';
+    for (final keyword in recommendedKeywords) {
+      result += '$keyword,';
     }
     return result;
   }
