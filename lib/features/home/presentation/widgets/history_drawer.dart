@@ -31,7 +31,7 @@ class _HistoryDrawerState extends State<HistoryDrawer> {
 
   List<Map> _keywordsFromString(String string) {
     final List<Map> result = [];
-    final parts = string.split('/');
+    final parts = string.split('@');
     for (var i = 0; i < parts.length - 1; i += 2) {
       result.add({"word": parts[i], "value": int.parse(parts[i + 1])});
     }
