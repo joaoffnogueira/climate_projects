@@ -7,4 +7,5 @@ class _HistoryModel {
   late String title;
   late String answers;
   late String keywords;
+  late String recommendedKeywords;
 }
