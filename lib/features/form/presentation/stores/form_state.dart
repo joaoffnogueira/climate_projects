@@ -35,7 +35,9 @@ class FormState extends BaseState {
           36,
           (index) => AnswerModel(
               questionId: index,
+              questionText: '',
               answers: [0],
+              answerTexts: List.empty(growable: true),
               keywords: List.empty(growable: true)),
           growable: false),
       questionTense: TenseEnum.future,
