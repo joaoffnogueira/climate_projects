@@ -256,6 +256,13 @@ class _FormScreenState extends State<FormScreen> {
                                                     ResultsScreen(
                                                   keywords:
                                                       controller.getResults(),
+                                                  recommendedKeywords: controller
+                                                      .getRecommendedKeywords(
+                                                          controller
+                                                              .getResults()),
+                                                  answersFromDb: controller
+                                                      .state.answers
+                                                      .join('/'),
                                                 ),
                                               ),
                                             )
