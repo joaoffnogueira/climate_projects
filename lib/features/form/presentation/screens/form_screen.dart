@@ -261,8 +261,7 @@ class _FormScreenState extends State<FormScreen> {
                                                           controller
                                                               .getResults()),
                                                   answersFromDb: controller
-                                                      .state.answers
-                                                      .join('/'),
+                                                      .getQuestionOptions(),
                                                 ),
                                               ),
                                             )
