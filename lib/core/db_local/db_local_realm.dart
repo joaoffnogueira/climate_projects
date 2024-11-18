@@ -6,7 +6,8 @@ class DbLocalRealm implements DbLocal {
   final LocalConfiguration configLocal;
 
   DbLocalRealm(List<SchemaObject> schemas)
-      : configLocal = Configuration.local(schemas);
+      : configLocal =
+            Configuration.local(schemas, shouldDeleteIfMigrationNeeded: true);
 
   late Realm realm;
 
