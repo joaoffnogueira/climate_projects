@@ -11,8 +11,16 @@ class FormStore extends NotifyBaseStore<FormState> {
   FormStore() : super(FormState.initial());
   final DbLocal dbLocal = DbLocalRealm([HistoryModel.schema]);
   void onChangeRadio(int? value, List<String>? keywords) {
+    state.answers[state.currentQuestionId - 1].questionText =
+        state.formDatabinding.defaultForm[state.currentQuestionId]!.question;
     state.answers[state.currentQuestionId - 1].answers.clear();
+    state.answers[state.currentQuestionId - 1].answerTexts.clear();
+    state.answers[state.currentQuestionId - 1].keywords.clear();
     state.answers[state.currentQuestionId - 1].answers.add(value!);
+    state.answers[state.currentQuestionId - 1].answerTexts.add(state
+        .formDatabinding.defaultForm[state.currentQuestionId]!.options!
+        .firstWhere((element) => element.id == value)
+        .option);
     state.answers[state.currentQuestionId - 1].keywords.addAll(keywords ?? []);
     setState(
       state.copyWith(
@@ -22,9 +30,15 @@ class FormStore extends NotifyBaseStore<FormState> {
   }
 
   void onChangeCheckbox(int value, List<String>? keywords) {
+    state.answers[state.currentQuestionId - 1].questionText =
+        state.formDatabinding.defaultForm[state.currentQuestionId]!.question;
     state.answers[state.currentQuestionId - 1].answers.remove(0);
     if (state.answers[state.currentQuestionId - 1].answers.contains(value)) {
       state.answers[state.currentQuestionId - 1].answers.remove(value);
+      state.answers[state.currentQuestionId - 1].answerTexts.remove(state
+          .formDatabinding.defaultForm[state.currentQuestionId]!.options!
+          .firstWhere((element) => element.id == value)
+          .option);
       state.answers[state.currentQuestionId - 1].keywords.removeWhere(
           (element) =>
               element ==
@@ -32,6 +46,10 @@ class FormStore extends NotifyBaseStore<FormState> {
                   .firstWhere((element) => element == keywords?.first));
     } else {
       state.answers[state.currentQuestionId - 1].answers.add(value);
+      state.answers[state.currentQuestionId - 1].answerTexts.add(state
+          .formDatabinding.defaultForm[state.currentQuestionId]!.options!
+          .firstWhere((element) => element.id == value)
+          .option);
       state.answers[state.currentQuestionId - 1].keywords
           .addAll(keywords ?? []);
     }
@@ -186,16 +204,16 @@ class FormStore extends NotifyBaseStore<FormState> {
     dbLocal.openConection();
     dbLocal.add(HistoryModel(
         DateTime.now().toString(),
-        state.answers.join('/'),
         _keywordsString(keywords),
-        _recommendedKeywordsString(recommendedKeywords)));
+        _recommendedKeywordsString(recommendedKeywords),
+        answers: getQuestionOptions()));
     dbLocal.close();
   }
 
   String _keywordsString(List<Map> keywords) {
     String result = '';
     for (final keyword in keywords) {
-      result += '${keyword['word']}/${keyword['value']}/';
+      result += '${keyword['word']}@${keyword['value']}@';
     }
     return result;
   }
@@ -206,6 +224,14 @@ class FormStore extends NotifyBaseStore<FormState> {
       result += '$keyword,';
     }
     return result;
+  }
+
+  Map<String, String> getQuestionOptions() {
+    final Map<String, String> questionOptions = {};
+    for (final answer in state.answers) {
+      questionOptions[answer.questionText] = answer.answerTexts.join(', ');
+    }
+    return questionOptions;
   }
 
   void dispose() {
