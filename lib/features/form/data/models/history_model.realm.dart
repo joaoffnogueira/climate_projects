@@ -13,10 +13,12 @@ class HistoryModel extends _HistoryModel
     String title,
     String answers,
     String keywords,
+    String recommendedKeywords,
   ) {
     RealmObjectBase.set(this, 'title', title);
     RealmObjectBase.set(this, 'answers', answers);
     RealmObjectBase.set(this, 'keywords', keywords);
+    RealmObjectBase.set(this, 'recommendedKeywords', recommendedKeywords);
   }
 
   HistoryModel._();
@@ -38,6 +40,13 @@ class HistoryModel extends _HistoryModel
   set keywords(String value) => RealmObjectBase.set(this, 'keywords', value);
 
   @override
+  String get recommendedKeywords =>
+      RealmObjectBase.get<String>(this, 'recommendedKeywords') as String;
+  @override
+  set recommendedKeywords(String value) =>
+      RealmObjectBase.set(this, 'recommendedKeywords', value);
+
+  @override
   Stream<RealmObjectChanges<HistoryModel>> get changes =>
       RealmObjectBase.getChanges<HistoryModel>(this);
 
@@ -54,6 +63,7 @@ class HistoryModel extends _HistoryModel
       'title': title.toEJson(),
       'answers': answers.toEJson(),
       'keywords': keywords.toEJson(),
+      'recommendedKeywords': recommendedKeywords.toEJson(),
     };
   }
 
@@ -65,11 +75,13 @@ class HistoryModel extends _HistoryModel
         'title': EJsonValue title,
         'answers': EJsonValue answers,
         'keywords': EJsonValue keywords,
+        'recommendedKeywords': EJsonValue recommendedKeywords,
       } =>
         HistoryModel(
           fromEJson(title),
           fromEJson(answers),
           fromEJson(keywords),
+          fromEJson(recommendedKeywords),
         ),
       _ => raiseInvalidEJson(ejson),
     };
@@ -83,6 +95,7 @@ class HistoryModel extends _HistoryModel
       SchemaProperty('title', RealmPropertyType.string, primaryKey: true),
       SchemaProperty('answers', RealmPropertyType.string),
       SchemaProperty('keywords', RealmPropertyType.string),
+      SchemaProperty('recommendedKeywords', RealmPropertyType.string),
     ]);
   }();
 
