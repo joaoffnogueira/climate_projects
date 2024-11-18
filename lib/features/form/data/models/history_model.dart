@@ -5,7 +5,7 @@ part 'history_model.realm.dart';
 class _HistoryModel {
   @PrimaryKey()
   late String title;
-  late String answers;
+  late Map<String, String> answers;
   late String keywords;
   late String recommendedKeywords;
 }

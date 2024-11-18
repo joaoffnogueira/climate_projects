@@ -11,12 +11,13 @@ class HistoryModel extends _HistoryModel
     with RealmEntity, RealmObjectBase, RealmObject {
   HistoryModel(
     String title,
-    String answers,
     String keywords,
-    String recommendedKeywords,
-  ) {
+    String recommendedKeywords, {
+    Map<String, String> answers = const {},
+  }) {
     RealmObjectBase.set(this, 'title', title);
-    RealmObjectBase.set(this, 'answers', answers);
+    RealmObjectBase.set<RealmMap<String>>(
+        this, 'answers', RealmMap<String>(answers));
     RealmObjectBase.set(this, 'keywords', keywords);
     RealmObjectBase.set(this, 'recommendedKeywords', recommendedKeywords);
   }
@@ -29,9 +30,11 @@ class HistoryModel extends _HistoryModel
   set title(String value) => RealmObjectBase.set(this, 'title', value);
 
   @override
-  String get answers => RealmObjectBase.get<String>(this, 'answers') as String;
+  RealmMap<String> get answers =>
+      RealmObjectBase.get<String>(this, 'answers') as RealmMap<String>;
   @override
-  set answers(String value) => RealmObjectBase.set(this, 'answers', value);
+  set answers(covariant RealmMap<String> value) =>
+      throw RealmUnsupportedSetError();
 
   @override
   String get keywords =>
@@ -73,15 +76,14 @@ class HistoryModel extends _HistoryModel
     return switch (ejson) {
       {
         'title': EJsonValue title,
-        'answers': EJsonValue answers,
         'keywords': EJsonValue keywords,
         'recommendedKeywords': EJsonValue recommendedKeywords,
       } =>
         HistoryModel(
           fromEJson(title),
-          fromEJson(answers),
           fromEJson(keywords),
           fromEJson(recommendedKeywords),
+          answers: fromEJson(ejson['answers']),
         ),
       _ => raiseInvalidEJson(ejson),
     };
@@ -93,7 +95,8 @@ class HistoryModel extends _HistoryModel
     return const SchemaObject(
         ObjectType.realmObject, HistoryModel, 'HistoryModel', [
       SchemaProperty('title', RealmPropertyType.string, primaryKey: true),
-      SchemaProperty('answers', RealmPropertyType.string),
+      SchemaProperty('answers', RealmPropertyType.string,
+          collectionType: RealmCollectionType.map),
       SchemaProperty('keywords', RealmPropertyType.string),
       SchemaProperty('recommendedKeywords', RealmPropertyType.string),
     ]);
