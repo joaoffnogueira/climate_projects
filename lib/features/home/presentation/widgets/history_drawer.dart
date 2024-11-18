@@ -31,7 +31,7 @@ class _HistoryDrawerState extends State<HistoryDrawer> {
 
   List<Map> _keywordsFromString(String string) {
     final List<Map> result = [];
-    final parts = string.split(' ');
+    final parts = string.split('/');
     for (var i = 0; i < parts.length - 1; i += 2) {
       result.add({"word": parts[i], "value": int.parse(parts[i + 1])});
     }
@@ -64,13 +64,18 @@ class _HistoryDrawerState extends State<HistoryDrawer> {
               final dateTime = DateTime.parse(history[index].title);
               return ListTile(
                 title: Text(
-                  '${dateTime.day}/${dateTime.month}/${dateTime.year} - ${dateTime.hour}:${dateTime.minute}',
+                  '${dateTime.day}/${dateTime.month}/${dateTime.year} - ${dateTime.hour}:${dateTime.minute < 10 ? '0' : ''}${dateTime.minute}',
                 ),
                 onTap: () {
                   Navigator.of(context, rootNavigator: true).push(
                     MaterialPageRoute(
                       builder: (context) => ResultsScreen(
                         keywords: _keywordsFromString(history[index].keywords),
+                        recommendedKeywords: history[index]
+                            .recommendedKeywords
+                            .split(',')
+                            .toSet(),
+                        answersFromDb: history[index].answers,
                       ),
                     ),
                   );
