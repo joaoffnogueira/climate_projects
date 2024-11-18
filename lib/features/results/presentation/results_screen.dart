@@ -14,7 +14,7 @@ import '../../library/presentation/library_screen.dart';
 class ResultsScreen extends StatefulWidget {
   final List<Map<dynamic, dynamic>> keywords;
   final Set<String> recommendedKeywords;
-  final String answersFromDb;
+  final Map<String, String> answersFromDb;
   const ResultsScreen(
       {required this.keywords,
       required this.recommendedKeywords,
@@ -159,32 +159,36 @@ class _ResultsScreenState extends State<ResultsScreen> {
                         ),
                       ],
                     ),
-                    Card(
-                      color: Theme.of(context)
-                          .colorScheme
-                          .surface
-                          .withOpacity(0.9),
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Column(
-                          children: [
-                            Text(
-                              'Temas recomendados para aprofundamento:',
-                              style: Theme.of(context).textTheme.bodyLarge,
-                            ),
-                            const SizedBox(height: 10),
-                            Text(
-                              widget.recommendedKeywords.join(', '),
-                              maxLines: 30,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium
-                                  ?.copyWith(
-                                    color: Theme.of(context).colorScheme.error,
-                                  ),
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
+                    Visibility(
+                      visible: widget.recommendedKeywords.isNotEmpty,
+                      child: Card(
+                        color: Theme.of(context)
+                            .colorScheme
+                            .surface
+                            .withOpacity(0.9),
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                'Temas recomendados para aprofundamento:',
+                                style: Theme.of(context).textTheme.bodyLarge,
+                              ),
+                              const SizedBox(height: 10),
+                              Text(
+                                widget.recommendedKeywords.join(', '),
+                                maxLines: 30,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium
+                                    ?.copyWith(
+                                      color:
+                                          Theme.of(context).colorScheme.error,
+                                    ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
