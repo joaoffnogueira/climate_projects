@@ -9,6 +9,7 @@ import '../../data/models/question_type_enum.dart';
 class FormDatabinding {
   TenseEnum questionTense = TenseEnum.future;
   Map<int, QuestionModel> defaultForm = {};
+  Set<String> recomendedKeywords = {};
   void changeTense(List<int> value) {
     if (value.first == 3) {
       questionTense = TenseEnum.past;
@@ -747,5 +748,12 @@ class FormDatabinding {
         options: [OptionsModel(id: 1, option: '')],
       ),
     };
+    defaultForm.forEach((key, value) {
+      value.options?.forEach((element) {
+        if (element.keywords != null) {
+          recomendedKeywords.addAll(element.keywords ?? []);
+        }
+      });
+    });
   }
 }
