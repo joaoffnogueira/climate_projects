@@ -1,4 +1,4 @@
-package dev.joaonogueira.climate_change_projects
+package dev.joaonogueira.emergeclima
 
 import io.flutter.embedding.android.FlutterActivity
 
