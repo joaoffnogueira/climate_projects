@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class ThemeHelper {
   int? theme;
   randomTheme() {
-    theme = Random().nextInt(10);
+    theme = Random().nextInt(13);
   }
 
   Color get primaryColor =>
@@ -87,6 +87,27 @@ class ThemeHelper {
       backgroundColor: const Color(0xff685CF3),
       image: 'assets/back10.jpg',
       credit: 'Energy Consumption - Tengwan Quek',
+    ),
+    MyThemes(
+      id: 10,
+      primaryColor: Colors.deepPurple,
+      backgroundColor: const Color(0xfff9eeb7),
+      image: 'assets/back11.jpg',
+      credit: 'Urgent Solutions - Gorka Gil',
+    ),
+    MyThemes(
+      id: 11,
+      primaryColor: Colors.indigo,
+      backgroundColor: const Color(0xfffbf4f2),
+      image: 'assets/back12.jpg',
+      credit: 'Care For Your Home - Ely Astorga',
+    ),
+    MyThemes(
+      id: 12,
+      primaryColor: Colors.indigoAccent,
+      backgroundColor: const Color(0xffefe5b4),
+      image: 'assets/back13.jpg',
+      credit: 'Carry The World Forward - Mattia Riami',
     ),
   ];
 }
