@@ -1,5 +1,6 @@
 import 'package:climate_change_projects/core/db_local/db_local.dart';
 import 'package:climate_change_projects/features/form/data/models/history_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart' show ScrollController, Curves;
 
 import '../../../../core/db_local/db_local_realm.dart';
@@ -99,6 +100,9 @@ class FormStore extends NotifyBaseStore<FormState> {
         }
         break;
       case 34:
+        if (state.answers[33].answers.contains(1)) {
+          sendForm();
+        }
         state.answers[34].answers.remove(0);
         state.answers[34].answers.add(1);
         nextQuestionId = 35;
@@ -232,6 +236,28 @@ class FormStore extends NotifyBaseStore<FormState> {
       questionOptions[answer.questionText] = answer.answerTexts.join(', ');
     }
     return questionOptions;
+  }
+
+  Future<void> sendForm() async {
+    final db = FirebaseFirestore.instance;
+    final Map<String, dynamic> form = {
+      "date": DateTime.now().toString(),
+    };
+    form.addAll(getQuestionOptions());
+    form.removeWhere((key, value) => key.isEmpty);
+    db.collection("form-answers").add(form);
+  }
+
+  Future<void> sendSuggestions() async {
+    if (state.finalSuggestionsController.text.isEmpty) {
+      return;
+    }
+    final db = FirebaseFirestore.instance;
+    final suggestion = {
+      "date": DateTime.now().toString(),
+      "suggestion": state.finalSuggestionsController.text,
+    };
+    db.collection("suggestions").add(suggestion);
   }
 
   void dispose() {
