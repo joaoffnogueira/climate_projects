@@ -226,6 +226,8 @@ class _FormScreenState extends State<FormScreen> {
                                     if (currentQuestion.type ==
                                         QuestionTypeEnum.text) {
                                       return TextField(
+                                        controller: controller
+                                            .state.finalSuggestionsController,
                                         minLines: 1,
                                         maxLines: 10,
                                       );
@@ -239,7 +241,7 @@ class _FormScreenState extends State<FormScreen> {
                             SizedBox(
                               width: 250,
                               child: ElevatedButton(
-                                onPressed: () {
+                                onPressed: () async {
                                   currentAnswer.answers.contains(0) ||
                                           currentAnswer.answers.isEmpty
                                       ? controller.setState(
@@ -248,23 +250,24 @@ class _FormScreenState extends State<FormScreen> {
                                           ),
                                         )
                                       : controller.state.currentQuestionId == 35
-                                          ? Navigator.of(context,
-                                                  rootNavigator: true)
-                                              .push(
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    ResultsScreen(
-                                                  keywords:
-                                                      controller.getResults(),
-                                                  recommendedKeywords: controller
-                                                      .getRecommendedKeywords(
-                                                          controller
-                                                              .getResults()),
-                                                  answersFromDb: controller
-                                                      .getQuestionOptions(),
-                                                ),
-                                              ),
-                                            )
+                                          ? controller.sendSuggestions().then(
+                                              (value) => Navigator.of(context,
+                                                          rootNavigator: true)
+                                                      .push(
+                                                    MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          ResultsScreen(
+                                                        keywords: controller
+                                                            .getResults(),
+                                                        recommendedKeywords: controller
+                                                            .getRecommendedKeywords(
+                                                                controller
+                                                                    .getResults()),
+                                                        answersFromDb: controller
+                                                            .getQuestionOptions(),
+                                                      ),
+                                                    ),
+                                                  ))
                                           : controller.state.tipsDatabinding
                                                   .tips.keys
                                                   .contains(controller
