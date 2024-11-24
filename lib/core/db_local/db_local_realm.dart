@@ -59,10 +59,10 @@ class DbLocalRealm implements DbLocal {
   @override
   T add<T extends RealmObject>(T object) {
     try {
-      if (realm.all<T>().length == 10) {
-        realm.delete(realm.all<T>().first);
-      }
       return realm.write(() {
+        if (realm.all<T>().length == 10) {
+          realm.delete(realm.all<T>().first);
+        }
         return realm.add(object);
       });
     } on RealmException {
