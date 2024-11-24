@@ -41,17 +41,19 @@ class SectionCard extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Icon(
                   icon,
                   size: iconSize,
                   color: Theme.of(context).colorScheme.primary,
                 ),
-                const SizedBox(height: 10),
                 Text(
                   title,
-                  style:
-                      titleStyle ?? Theme.of(context).textTheme.headlineSmall,
+                  style: titleStyle ??
+                      Theme.of(context).textTheme.bodyLarge?.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
                   textAlign: TextAlign.center,
                 ),
               ],
