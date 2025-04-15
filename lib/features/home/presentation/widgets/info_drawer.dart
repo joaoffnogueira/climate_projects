@@ -7,82 +7,100 @@ class InfoDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
     return Material(
-      child: SingleChildScrollView(
-        child: SizedBox(
-          width: size.width * 0.8,
-          height: size.height,
-          child: LicensePage(
-            applicationName: 'EmergeClima',
-            applicationVersion: 'Versão atual: 1.1.6+8',
-            applicationIcon: Column(
-              children: [
-                Text(
-                  'Baseado na pesquisa de Fernanda Gurgel Matakas, sob orientação das professoras Adriana Massaê Kataoka e Ana Lucia Suriani Affonso,',
-                  style: Theme.of(context).textTheme.bodyMedium,
-                  textAlign: TextAlign.center,
-                ),
-                Text(
-                  'Imagens de fundo: ArtistsForClimate.org',
-                  style: Theme.of(context).textTheme.bodySmall,
-                  textAlign: TextAlign.center,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Tooltip(
-                      message:
-                          'Laboratório de Educação Ambiental e Ecologia - UNICENTRO',
-                      child: Image.asset(
-                        'assets/lab.png',
-                        width: size.width * 0.25,
-                        filterQuality: FilterQuality.high,
-                      ),
+      child: SizedBox(
+        width: size.width * 0.9,
+        height: size.height,
+        child: LicensePage(
+          applicationName: 'EmergeClima',
+          applicationVersion: 'Versão atual: 1.1.7+9',
+          applicationIcon: Column(
+            children: [
+              Text(
+                'Este aplicativo foi construído para que professores possam refletir sobre o processo de planejamento e execução de um projeto que aborde o tema da Emergência Climática, convidando-os a responder um questionário investigativo. Além disso, disponibilizamos uma biblioteca de conteúdo com diferentes alternativas de reflexão para auxiliar no aprofundamento de seus conhecimentos referentes à Emergência Climática e às etapas para o planejamento de projetos pautados na Educação Ambiental. Dessa forma, o aplicativo EmergeClima se constitui como uma estratégia de planejamento de projetos e aulas.',
+                style: Theme.of(context).textTheme.bodyMedium,
+                textAlign: TextAlign.justify,
+              ),
+              Text(
+                'Baseado na pesquisa de Fernanda Gurgel Matakas, sob orientação das professoras Adriana Massaê Kataoka e Ana Lucia Suriani Affonso.',
+                style: Theme.of(context).textTheme.bodyMedium,
+                textAlign: TextAlign.justify,
+              ),
+              Text(
+                'Imagens de fundo: ArtistsForClimate.org',
+                style: Theme.of(context).textTheme.bodySmall,
+                textAlign: TextAlign.left,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Tooltip(
+                    message:
+                        'Laboratório de Educação Ambiental e Ecologia - UNICENTRO',
+                    child: Image.asset(
+                      'assets/lab.png',
+                      width: size.width * 0.20,
+                      filterQuality: FilterQuality.high,
                     ),
-                    Tooltip(
-                      message: 'Núcleo de Educação Ambiental - NEA/UNICENTRO',
-                      child: Image.asset(
-                        'assets/nea.png',
-                        width: size.width * 0.25,
-                        filterQuality: FilterQuality.high,
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Tooltip(
-                      message: 'Global Youth Climate Pact',
-                      child: Image.asset(
-                        'assets/gycp.png',
-                        width: size.width * 0.25,
-                        filterQuality: FilterQuality.high,
-                      ),
-                    ),
-                    Tooltip(
-                      message:
-                          'Novos Arranjos de Pesquisa e Inovação - Emergência Climática',
-                      child: Image.asset(
-                        'assets/napi.png',
-                        width: size.width * 0.25,
-                        filterQuality: FilterQuality.high,
-                      ),
-                    ),
-                  ],
-                ),
-                Tooltip(
-                  message: 'Universidade Estadual do Centro-Oeste - UNICENTRO',
-                  child: Image.asset(
-                    'assets/unicentro.png',
-                    width: size.width * 0.25,
-                    filterQuality: FilterQuality.high,
                   ),
-                ),
-              ],
-            ),
-            applicationLegalese:
-                'Desenvolvido por João Fernando Ferrari Nogueira (joaonogueira.dev)',
+                  Tooltip(
+                    message: 'Núcleo de Educação Ambiental - NEA/UNICENTRO',
+                    child: Image.asset(
+                      'assets/nea.png',
+                      width: size.width * 0.20,
+                      filterQuality: FilterQuality.high,
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Tooltip(
+                    message: 'Global Youth Climate Pact',
+                    child: Image.asset(
+                      'assets/gycp.png',
+                      width: size.width * 0.25,
+                      filterQuality: FilterQuality.high,
+                    ),
+                  ),
+                  Tooltip(
+                    message:
+                        'Novos Arranjos de Pesquisa e Inovação - Emergência Climática',
+                    child: Image.asset(
+                      'assets/napi.png',
+                      width: size.width * 0.25,
+                      filterQuality: FilterQuality.high,
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Tooltip(
+                    message:
+                        'Programa de Pós-Graduação em Ensino de Ciências Naturais e Matemática - PPGEN',
+                    child: Image.asset(
+                      'assets/ppgen.png',
+                      width: size.width * 0.15,
+                      filterQuality: FilterQuality.high,
+                    ),
+                  ),
+                  Tooltip(
+                    message:
+                        'Universidade Estadual do Centro-Oeste - UNICENTRO',
+                    child: Image.asset(
+                      'assets/unicentro.png',
+                      width: size.width * 0.20,
+                      filterQuality: FilterQuality.high,
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
+          applicationLegalese:
+              'Desenvolvido por João Fernando Ferrari Nogueira (joaonogueira.dev)',
         ),
       ),
     );
