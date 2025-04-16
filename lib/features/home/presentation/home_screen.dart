@@ -29,7 +29,8 @@ class _MyHomePageState extends State<MyHomePage> {
         automaticallyImplyLeading: false,
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
-        toolbarHeight: 65,
+        toolbarHeight: 67,
+        titleSpacing: 5,
         actions: [
           Column(
             children: [
@@ -39,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   _scaffoldKey.currentState!.openDrawer();
                 },
               ),
-              Text('Créditos', style: Theme.of(context).textTheme.bodySmall),
+              Text('Créditos', style: Theme.of(context).textTheme.labelSmall),
             ],
           ),
           const SizedBox(width: 10),
@@ -55,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   );
                 },
               ),
-              Text('Biblioteca', style: Theme.of(context).textTheme.bodySmall),
+              Text('Biblioteca', style: Theme.of(context).textTheme.labelSmall),
             ],
           ),
           const SizedBox(width: 10),
@@ -67,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   _scaffoldKey.currentState!.openEndDrawer();
                 },
               ),
-              Text('Histórico', style: Theme.of(context).textTheme.bodySmall),
+              Text('Histórico', style: Theme.of(context).textTheme.labelSmall),
             ],
           ),
           const SizedBox(width: 10),
@@ -82,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 SizedBox(
-                  width: 280,
+                  width: 310,
                   height: 60,
                   child: ElevatedButton(
                     onPressed: () {
