@@ -28,11 +28,11 @@ class BackgroundWidget extends StatelessWidget {
           ),
           child: Padding(
             padding:
-                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 65.0),
+                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 40.0),
             child: Text(
               credit,
               maxLines: 2,
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+              style: Theme.of(context).textTheme.labelSmall?.copyWith(
                     color: Theme.of(context).colorScheme.onPrimary,
                   ),
             ),
