@@ -9,7 +9,7 @@ class LibraryDatabinding {
     required this.categoryFilter,
   }) {
     suggestionsCategory = suggestions
-        .where((element) => element.category == categoryFilter)
+        .where((element) => element.category.contains(categoryFilter))
         .toList();
     filteredSuggestions = suggestionsCategory;
   }
@@ -36,7 +36,7 @@ class LibraryDatabinding {
       url: "https://tede.unicentro.br/jspui/handle/jspui/1455",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.project,
+      category: [SuggestionCategoryEnum.project],
     ),
     SuggestionModel(
       title: "Subsídios para práticas de educação em uma perspectiva crítica",
@@ -44,7 +44,7 @@ class LibraryDatabinding {
       url: "https://tede.unicentro.br/jspui/handle/jspui/1508",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.diagnosis,
+      category: [SuggestionCategoryEnum.diagnosis],
     ),
     SuggestionModel(
       title:
@@ -55,7 +55,7 @@ class LibraryDatabinding {
           "https://ddd.uab.cat/pub/edlc/edlc_a2017nEXTRA/52_-_A_utilizacao_do_Ve_Epistemologico_de_Gowin_no_ensino_de_ciencias_como.pdf",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.evaluation,
+      category: [SuggestionCategoryEnum.evaluation],
     ),
     SuggestionModel(
       title:
@@ -66,7 +66,7 @@ class LibraryDatabinding {
           "https://www.researchgate.net/publication/347885638_Cafe_avaliativo_uma_reflexao_a_respeito_da_avaliacao_formativa_na_educacao_basica",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.evaluation,
+      category: [SuggestionCategoryEnum.evaluation],
     ),
     SuggestionModel(
       title:
@@ -76,7 +76,7 @@ class LibraryDatabinding {
       url: "https://raco.cat/index.php/Ensenanza/article/view/307716/397692",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.evaluation,
+      category: [SuggestionCategoryEnum.evaluation],
     ),
     SuggestionModel(
       title:
@@ -86,7 +86,7 @@ class LibraryDatabinding {
           "https://unilogos.edu.eu/wp-content/uploads/2020/12/Por-uma-pratica-educativa-inovadora.pdf",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.evaluation,
+      category: [SuggestionCategoryEnum.evaluation],
     ),
     SuggestionModel(
       title:
@@ -95,7 +95,7 @@ class LibraryDatabinding {
       url: "https://rsdjournal.org/index.php/rsd/article/view/10197/9122",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.evaluation,
+      category: [SuggestionCategoryEnum.evaluation],
     ),
     SuggestionModel(
       title: "Tem um monstro na minha cozinha",
@@ -103,7 +103,7 @@ class LibraryDatabinding {
       url: "https://www.youtube.com/watch?v=gLZcafZ8t_4",
       type: SuggestionTypeEnum.video,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -112,7 +112,7 @@ class LibraryDatabinding {
       url: "https://www.youtube.com/watch?v=Mf2cxR9BWa4",
       type: SuggestionTypeEnum.video,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Você pode parar as mudanças climáticas?",
@@ -120,7 +120,7 @@ class LibraryDatabinding {
       url: "https://www.youtube.com/watch?v=MuSpZBVcxow",
       type: SuggestionTypeEnum.video,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Nós vamos RESOLVER as mudanças climáticas!",
@@ -128,7 +128,7 @@ class LibraryDatabinding {
       url: "https://www.youtube.com/watch?v=JcSgulAdofc",
       type: SuggestionTypeEnum.video,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -137,7 +137,7 @@ class LibraryDatabinding {
       url: "https://www.youtube.com/watch?v=hiuYS2w4D4k",
       type: SuggestionTypeEnum.video,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Esse é o maior desafio da humanidade",
@@ -145,7 +145,7 @@ class LibraryDatabinding {
       url: "https://www.youtube.com/watch?v=sgBF3XrJhvY",
       type: SuggestionTypeEnum.video,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Desmatamento no Brasil",
@@ -153,7 +153,7 @@ class LibraryDatabinding {
       url: "https://www.youtube.com/watch?v=hIS89KngbNE",
       type: SuggestionTypeEnum.video,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Como o Brasil produz tanto e tem tanta fome?",
@@ -161,7 +161,7 @@ class LibraryDatabinding {
       url: "https://www.youtube.com/watch?v=UmOXb5zLqJQ",
       type: SuggestionTypeEnum.video,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Proteger nosso planeta, combater as mudanças climáticas",
@@ -169,7 +169,7 @@ class LibraryDatabinding {
       url: "https://www.youtube.com/watch?v=l19WLdf_NLo",
       type: SuggestionTypeEnum.video,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "O Sal da Terra",
@@ -177,7 +177,10 @@ class LibraryDatabinding {
       url: "https://www.youtube.com/watch?v=72KeLv3RF7k",
       type: SuggestionTypeEnum.audio,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [
+        SuggestionCategoryEnum.climateEmergency,
+        SuggestionCategoryEnum.environmentalEducation
+      ],
     ),
     SuggestionModel(
       title: "Passarinhos",
@@ -185,7 +188,10 @@ class LibraryDatabinding {
       url: "https://www.youtube.com/watch?v=IJcmLHjjAJ4",
       type: SuggestionTypeEnum.audio,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [
+        SuggestionCategoryEnum.climateEmergency,
+        SuggestionCategoryEnum.environmentalEducation
+      ],
     ),
     SuggestionModel(
       title: "Tá?",
@@ -193,7 +199,10 @@ class LibraryDatabinding {
       url: "https://www.youtube.com/watch?v=FH1N_5MDUYI",
       type: SuggestionTypeEnum.audio,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [
+        SuggestionCategoryEnum.climateEmergency,
+        SuggestionCategoryEnum.environmentalEducation
+      ],
     ),
     SuggestionModel(
       title: "Hagua",
@@ -201,7 +210,10 @@ class LibraryDatabinding {
       url: "https://www.youtube.com/watch?v=QVzEZXASfms",
       type: SuggestionTypeEnum.audio,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [
+        SuggestionCategoryEnum.climateEmergency,
+        SuggestionCategoryEnum.environmentalEducation
+      ],
     ),
     SuggestionModel(
       title: "As Baleias",
@@ -209,7 +221,10 @@ class LibraryDatabinding {
       url: "https://www.youtube.com/watch?v=UqOFuGMPzRg",
       type: SuggestionTypeEnum.audio,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [
+        SuggestionCategoryEnum.climateEmergency,
+        SuggestionCategoryEnum.environmentalEducation
+      ],
     ),
     SuggestionModel(
       title: "Sobradinho",
@@ -217,7 +232,10 @@ class LibraryDatabinding {
       url: "https://www.youtube.com/watch?v=naxgLThFCsc",
       type: SuggestionTypeEnum.audio,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [
+        SuggestionCategoryEnum.climateEmergency,
+        SuggestionCategoryEnum.environmentalEducation
+      ],
     ),
     SuggestionModel(
       title: "Xote Ecológico",
@@ -225,7 +243,10 @@ class LibraryDatabinding {
       url: "https://www.youtube.com/watch?v=YSwq5mJwi38",
       type: SuggestionTypeEnum.audio,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [
+        SuggestionCategoryEnum.climateEmergency,
+        SuggestionCategoryEnum.environmentalEducation
+      ],
     ),
     SuggestionModel(
       title: "Herdeiros do Futuro",
@@ -233,7 +254,10 @@ class LibraryDatabinding {
       url: "https://www.youtube.com/watch?v=KtfRRIc5VME",
       type: SuggestionTypeEnum.audio,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [
+        SuggestionCategoryEnum.climateEmergency,
+        SuggestionCategoryEnum.environmentalEducation
+      ],
     ),
     SuggestionModel(
       title: "Absurdo",
@@ -241,7 +265,10 @@ class LibraryDatabinding {
       url: "https://www.youtube.com/watch?v=LhzRjDQ1RjU",
       type: SuggestionTypeEnum.audio,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [
+        SuggestionCategoryEnum.climateEmergency,
+        SuggestionCategoryEnum.environmentalEducation
+      ],
     ),
     SuggestionModel(
       title: "Planeta Azul",
@@ -249,7 +276,10 @@ class LibraryDatabinding {
       url: "https://www.youtube.com/watch?v=mAilU73D1YA",
       type: SuggestionTypeEnum.audio,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [
+        SuggestionCategoryEnum.climateEmergency,
+        SuggestionCategoryEnum.environmentalEducation
+      ],
     ),
     SuggestionModel(
       title: "Os Operadores Cognitivos do Pensamento Complexo",
@@ -258,7 +288,7 @@ class LibraryDatabinding {
           "http://escoladedialogo.com.br/escoladedialogo/index.php/biblioteca/artigos/operadores-cognitivos/",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -267,7 +297,7 @@ class LibraryDatabinding {
       url: "https://www.revistas.usp.br/eav/article/view/178752",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Guia para Justiça Climática",
@@ -276,7 +306,7 @@ class LibraryDatabinding {
           "https://educacao.cemaden.gov.br/midiateca/guia-para-justica-climatica/",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -286,7 +316,7 @@ class LibraryDatabinding {
           "https://educacao.cemaden.gov.br/midiateca/seguranca-hidrica-emergencia-climatica-governanca-e-vulnerabilidade-social/",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Mudanças climáticas e a sociedade",
@@ -295,7 +325,7 @@ class LibraryDatabinding {
           "https://educacao.cemaden.gov.br/midiateca/mudancas-climaticas-e-a-sociedade/",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -305,7 +335,7 @@ class LibraryDatabinding {
           "https://educacao.cemaden.gov.br/midiateca/educacion-para-el-cambio-climatico-educar-sobre-el-clima-o-para-el-cambio/",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -315,7 +345,7 @@ class LibraryDatabinding {
           "https://educacao.cemaden.gov.br/midiateca/mudancas-climaticas-saude-e-educacao-ambiental-como-politica-publica-em-tempos-de-crise-socioambiental/",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Glossário da Justiça Climática",
@@ -324,7 +354,7 @@ class LibraryDatabinding {
           "https://educacao.cemaden.gov.br/midiateca/glossario-de-justica-climatica/",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Glossário Climático para jovens",
@@ -333,7 +363,7 @@ class LibraryDatabinding {
           "https://educacao.cemaden.gov.br/midiateca/glossario-climatico-para-jovens/",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Soberania Alimentar: Uma resposta às mudanças climáticas",
@@ -342,7 +372,7 @@ class LibraryDatabinding {
           "https://educacao.cemaden.gov.br/midiateca/soberania-alimentar-uma-resposta-as-mudancas-climaticas/",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Quem precisa de justiça climática no Brasil?",
@@ -351,7 +381,7 @@ class LibraryDatabinding {
           "https://educacao.cemaden.gov.br/midiateca/quem-precisa-de-justica-climatica-no-brasil/",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Racismo Ambiental e Emergências Climáticas no Brasil",
@@ -360,7 +390,7 @@ class LibraryDatabinding {
           "https://educacao.cemaden.gov.br/midiateca/racismo-ambiental-e-emergencias-climaticas-no-brasil/",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -370,7 +400,7 @@ class LibraryDatabinding {
           "https://educacao.cemaden.gov.br/midiateca/temas-atuais-em-mudancas-climaticas-para-os-ensinos-fundamental-e-medio-2/",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -380,7 +410,7 @@ class LibraryDatabinding {
           "https://www.livrosabertos.abcd.usp.br/portaldelivrosUSP/catalog/book/711",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -390,7 +420,7 @@ class LibraryDatabinding {
           "https://educacao.cemaden.gov.br/midiateca/conhece-e-valoriza-as-alteracoes-climaticas-propostas-para-trabalhar-em-grupo/",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -400,7 +430,7 @@ class LibraryDatabinding {
           "https://repositorio.fgv.br/items/e9707cf2-d857-4003-8927-ed48b22ec813",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Relatório Síntese IPCC 2023",
@@ -409,7 +439,7 @@ class LibraryDatabinding {
           "https://educacao.cemaden.gov.br/midiateca/relatorio-sintese-do-sexto-relatorio-de-avaliacao-do-ipcc/",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -419,7 +449,7 @@ class LibraryDatabinding {
           "https://www.formaeducacional.com.br/2024/07/vamos-conhecer-nosso-planeta-as.html",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Glossário climático",
@@ -428,7 +458,7 @@ class LibraryDatabinding {
           "https://climainfo.org.br/wp-content/uploads/2022/06/GlossarioClimaInfo_V3.pptx.pdf",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -438,7 +468,7 @@ class LibraryDatabinding {
           "https://educacao.cemaden.gov.br/midiateca/guia-para-planos-municipais-de-reducao-de-riscos/",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Mudanças do clima: Tudo o que você queria e não queria saber",
@@ -447,7 +477,7 @@ class LibraryDatabinding {
           "https://educacao.cemaden.gov.br/midiateca/mudancas-do-clima-tudo-o-que-voce-queria-e-nao-queria-saber/",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Educação em clima de riscos de desastres",
@@ -456,7 +486,7 @@ class LibraryDatabinding {
           "https://educacao.cemaden.gov.br/midiateca/educacao-em-clima-de-riscos-de-desastres-2/",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -466,7 +496,7 @@ class LibraryDatabinding {
           "https://educacao.cemaden.gov.br/midiateca/educacao-ambiental-mudancas-do-clima-e-reducao-de-riscos-de-desastres-esperancas-e-vida-em-tempos-de-capitaloceno/",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -476,7 +506,7 @@ class LibraryDatabinding {
           "https://educacao.cemaden.gov.br/midiateca/hq-educacaoparticipacao-uma-equacao-para-reducao-do-risco-de-desastres/",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Simulação da Ação Climática",
@@ -486,7 +516,7 @@ class LibraryDatabinding {
           "https://www.climateinteractive.org/pt/simulacao-da-acao-climatica/#:~:text=Este%20jogo%20%C3%A9%20recurso%20l%C3%BAdico,leia%20o%20Manual%20do%20Facilitator.&text=Os%20folhetos%20de%20instru%C3%A7%C3%B5es%20do,fun%C3%A7%C3%B5es%20atribu%C3%ADdas%20aos%20seus%20personagens",
       type: SuggestionTypeEnum.game,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Cartas Contra o Planeta",
@@ -496,7 +526,7 @@ class LibraryDatabinding {
           "https://tapioca.ird.fr/cartas-contra-o-planeta-um-game-educacional-para-aprender-sobre-mudancas-climaticas-globais/",
       type: SuggestionTypeEnum.game,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Survive the Century",
@@ -505,7 +535,7 @@ class LibraryDatabinding {
       url: "https://survivethecentury.net/",
       type: SuggestionTypeEnum.game,
       lang: SuggestionLangEnum.en,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "The Climate Game – Can you reach net zero by 2050?",
@@ -514,7 +544,7 @@ class LibraryDatabinding {
       url: "https://ig.ft.com/climate-game/",
       type: SuggestionTypeEnum.game,
       lang: SuggestionLangEnum.en,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Na Trilha do Risco",
@@ -523,7 +553,7 @@ class LibraryDatabinding {
       url: "https://educacao.cemaden.gov.br/midiateca/jogo-na-trilha-do-risco/",
       type: SuggestionTypeEnum.game,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Quem?",
@@ -532,7 +562,7 @@ class LibraryDatabinding {
       url: "https://educacao.cemaden.gov.br/midiateca/jogo-quem/",
       type: SuggestionTypeEnum.game,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Minitrunfo",
@@ -541,7 +571,7 @@ class LibraryDatabinding {
       url: "https://educacao.cemaden.gov.br/midiateca/jogo-minitrunfo/",
       type: SuggestionTypeEnum.game,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -551,7 +581,7 @@ class LibraryDatabinding {
           "https://umsoplaneta.globo.com/sociedade/noticia/2024/03/06/mudanca-climatica-faz-mulheres-e-familias-mais-pobres-de-zonas-rurais-sofrem-perdas-economicas-maiores-aponta-fao.ghtml",
       type: SuggestionTypeEnum.news,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -561,7 +591,7 @@ class LibraryDatabinding {
           "https://veja.abril.com.br/coluna/maquiavel/crise-climatica-brasil-tem-mais-de-900-municipios-em-estado-de-emergencia",
       type: SuggestionTypeEnum.news,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -571,7 +601,7 @@ class LibraryDatabinding {
           "https://portal.fiocruz.br/noticia/estudo-alerta-sobre-potenciais-riscos-saude-causados-pelo-estresse-termico",
       type: SuggestionTypeEnum.news,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Fatos sobre a Emergência Climática",
@@ -580,7 +610,7 @@ class LibraryDatabinding {
           "https://www.unep.org/pt-br/explore-topics/climate-change/fatos-sobre-emergencia-climatica",
       type: SuggestionTypeEnum.news,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -590,7 +620,7 @@ class LibraryDatabinding {
           "https://umsoplaneta.globo.com/sociedade/noticia/2024/03/09/como-as-cidades-estao-se-adaptando-para-enfrentar-a-crise-climatica.ghtml",
       type: SuggestionTypeEnum.news,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Impacto das mudanças climáticas na biodiversidade brasileira",
@@ -599,7 +629,7 @@ class LibraryDatabinding {
           "https://www.correiobraziliense.com.br/opiniao/2024/03/6819366-impacto-das-mudancas-climaticas-na-biodiversidade-brasileira.html#google_vignette",
       type: SuggestionTypeEnum.news,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -609,7 +639,7 @@ class LibraryDatabinding {
           "https://climainfo.org.br/2024/03/18/crescimento-da-dengue-esta-relacionado-com-desmatamento-e-crise-climatica-diz-estudo-da-fiocruz/",
       type: SuggestionTypeEnum.news,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -619,7 +649,7 @@ class LibraryDatabinding {
           "https://umsoplaneta.globo.com/clima/noticia/2024/05/19/adaptacao-das-cidades-a-crise-climatica-exige-mudanca-de-paradigma.ghtml",
       type: SuggestionTypeEnum.news,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -629,7 +659,7 @@ class LibraryDatabinding {
           "https://globorural.globo.com/entrevista/noticia/2024/06/producao-regenerativa-e-o-caminho-para-o-agro-combater-as-mudancas-climaticas-diz-pesquisador.ghtml",
       type: SuggestionTypeEnum.news,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Seca e vegetação rasteira podem ser o novo normal da Amazônia",
@@ -638,7 +668,7 @@ class LibraryDatabinding {
           "https://www.metropoles.com/brasil/seca-e-vegetacao-rasteira-podem-ser-o-novo-normal-da-amazonia",
       type: SuggestionTypeEnum.news,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -648,7 +678,7 @@ class LibraryDatabinding {
           "https://climainfo.org.br/2024/10/13/brasil-em-chamas-area-queimada-entre-janeiro-e-setembro-cresceu-150/",
       type: SuggestionTypeEnum.news,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -658,7 +688,7 @@ class LibraryDatabinding {
           "https://climainfo.org.br/2024/10/10/gas-liquefeito-tem-grande-papel-negativo-para-as-mudancas-climaticas-mostra-estudo/",
       type: SuggestionTypeEnum.news,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "A urgência e os desafios da transição energética justa",
@@ -667,7 +697,7 @@ class LibraryDatabinding {
           "https://climainfo.org.br/2024/10/08/a-urgencia-e-os-desafios-da-transicao-energetica-justa/",
       type: SuggestionTypeEnum.news,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -677,7 +707,7 @@ class LibraryDatabinding {
           "https://climainfo.org.br/2024/10/07/2023-foi-o-ano-mais-seco-para-os-rios-do-planeta-em-30-anos-mostra-a-omm/",
       type: SuggestionTypeEnum.news,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -687,7 +717,7 @@ class LibraryDatabinding {
           "https://climainfo.org.br/2024/10/07/crise-climatica-derrete-geleiras-dos-alpes-e-faz-suica-e-italia-alterarem-fronteira/",
       type: SuggestionTypeEnum.news,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Ritmo de aquecimento dos oceanos quase duplicou desde 2005",
@@ -696,7 +726,7 @@ class LibraryDatabinding {
           "https://climainfo.org.br/2024/10/01/ritmo-de-aquecimento-dos-oceanos-quase-duplicou-desde-2005/",
       type: SuggestionTypeEnum.news,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -706,7 +736,7 @@ class LibraryDatabinding {
           "https://climainfo.org.br/2024/10/15/apagao-em-sp-mostra-incompetencia-do-poder-publico-e-das-concessionarias-em-lidar-com-clima-extremo/",
       type: SuggestionTypeEnum.news,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -716,7 +746,7 @@ class LibraryDatabinding {
           "https://climainfo.org.br/2024/09/30/transicao-energetica-reino-unido-fecha-sua-ultima-usina-termica-a-carvao/",
       type: SuggestionTypeEnum.news,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -726,7 +756,7 @@ class LibraryDatabinding {
           "https://climainfo.org.br/2024/09/25/setembro-amarelo-e-possivel-ter-saude-mental-em-um-planeta-doente/",
       type: SuggestionTypeEnum.news,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -736,7 +766,7 @@ class LibraryDatabinding {
           "https://climainfo.org.br/2024/09/16/brasil-em-chamas-2-onde-o-clima-extremo-encontra-o-crime-extremo/",
       type: SuggestionTypeEnum.news,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title:
@@ -746,7 +776,7 @@ class LibraryDatabinding {
           "https://climainfo.org.br/2024/09/10/brasil-e-o-2o-pais-do-mundo-onde-mais-se-matou-defensores-ambientais-em-2023/",
       type: SuggestionTypeEnum.news,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Por que gênero e clima?",
@@ -755,7 +785,7 @@ class LibraryDatabinding {
       url: "https://generoeclima.oc.eco.br/infografico-porque-genero-e-clima/",
       type: SuggestionTypeEnum.image,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
     SuggestionModel(
       title: "Dra. Marina Hirota: Mudanças Climáticas e Eventos Extremos",
@@ -763,7 +793,10 @@ class LibraryDatabinding {
       url: "https://www.youtube.com/watch?v=57LKlCF4KEo",
       type: SuggestionTypeEnum.audio,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.climateEmergency,
+      category: [
+        SuggestionCategoryEnum.climateEmergency,
+        SuggestionCategoryEnum.environmentalEducation
+      ],
     ),
     SuggestionModel(
       title: "Diagnóstico Rural Participativo (DRP)",
@@ -773,7 +806,7 @@ class LibraryDatabinding {
           "http://jararaca.ufsm.br/websites/deaer/download/VIVIEN/Texto01/ManualDATER.pdf",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.diagnosis,
+      category: [SuggestionCategoryEnum.diagnosis],
     ),
     SuggestionModel(
       title: "Captação de Projetos de Temática Ambiental (CAPTA)",
@@ -782,7 +815,7 @@ class LibraryDatabinding {
       url: "https://capta.org.br/",
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
-      category: SuggestionCategoryEnum.project,
+      category: [SuggestionCategoryEnum.project],
     ),
   ];
 }
