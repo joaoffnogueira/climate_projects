@@ -51,7 +51,7 @@ class _ResultsScreenState extends State<ResultsScreen> {
                       color: Theme.of(context)
                           .colorScheme
                           .surface
-                          .withOpacity(0.9),
+                          .withValues(alpha: 0.9),
                       child: Column(
                         children: [
                           Text(
@@ -165,7 +165,7 @@ class _ResultsScreenState extends State<ResultsScreen> {
                         color: Theme.of(context)
                             .colorScheme
                             .surface
-                            .withOpacity(0.9),
+                            .withValues(alpha: 0.9),
                         child: Padding(
                           padding: const EdgeInsets.all(16.0),
                           child: Column(
@@ -196,7 +196,7 @@ class _ResultsScreenState extends State<ResultsScreen> {
                       color: Theme.of(context)
                           .colorScheme
                           .surface
-                          .withOpacity(0.9),
+                          .withValues(alpha: 0.9),
                       child: Padding(
                         padding: const EdgeInsets.all(16.0),
                         child: Column(
