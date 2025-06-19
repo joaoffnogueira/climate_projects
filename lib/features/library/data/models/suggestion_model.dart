@@ -8,7 +8,7 @@ class SuggestionModel {
   final String url;
   final SuggestionTypeEnum type;
   final SuggestionLangEnum lang;
-  final SuggestionCategoryEnum category;
+  final List<SuggestionCategoryEnum> category;
 
   SuggestionModel({
     required this.title,
