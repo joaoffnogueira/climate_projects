@@ -40,6 +40,19 @@ class _LibraryScreenState extends State<LibraryScreen> {
                         Navigator.of(context, rootNavigator: true).push(
                           MaterialPageRoute(
                             builder: (context) => const SearchScreen(
+                              categoryFilter: SuggestionCategoryEnum.evaluation,
+                            ),
+                          ),
+                        );
+                      },
+                      title: 'Avaliação',
+                      icon: Icons.checklist_rounded,
+                    ),
+                    SectionCard(
+                      onPressed: () {
+                        Navigator.of(context, rootNavigator: true).push(
+                          MaterialPageRoute(
+                            builder: (context) => const SearchScreen(
                               categoryFilter: SuggestionCategoryEnum.diagnosis,
                             ),
                           ),
@@ -53,13 +66,15 @@ class _LibraryScreenState extends State<LibraryScreen> {
                         Navigator.of(context, rootNavigator: true).push(
                           MaterialPageRoute(
                             builder: (context) => const SearchScreen(
-                              categoryFilter: SuggestionCategoryEnum.project,
+                              categoryFilter:
+                                  SuggestionCategoryEnum.environmentalEducation,
                             ),
                           ),
                         );
                       },
-                      title: 'Projeto',
-                      icon: Icons.note_alt_rounded,
+                      title: 'Educação Ambiental',
+                      icon: Icons.emoji_nature_outlined,
+                      iconSize: 55,
                     ),
                     SectionCard(
                       onPressed: () {
@@ -81,28 +96,13 @@ class _LibraryScreenState extends State<LibraryScreen> {
                         Navigator.of(context, rootNavigator: true).push(
                           MaterialPageRoute(
                             builder: (context) => const SearchScreen(
-                              categoryFilter: SuggestionCategoryEnum.evaluation,
+                              categoryFilter: SuggestionCategoryEnum.project,
                             ),
                           ),
                         );
                       },
-                      title: 'Avaliação',
-                      icon: Icons.checklist_rounded,
-                    ),
-                    SectionCard(
-                      onPressed: () {
-                        Navigator.of(context, rootNavigator: true).push(
-                          MaterialPageRoute(
-                            builder: (context) => const SearchScreen(
-                              categoryFilter:
-                                  SuggestionCategoryEnum.environmentalEducation,
-                            ),
-                          ),
-                        );
-                      },
-                      title: 'Educação Ambiental',
-                      icon: Icons.emoji_nature_outlined,
-                      iconSize: 55,
+                      title: 'Projeto',
+                      icon: Icons.note_alt_rounded,
                     ),
                   ],
                 ),
