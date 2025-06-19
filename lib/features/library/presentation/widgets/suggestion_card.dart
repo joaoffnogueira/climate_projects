@@ -49,11 +49,25 @@ class SuggestionCard extends StatelessWidget {
         color: Theme.of(context).colorScheme.surface.withValues(alpha: 0.9),
         child: ListTile(
           isThreeLine: true,
-          title: Text(title),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Flexible(child: Text(title)),
+              IconButton(
+                icon: const Icon(Icons.open_in_new_rounded),
+                onPressed: () {
+                  open();
+                },
+              ),
+            ],
+          ),
           subtitle: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(subtitle),
+              Text(
+                subtitle,
+                textAlign: TextAlign.justify,
+              ),
               Row(
                 children: [
                   Icon(icon),
@@ -65,12 +79,6 @@ class SuggestionCard extends StatelessWidget {
                 ],
               ),
             ],
-          ),
-          trailing: IconButton(
-            icon: const Icon(Icons.open_in_new_rounded),
-            onPressed: () {
-              open();
-            },
           ),
         ),
       ),
