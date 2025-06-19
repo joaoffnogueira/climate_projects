@@ -2,7 +2,7 @@ enum SuggestionTypeEnum {
   all,
   text,
   news,
-  image,
+  site,
   video,
   book,
   audio,

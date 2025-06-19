@@ -29,7 +29,7 @@ class SuggestionCard extends StatelessWidget {
         icon = Icons.music_note_rounded;
       case SuggestionTypeEnum.video:
         icon = Icons.video_collection_rounded;
-      case SuggestionTypeEnum.image:
+      case SuggestionTypeEnum.site:
         icon = Icons.web_asset_rounded;
       case SuggestionTypeEnum.game:
         icon = Icons.videogame_asset_rounded;

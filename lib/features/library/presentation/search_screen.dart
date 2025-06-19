@@ -173,10 +173,10 @@ class _SearchScreenState extends State<SearchScreen> {
                                         label: Icon(Icons.web_asset_rounded),
                                         labelPadding: EdgeInsets.all(0),
                                         selected: controller.state.typeFilter ==
-                                            SuggestionTypeEnum.image,
+                                            SuggestionTypeEnum.site,
                                         onSelected: (value) =>
                                             controller.setTypeFilter(
-                                                SuggestionTypeEnum.image),
+                                                SuggestionTypeEnum.site),
                                         tooltip: 'Site',
                                       ),
                                       ChoiceChip(
