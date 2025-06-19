@@ -43,7 +43,7 @@ class _HistoryDrawerState extends State<HistoryDrawer> {
     final size = MediaQuery.sizeOf(context);
     return Material(
       child: SizedBox(
-        width: size.width * 0.55,
+        width: size.width * 0.6,
         height: size.height,
         child: Scaffold(
           appBar: AppBar(
