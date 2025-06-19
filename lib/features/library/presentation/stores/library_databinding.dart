@@ -783,7 +783,7 @@ class LibraryDatabinding {
       subtitle:
           "O infográfico “Por que gênero e clima?” foi construído coletivamente pelo Grupo de Trabalho em Gênero e Clima do Observatório do Clima. O material apresenta informações sobre como o impacto da mudança do clima é sentido de forma diferente pelas mulheres. Apresenta, também, que as mulheres estão pouco representadas nos espaços de tomadas de decisões. Apesar disso, as mulheres já contribuem fortemente para o enfrentamento da emergência climática, mas o reconhecimento é pouco.",
       url: "https://generoeclima.oc.eco.br/infografico-porque-genero-e-clima/",
-      type: SuggestionTypeEnum.image,
+      type: SuggestionTypeEnum.site,
       lang: SuggestionLangEnum.pt,
       category: [SuggestionCategoryEnum.climateEmergency],
     ),
@@ -816,6 +816,61 @@ class LibraryDatabinding {
       type: SuggestionTypeEnum.text,
       lang: SuggestionLangEnum.pt,
       category: [SuggestionCategoryEnum.project],
+    ),
+    SuggestionModel(
+      title: "Central da COP",
+      subtitle:
+          "O Site “Central da COP” apresenta informações sobre o clima e a COP utilizando linguagem de futebol.",
+      url: "https://centraldacop.oc.eco.br/",
+      type: SuggestionTypeEnum.site,
+      lang: SuggestionLangEnum.pt,
+      category: [SuggestionCategoryEnum.climateEmergency],
+    ),
+    SuggestionModel(
+      title: "Plataforma Adapta Brasil",
+      subtitle:
+          "Apresenta índices e indicadores de risco de impactos das mudanças climáticas no Brasil, integrados em uma única plataforma.",
+      url: "https://sistema.adaptabrasil.mcti.gov.br/",
+      type: SuggestionTypeEnum.site,
+      lang: SuggestionLangEnum.pt,
+      category: [SuggestionCategoryEnum.climateEmergency],
+    ),
+    SuggestionModel(
+      title: "Curso de Formação: Educação Ambiental e Crise Climática",
+      subtitle: "Youtube",
+      url:
+          "https://www.youtube.com/watch?v=C7x24nF7LIw&list=PLiQ8tMdXCiXLTNCWhVB8iFj8hffTSU0a1",
+      type: SuggestionTypeEnum.video,
+      lang: SuggestionLangEnum.pt,
+      category: [SuggestionCategoryEnum.climateEmergency],
+    ),
+    SuggestionModel(
+      title: "ONU confirma 2024 como o ano mais quente já registrado",
+      subtitle: "Nações Unidas Brasil",
+      url:
+          "https://brasil.un.org/pt-br/287173-onu-confirma-2024-como-o-ano-mais-quente-j%C3%A1-registrado-com-cerca-de-155%C2%B0c-acima-dos-n%C3%ADveis",
+      type: SuggestionTypeEnum.news,
+      lang: SuggestionLangEnum.pt,
+      category: [SuggestionCategoryEnum.climateEmergency],
+    ),
+    SuggestionModel(
+      title: "Corrida da Herpetofauna contra as mudanças climáticas",
+      subtitle:
+          "Jogo de tabuleiro onde os jogadores aprendem, de forma interativa, as relações entre ações humanas, mudanças climáticas e impactos na biodiversidade, respondendo perguntas, participando de desafios e buscando a colaboração entre todos para salvar as espécies da extinção e garantir a conservação do Planeta Terra.",
+      url: "https://repositorio.inpa.gov.br/handle/1/39612",
+      type: SuggestionTypeEnum.game,
+      lang: SuggestionLangEnum.pt,
+      category: [SuggestionCategoryEnum.climateEmergency],
+    ),
+    SuggestionModel(
+      title: "Simulação de Efeito Estufa",
+      subtitle:
+          "Utilize o simulador PhET para ver como a luz e os gases de efeito estufa determinam a temperatura do planeta.",
+      url:
+          "https://www.energyeducation.ca/encyclopedia/Earth_Temperature_without_GHGs",
+      type: SuggestionTypeEnum.game,
+      lang: SuggestionLangEnum.en,
+      category: [SuggestionCategoryEnum.climateEmergency],
     ),
   ];
 }
