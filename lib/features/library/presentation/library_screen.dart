@@ -89,6 +89,21 @@ class _LibraryScreenState extends State<LibraryScreen> {
                       title: 'Avaliação',
                       icon: Icons.checklist_rounded,
                     ),
+                    SectionCard(
+                      onPressed: () {
+                        Navigator.of(context, rootNavigator: true).push(
+                          MaterialPageRoute(
+                            builder: (context) => const SearchScreen(
+                              categoryFilter:
+                                  SuggestionCategoryEnum.environmentalEducation,
+                            ),
+                          ),
+                        );
+                      },
+                      title: 'Educação Ambiental',
+                      icon: Icons.emoji_nature_outlined,
+                      iconSize: 55,
+                    ),
                   ],
                 ),
               ),
