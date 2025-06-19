@@ -3,4 +3,5 @@ enum SuggestionCategoryEnum {
   project,
   climateEmergency,
   evaluation,
+  environmentalEducation,
 }
