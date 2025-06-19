@@ -79,7 +79,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           color: Theme.of(context)
                               .colorScheme
                               .surface
-                              .withOpacity(0.9),
+                              .withValues(alpha: 0.9),
                           child: SizedBox(
                             width: size.width * 0.95,
                             child: Padding(
@@ -127,7 +127,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text('Tipo:'),
-                                      const SizedBox(width: 4),
+                                      const SizedBox(width: 1),
                                       ChoiceChip(
                                         label: Icon(Icons.article_rounded),
                                         labelPadding: EdgeInsets.all(0),
@@ -170,14 +170,14 @@ class _SearchScreenState extends State<SearchScreen> {
                                         tooltip: 'Jogo',
                                       ),
                                       ChoiceChip(
-                                        label: Icon(Icons.auto_graph_rounded),
+                                        label: Icon(Icons.web_asset_rounded),
                                         labelPadding: EdgeInsets.all(0),
                                         selected: controller.state.typeFilter ==
                                             SuggestionTypeEnum.image,
                                         onSelected: (value) =>
                                             controller.setTypeFilter(
                                                 SuggestionTypeEnum.image),
-                                        tooltip: 'Infográfico',
+                                        tooltip: 'Site',
                                       ),
                                       ChoiceChip(
                                         label: Icon(
