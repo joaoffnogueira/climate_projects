@@ -872,5 +872,46 @@ class LibraryDatabinding {
       lang: SuggestionLangEnum.en,
       category: [SuggestionCategoryEnum.climateEmergency],
     ),
+    SuggestionModel(
+      title: "Minuto Ambiental: Educação Ambiental",
+      subtitle: "Youtube",
+      url: "https://www.youtube.com/watch?v=YgTdDm4FX3c",
+      type: SuggestionTypeEnum.video,
+      lang: SuggestionLangEnum.pt,
+      category: [SuggestionCategoryEnum.environmentalEducation],
+    ),
+    SuggestionModel(
+      title: "Curso de Formação: Educação Ambiental e Crise Climática",
+      subtitle: "Youtube",
+      url:
+          "https://www.youtube.com/watch?v=C7x24nF7LIw&list=PLiQ8tMdXCiXLTNCWhVB8iFj8hffTSU0a1",
+      type: SuggestionTypeEnum.video,
+      lang: SuggestionLangEnum.pt,
+      category: [SuggestionCategoryEnum.environmentalEducation],
+    ),
+    SuggestionModel(
+      title: "O que é a economia da sociobiodiversidade?",
+      subtitle: "Youtube",
+      url: "https://www.youtube.com/watch?v=z8UbeIGnkMs&t=204s",
+      type: SuggestionTypeEnum.video,
+      lang: SuggestionLangEnum.pt,
+      category: [SuggestionCategoryEnum.environmentalEducation],
+    ),
+    SuggestionModel(
+      title: "Animação – O homem capitalista",
+      subtitle: "Youtube",
+      url: "https://www.youtube.com/watch?v=WfGMYdalClU",
+      type: SuggestionTypeEnum.video,
+      lang: SuggestionLangEnum.pt,
+      category: [SuggestionCategoryEnum.environmentalEducation],
+    ),
+    SuggestionModel(
+      title: "A história das coisas",
+      subtitle: "Youtube",
+      url: "https://www.youtube.com/watch?v=DfG6MFLZ-VQ",
+      type: SuggestionTypeEnum.video,
+      lang: SuggestionLangEnum.pt,
+      category: [SuggestionCategoryEnum.environmentalEducation],
+    ),
   ];
 }
