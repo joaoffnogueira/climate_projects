@@ -113,7 +113,7 @@ class _FormScreenState extends State<FormScreen> {
                               color: Theme.of(context)
                                   .colorScheme
                                   .surface
-                                  .withOpacity(0.9),
+                                  .withValues(alpha: 0.9),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Column(
@@ -154,7 +154,7 @@ class _FormScreenState extends State<FormScreen> {
                               color: Theme.of(context)
                                   .colorScheme
                                   .surface
-                                  .withOpacity(0.9),
+                                  .withValues(alpha: 0.9),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: ListView.builder(
