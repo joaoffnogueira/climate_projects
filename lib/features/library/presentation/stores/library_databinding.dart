@@ -10,7 +10,8 @@ class LibraryDatabinding {
   }) {
     suggestionsCategory = suggestions
         .where((element) => element.category.contains(categoryFilter))
-        .toList();
+        .toList()
+      ..sort((a, b) => a.title.compareTo(b.title));
     filteredSuggestions = suggestionsCategory;
   }
 
