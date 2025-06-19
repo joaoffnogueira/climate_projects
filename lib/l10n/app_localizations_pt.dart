@@ -1,5 +1,5 @@
+// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -21,7 +21,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option1_3 => 'Concluído';
 
   @override
-  String get question2 => 'O projeto surgiu a partir de uma necessidade real da comunidade, identificada através de um diagnóstico prévio?';
+  String get question2 =>
+      'O projeto surgiu a partir de uma necessidade real da comunidade, identificada através de um diagnóstico prévio?';
 
   @override
   String option2_1(String tense) {
@@ -125,7 +126,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option5_2 => 'Mapeamento de recursos e necessidades da comunidade';
 
   @override
-  String get option5_3 => 'Avaliação das percepções e conhecimentos dos atores locais sobre as mudanças climáticas';
+  String get option5_3 =>
+      'Avaliação das percepções e conhecimentos dos atores locais sobre as mudanças climáticas';
 
   @override
   String get option5_4 => 'Outros';
@@ -135,9 +137,12 @@ class AppLocalizationsPt extends AppLocalizations {
     String _temp0 = intl.Intl.selectLogic(
       tense,
       {
-        'past': 'Os resultados do diagnóstico foram incorporados no planejamento do projeto?',
-        'present': 'Os resultados do diagnóstico estão sendo incorporados no planejamento do projeto?',
-        'other': 'Os resultados do diagnóstico serão incorporados no planejamento do projeto?',
+        'past':
+            'Os resultados do diagnóstico foram incorporados no planejamento do projeto?',
+        'present':
+            'Os resultados do diagnóstico estão sendo incorporados no planejamento do projeto?',
+        'other':
+            'Os resultados do diagnóstico serão incorporados no planejamento do projeto?',
       },
     );
     return '$_temp0';
@@ -148,9 +153,12 @@ class AppLocalizationsPt extends AppLocalizations {
     String _temp0 = intl.Intl.selectLogic(
       tense,
       {
-        'past': 'Os resultados do diagnóstico guiaram todas as fases do projeto',
-        'present': 'Os resultados do diagnóstico guiam todas as fases do projeto',
-        'other': 'Os resultados do diagnóstico guiarão todas as fases do projeto',
+        'past':
+            'Os resultados do diagnóstico guiaram todas as fases do projeto',
+        'present':
+            'Os resultados do diagnóstico guiam todas as fases do projeto',
+        'other':
+            'Os resultados do diagnóstico guiarão todas as fases do projeto',
       },
     );
     return '$_temp0';
@@ -161,9 +169,12 @@ class AppLocalizationsPt extends AppLocalizations {
     String _temp0 = intl.Intl.selectLogic(
       tense,
       {
-        'past': 'Os resultados do diagnóstico guiaram algumas atividades dentro do projeto',
-        'present': 'Os resultados do diagnóstico guiam algumas atividades dentro do projeto',
-        'other': 'Os resultados do diagnóstico guiarão algumas atividades dentro do projeto',
+        'past':
+            'Os resultados do diagnóstico guiaram algumas atividades dentro do projeto',
+        'present':
+            'Os resultados do diagnóstico guiam algumas atividades dentro do projeto',
+        'other':
+            'Os resultados do diagnóstico guiarão algumas atividades dentro do projeto',
       },
     );
     return '$_temp0';
@@ -174,9 +185,12 @@ class AppLocalizationsPt extends AppLocalizations {
     String _temp0 = intl.Intl.selectLogic(
       tense,
       {
-        'past': 'Os resultados do diagnóstico não foram incorporados no projeto',
-        'present': 'Os resultados do diagnóstico não estão sendo incorporados no projeto',
-        'other': 'Os resultados do diagnóstico não serão incorporados no projeto',
+        'past':
+            'Os resultados do diagnóstico não foram incorporados no projeto',
+        'present':
+            'Os resultados do diagnóstico não estão sendo incorporados no projeto',
+        'other':
+            'Os resultados do diagnóstico não serão incorporados no projeto',
       },
     );
     return '$_temp0';
@@ -218,9 +232,12 @@ class AppLocalizationsPt extends AppLocalizations {
     String _temp0 = intl.Intl.selectLogic(
       tense,
       {
-        'past': 'O projeto promoveu colaboração entre diferentes setores da sociedade?',
-        'present': 'O projeto promove colaboração entre diferentes setores da sociedade?',
-        'other': 'O projeto promoverá colaboração entre diferentes setores da sociedade?',
+        'past':
+            'O projeto promoveu colaboração entre diferentes setores da sociedade?',
+        'present':
+            'O projeto promove colaboração entre diferentes setores da sociedade?',
+        'other':
+            'O projeto promoverá colaboração entre diferentes setores da sociedade?',
       },
     );
     return '$_temp0';
@@ -305,9 +322,12 @@ class AppLocalizationsPt extends AppLocalizations {
     String _temp0 = intl.Intl.selectLogic(
       tense,
       {
-        'past': 'Com relação à Emergência Climática, quais os temas que foram abordados no projeto?',
-        'present': 'Com relação à Emergência Climática, quais os temas que são abordados no projeto?',
-        'other': 'Com relação à Emergência Climática, quais os temas que serão abordados no projeto?',
+        'past':
+            'Com relação à Emergência Climática, quais os temas que foram abordados no projeto?',
+        'present':
+            'Com relação à Emergência Climática, quais os temas que são abordados no projeto?',
+        'other':
+            'Com relação à Emergência Climática, quais os temas que serão abordados no projeto?',
       },
     );
     return '$_temp0';
@@ -385,7 +405,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option13_1 => 'Políticas públicas ambientais';
 
   @override
-  String get option13_2 => 'Legislação e acordos internacionais sobre mudanças climáticas';
+  String get option13_2 =>
+      'Legislação e acordos internacionais sobre mudanças climáticas';
 
   @override
   String get option13_3 => 'Governança e tomada de decisão';
@@ -404,7 +425,8 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get option14_1 => 'Alternativas econômicas em relação ao modelo vigente';
+  String get option14_1 =>
+      'Alternativas econômicas em relação ao modelo vigente';
 
   @override
   String get option14_2 => 'Impactos econômicos das mudanças climáticas';
@@ -457,7 +479,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option16_2 => 'Diálogo entre diferentes culturas';
 
   @override
-  String get option16_3 => 'Práticas culturais locais e sua relação com o ambiente';
+  String get option16_3 =>
+      'Práticas culturais locais e sua relação com o ambiente';
 
   @override
   String question17(String tense) {
@@ -586,9 +609,12 @@ class AppLocalizationsPt extends AppLocalizations {
     String _temp0 = intl.Intl.selectLogic(
       tense,
       {
-        'past': 'Quais valores foram trabalhados durante o desenvolvimento do projeto?',
-        'present': 'Quais valores são trabalhados durante o desenvolvimento do projeto?',
-        'other': 'Quais valores serão trabalhados durante o desenvolvimento do projeto?',
+        'past':
+            'Quais valores foram trabalhados durante o desenvolvimento do projeto?',
+        'present':
+            'Quais valores são trabalhados durante o desenvolvimento do projeto?',
+        'other':
+            'Quais valores serão trabalhados durante o desenvolvimento do projeto?',
       },
     );
     return '$_temp0';
@@ -622,7 +648,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option22_9 => 'Não pensei nisso';
 
   @override
-  String get question23 => 'Quais emoções emergiram entre os participantes durante a realização do projeto com relação à temática Emergência Climática?';
+  String get question23 =>
+      'Quais emoções emergiram entre os participantes durante a realização do projeto com relação à temática Emergência Climática?';
 
   @override
   String get option23_1 => 'Ansiedade';
@@ -658,16 +685,20 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option23_11 => 'Não pensei nisso';
 
   @override
-  String get option23_12 => 'Não é possível responder pois o projeto ainda está em andamento';
+  String get option23_12 =>
+      'Não é possível responder pois o projeto ainda está em andamento';
 
   @override
   String question24(String tense) {
     String _temp0 = intl.Intl.selectLogic(
       tense,
       {
-        'past': 'O projeto buscou incentivar os participantes a desenvolverem uma conexão emocional com o ambiente?',
-        'present': 'O projeto busca incentivar os participantes a desenvolverem uma conexão emocional com o ambiente?',
-        'other': 'O projeto buscará incentivar os participantes a desenvolverem uma conexão emocional com o ambiente?',
+        'past':
+            'O projeto buscou incentivar os participantes a desenvolverem uma conexão emocional com o ambiente?',
+        'present':
+            'O projeto busca incentivar os participantes a desenvolverem uma conexão emocional com o ambiente?',
+        'other':
+            'O projeto buscará incentivar os participantes a desenvolverem uma conexão emocional com o ambiente?',
       },
     );
     return '$_temp0';
@@ -702,7 +733,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option25_3 => 'Atividades de voluntariado e serviço comunitário';
 
   @override
-  String get option25_4 => 'Reflexões pessoais e compartilhamento de experiências emocionais';
+  String get option25_4 =>
+      'Reflexões pessoais e compartilhamento de experiências emocionais';
 
   @override
   String get option25_5 => 'Outros';
@@ -713,7 +745,8 @@ class AppLocalizationsPt extends AppLocalizations {
       tense,
       {
         'past': 'Quais instrumentos foram utilizados para abordar a temática?',
-        'present': 'Quais instrumentos estão sendo utilizados para abordar a temática?',
+        'present':
+            'Quais instrumentos estão sendo utilizados para abordar a temática?',
         'other': 'Quais instrumentos serão utilizados para abordar a temática?',
       },
     );
@@ -724,10 +757,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option26_1 => 'Materiais didáticos (livros, artigos, vídeos)';
 
   @override
-  String get option26_2 => 'Atividades práticas (experimentos, projetos de campo)';
+  String get option26_2 =>
+      'Atividades práticas (experimentos, projetos de campo)';
 
   @override
-  String get option26_3 => 'Tecnologias digitais (software, simulações, aplicativos)';
+  String get option26_3 =>
+      'Tecnologias digitais (software, simulações, aplicativos)';
 
   @override
   String get option26_4 => 'Colaborações com especialistas e instituições';
@@ -740,9 +775,12 @@ class AppLocalizationsPt extends AppLocalizations {
     String _temp0 = intl.Intl.selectLogic(
       tense,
       {
-        'past': 'De que maneira ocorreram as atividades desenvolvidas no projeto?',
-        'present': 'De que maneira estão ocorrendo as atividades desenvolvidas no projeto?',
-        'other': 'De que maneira ocorrerão as atividades desenvolvidas no projeto?',
+        'past':
+            'De que maneira ocorreram as atividades desenvolvidas no projeto?',
+        'present':
+            'De que maneira estão ocorrendo as atividades desenvolvidas no projeto?',
+        'other':
+            'De que maneira ocorrerão as atividades desenvolvidas no projeto?',
       },
     );
     return '$_temp0';
@@ -758,7 +796,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option27_3 => 'Reflexão individual e autoavaliação';
 
   @override
-  String get option27_4 => 'Realização de oficinas e/ou atividades previamente planejadas';
+  String get option27_4 =>
+      'Realização de oficinas e/ou atividades previamente planejadas';
 
   @override
   String get option27_5 => 'Outros';
@@ -768,9 +807,12 @@ class AppLocalizationsPt extends AppLocalizations {
     String _temp0 = intl.Intl.selectLogic(
       tense,
       {
-        'past': 'Indique qual/quais áreas do conhecimento foram contempladas durante a realização do projeto:',
-        'present': 'Indique qual/quais áreas do conhecimento estão sendo contempladas durante a realização do projeto:',
-        'other': 'Indique qual/quais áreas do conhecimento serão contempladas durante a realização do projeto:',
+        'past':
+            'Indique qual/quais áreas do conhecimento foram contempladas durante a realização do projeto:',
+        'present':
+            'Indique qual/quais áreas do conhecimento estão sendo contempladas durante a realização do projeto:',
+        'other':
+            'Indique qual/quais áreas do conhecimento serão contempladas durante a realização do projeto:',
       },
     );
     return '$_temp0';
@@ -829,7 +871,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option29_3 => 'Participação de outros profissionais';
 
   @override
-  String get question30 => 'Selecione as dificuldades encontradas ao longo do projeto:';
+  String get question30 =>
+      'Selecione as dificuldades encontradas ao longo do projeto:';
 
   @override
   String get option30_1 => 'Conteúdo';
@@ -856,7 +899,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option30_8 => 'Não houveram dificuldades na realização do projeto';
 
   @override
-  String get option30_9 => 'Não é possível responder pois o projeto ainda está em andamento';
+  String get option30_9 =>
+      'Não é possível responder pois o projeto ainda está em andamento';
 
   @override
   String question31(String tense) {
@@ -882,9 +926,12 @@ class AppLocalizationsPt extends AppLocalizations {
     String _temp0 = intl.Intl.selectLogic(
       tense,
       {
-        'past': 'Houve um momento destinado para a autoavaliação dos participantes?',
-        'present': 'Há um momento destinado para a autoavaliação dos participantes?',
-        'other': 'Haverá um momento destinado para a autoavaliação dos participantes?',
+        'past':
+            'Houve um momento destinado para a autoavaliação dos participantes?',
+        'present':
+            'Há um momento destinado para a autoavaliação dos participantes?',
+        'other':
+            'Haverá um momento destinado para a autoavaliação dos participantes?',
       },
     );
     return '$_temp0';
@@ -897,7 +944,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option32_2 => 'Não';
 
   @override
-  String get question33 => 'Durante o preenchimento deste formulário, você teve novas ideias ou se deparou com questões que não havia imaginado para o seu projeto?';
+  String get question33 =>
+      'Durante o preenchimento deste formulário, você teve novas ideias ou se deparou com questões que não havia imaginado para o seu projeto?';
 
   @override
   String get option33_1 => 'Sim';
@@ -906,7 +954,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option33_2 => 'Não';
 
   @override
-  String get question34 => 'Você gostaria de compartilhar as respostas de seu questionário com os autores de forma a auxiliar nas pesquisas de melhoria do aplicativo?';
+  String get question34 =>
+      'Você gostaria de compartilhar as respostas de seu questionário com os autores de forma a auxiliar nas pesquisas de melhoria do aplicativo?';
 
   @override
   String get option34_1 => 'Sim';
@@ -915,22 +964,28 @@ class AppLocalizationsPt extends AppLocalizations {
   String get option34_2 => 'Não';
 
   @override
-  String get question35 => 'OPCIONAL: Deixe abaixo seus comentários, críticas, sugestões, elogios, sobre o questionário.';
+  String get question35 =>
+      'OPCIONAL: Deixe abaixo seus comentários, críticas, sugestões, elogios, sobre o questionário.';
 
   @override
-  String get result1 => '    Não há fenômeno no mundo que possua uma causa única, algo que pode ser claramente observado na Emergência Climática. Essa problemática resulta de uma combinação de fatores e eventos ocorridos ao longo de um extenso período, envolvendo dimensões naturais, históricas, sociais, políticas e econômicas. A Revolução Industrial, iniciada em 1760, marcou uma mudança profunda em nossa relação com o meio ambiente, as interferências antrópicas no ambiente  subsequentes a esse evento se ampliaram demasiadamente, gerando consequências inesperadas. A complexidade nos ensina que, uma vez desencadeadas as ações, também se dá início a circuitos que envolvem incerteza e imprevisibilidade do ambiente natural e cultural.  Nós agimos sobre o ambiente, constantemente alterando-o conforme nossas necessidades e desejos, mas como em um circuito de retroalimentação  essa ação retorna na  forma de  consequências desagradáveis ou muitas vezes catastrófica como temos presenciado.';
+  String get result1 =>
+      '    Não há fenômeno no mundo que possua uma causa única, algo que pode ser claramente observado na Emergência Climática. Essa problemática resulta de uma combinação de fatores e eventos ocorridos ao longo de um extenso período, envolvendo dimensões naturais, históricas, sociais, políticas e econômicas. A Revolução Industrial, iniciada em 1760, marcou uma mudança profunda em nossa relação com o meio ambiente, as interferências antrópicas no ambiente  subsequentes a esse evento se ampliaram demasiadamente, gerando consequências inesperadas. A complexidade nos ensina que, uma vez desencadeadas as ações, também se dá início a circuitos que envolvem incerteza e imprevisibilidade do ambiente natural e cultural.  Nós agimos sobre o ambiente, constantemente alterando-o conforme nossas necessidades e desejos, mas como em um circuito de retroalimentação  essa ação retorna na  forma de  consequências desagradáveis ou muitas vezes catastrófica como temos presenciado.';
 
   @override
-  String get result2 => '    A  fragmentação do conhecimento nos levou a acreditar que estamos separados da natureza, reduzindo muitas vezes a compreensão do ambiente a natureza ou a sociedade. Da mesma forma reduzindo o ser humano a sua dimensão racional.  Urge compreendermos que tanto o ambiente é complexo, envolvendo dimensão física, biológica e social, assim como o ser humano é biológico, social, e como indivíduo é racional, emocional, objetivo e subjetivo.';
+  String get result2 =>
+      '    A  fragmentação do conhecimento nos levou a acreditar que estamos separados da natureza, reduzindo muitas vezes a compreensão do ambiente a natureza ou a sociedade. Da mesma forma reduzindo o ser humano a sua dimensão racional.  Urge compreendermos que tanto o ambiente é complexo, envolvendo dimensão física, biológica e social, assim como o ser humano é biológico, social, e como indivíduo é racional, emocional, objetivo e subjetivo.';
 
   @override
-  String get result3 => '    Entender que vivemos em um mundo complexo é essencial para debatermos e buscarmos formas de enfrentar a Emergência Climática. Esse debate, porém, é desafiador devido às múltiplas dimensões envolvidas. Apoiar-se nas bases teóricas da Educação Ambiental é crucial para compreender profundamente o tema, além de permitir uma abordagem mais adequada ao contexto específico. A Educação Ambiental, como campo de conhecimento, busca oferecer uma nova concepção da relação entre seres humanos e ambiente. Ao aproximá-la do pensamento complexo, ampliamos nossa compreensão da realidade, necessária para a transformação social e pessoal. Transformação que leve a construção de um mundo mais justo, sustentável, solidário e pacífico. Compreender a complexidade que permeia o mundo implica em superar os limites e barreiras entre as diferentes áreas do saber, promovendo um diálogo contínuo.';
+  String get result3 =>
+      '    Entender que vivemos em um mundo complexo é essencial para debatermos e buscarmos formas de enfrentar a Emergência Climática. Esse debate, porém, é desafiador devido às múltiplas dimensões envolvidas. Apoiar-se nas bases teóricas da Educação Ambiental é crucial para compreender profundamente o tema, além de permitir uma abordagem mais adequada ao contexto específico. A Educação Ambiental, como campo de conhecimento, busca oferecer uma nova concepção da relação entre seres humanos e ambiente. Ao aproximá-la do pensamento complexo, ampliamos nossa compreensão da realidade, necessária para a transformação social e pessoal. Transformação que leve a construção de um mundo mais justo, sustentável, solidário e pacífico. Compreender a complexidade que permeia o mundo implica em superar os limites e barreiras entre as diferentes áreas do saber, promovendo um diálogo contínuo.';
 
   @override
-  String get result4 => '    Diante das dificuldades em abordar esse tema e sua complexidade, criamos uma biblioteca de informações para auxiliar no aprofundamento sobre a Emergência Climática. Com sugestões de leituras, vídeos, músicas, jogos e notícias, essa biblioteca foi elaborada com o objetivo de fornecer materiais que auxiliem na abordagem da Emergência Climática, abrangendo as várias dimensões e setores envolvidos, tanto nas causas quanto no enfrentamento da questão. Além disso, disponibilizamos materiais que podem auxiliar você no planejamento de projetos, incluindo orientações sobre a realização de diagnósticos prévios e a elaboração de propostas de Educação Ambiental.';
+  String get result4 =>
+      '    Diante das dificuldades em abordar esse tema e sua complexidade, criamos uma biblioteca de informações para auxiliar no aprofundamento sobre a Emergência Climática. Com sugestões de leituras, vídeos, músicas, jogos e notícias, essa biblioteca foi elaborada com o objetivo de fornecer materiais que auxiliem na abordagem da Emergência Climática, abrangendo as várias dimensões e setores envolvidos, tanto nas causas quanto no enfrentamento da questão. Além disso, disponibilizamos materiais que podem auxiliar você no planejamento de projetos, incluindo orientações sobre a realização de diagnósticos prévios e a elaboração de propostas de Educação Ambiental.';
 
   @override
-  String get result_question => 'Você gostaria de acessar a biblioteca de conteúdo?';
+  String get result_question =>
+      'Você gostaria de acessar a biblioteca de conteúdo?';
 
   @override
   String get result_option1 => 'Sim!';
@@ -939,35 +994,46 @@ class AppLocalizationsPt extends AppLocalizations {
   String get result_option2 => 'Não, acessarei depois.';
 
   @override
-  String get option_tip_14_1 => 'Economia verde\nEcossocialismo\nEcodesenvolvimento ou bioeconomia\nEconomia solidária\nBem-viver dos povos andinos';
+  String get option_tip_14_1 =>
+      'Economia verde\nEcossocialismo\nEcodesenvolvimento ou bioeconomia\nEconomia solidária\nBem-viver dos povos andinos';
 
   @override
-  String get option_tip_14_2 => 'As práticas locais estão conectadas às tradições e modos de vida das comunidades, envolvendo a valorização de técnicas sustentáveis e fortalecimento da economia local, como a agricultura familiar e orgânica, a produção e venda de artesanatos, turismo comunitário e a realização de feiras. Já no cenário global, as práticas econômicas refletem o impacto da globalização e a integração das economias. As empresas multinacionais produzem os componentes de um produto em diferentes países, reduzindo custos da produção e investindo capital em países estrangeiros para a construção fábricas. Utilizam, também, de sites para a venda em massa para qualquer local do mundo.';
+  String get option_tip_14_2 =>
+      'As práticas locais estão conectadas às tradições e modos de vida das comunidades, envolvendo a valorização de técnicas sustentáveis e fortalecimento da economia local, como a agricultura familiar e orgânica, a produção e venda de artesanatos, turismo comunitário e a realização de feiras. Já no cenário global, as práticas econômicas refletem o impacto da globalização e a integração das economias. As empresas multinacionais produzem os componentes de um produto em diferentes países, reduzindo custos da produção e investindo capital em países estrangeiros para a construção fábricas. Utilizam, também, de sites para a venda em massa para qualquer local do mundo.';
 
   @override
-  String get option_tip_14_3 => 'Atualmente, o modelo econômico presente na maioria dos países é o capitalismo. Esse sistema visa o lucro e a acumulação das riquezas, e está baseado na propriedade privada dos meios de produção. A busca pelo lucro máximo acarreta na desigualdade social, além de crises econômicas e efeitos negativos sobre o ambiente.';
+  String get option_tip_14_3 =>
+      'Atualmente, o modelo econômico presente na maioria dos países é o capitalismo. Esse sistema visa o lucro e a acumulação das riquezas, e está baseado na propriedade privada dos meios de produção. A busca pelo lucro máximo acarreta na desigualdade social, além de crises econômicas e efeitos negativos sobre o ambiente.';
 
   @override
-  String get option_tip_15 => 'Equidade e igualdade são termos diferentes. A igualdade é entendida como a aplicação das mesmas regras para todos, assegurando direitos e deveres iguais. Já a equidade reconhece as diferenças e desequilíbrios presentes na sociedade, valorizando a singularidade de cada pessoa e defendendo que todos sejam tratados de acordo com suas necessidades específicas, de modo a garantir o acesso justo às mesmas oportunidades.';
+  String get option_tip_15 =>
+      'Equidade e igualdade são termos diferentes. A igualdade é entendida como a aplicação das mesmas regras para todos, assegurando direitos e deveres iguais. Já a equidade reconhece as diferenças e desequilíbrios presentes na sociedade, valorizando a singularidade de cada pessoa e defendendo que todos sejam tratados de acordo com suas necessidades específicas, de modo a garantir o acesso justo às mesmas oportunidades.';
 
   @override
-  String get option_tip_18 => 'Os desastres ambientais são eventos catastróficos provocados por fenômenos naturais e, muitas vezes, amplificados pelas ações humanas. Como exemplos de desastres, podemos mencionar os terremotos, tsunamis, furacões, tempestades, tornados, secas e inundações. Temos, ainda, desastres que são resultados apenas da ação humana, como é o caso do derramamento de óleo, desmatamento, poluição, acidentes nucleares e incêndios florestais.';
+  String get option_tip_18 =>
+      'Os desastres ambientais são eventos catastróficos provocados por fenômenos naturais e, muitas vezes, amplificados pelas ações humanas. Como exemplos de desastres, podemos mencionar os terremotos, tsunamis, furacões, tempestades, tornados, secas e inundações. Temos, ainda, desastres que são resultados apenas da ação humana, como é o caso do derramamento de óleo, desmatamento, poluição, acidentes nucleares e incêndios florestais.';
 
   @override
-  String get tip2 => 'O diagnóstico prévio possibilita ajustar um projeto à realidade local, identificando fragilidades, potencialidades e lacunas de conhecimento da comunidade. Com essas informações, é possível priorizar ações que atendam de maneira mais eficaz às necessidades reais do território.';
+  String get tip2 =>
+      'O diagnóstico prévio possibilita ajustar um projeto à realidade local, identificando fragilidades, potencialidades e lacunas de conhecimento da comunidade. Com essas informações, é possível priorizar ações que atendam de maneira mais eficaz às necessidades reais do território.';
 
   @override
-  String get tip8 => 'Enfrentar problemas socioambientais requer o engajamento de toda a sociedade. A ação coletiva fortalece o senso de comunidade e promove mudanças positivas, unindo diferentes perspectivas e habilidades para gerar soluções mais eficazes.';
+  String get tip8 =>
+      'Enfrentar problemas socioambientais requer o engajamento de toda a sociedade. A ação coletiva fortalece o senso de comunidade e promove mudanças positivas, unindo diferentes perspectivas e habilidades para gerar soluções mais eficazes.';
 
   @override
-  String get tip12 => 'A emergência climática é uma questão complexa e global que exige compreensão em várias dimensões. Um projeto que integre diferentes perspectivas oferece uma abordagem mais completa e eficaz para enfrentar esse desafio.';
+  String get tip12 =>
+      'A emergência climática é uma questão complexa e global que exige compreensão em várias dimensões. Um projeto que integre diferentes perspectivas oferece uma abordagem mais completa e eficaz para enfrentar esse desafio.';
 
   @override
-  String get tip23 => 'Os problemas vivenciados pela sociedade despertam fortes emoções, que podem influenciar as ações. Sentimentos negativos podem paralisar, enquanto emoções positivas, como esperança e otimismo, podem incentivar o engajamento e ações eficazes no enfrentamento da emergência climática.';
+  String get tip23 =>
+      'Os problemas vivenciados pela sociedade despertam fortes emoções, que podem influenciar as ações. Sentimentos negativos podem paralisar, enquanto emoções positivas, como esperança e otimismo, podem incentivar o engajamento e ações eficazes no enfrentamento da emergência climática.';
 
   @override
-  String get tip24 => 'As emoções são fundamentais para a conservação ambiental, pois despertam interesse e engajamento. Uma conexão emocional com o ambiente incentiva comportamentos positivos, aumentando o comprometimento com sua preservação.';
+  String get tip24 =>
+      'As emoções são fundamentais para a conservação ambiental, pois despertam interesse e engajamento. Uma conexão emocional com o ambiente incentiva comportamentos positivos, aumentando o comprometimento com sua preservação.';
 
   @override
-  String get tip31 => 'O retorno contínuo dos participantes permite entender melhor como está sendo a experiência deles no projeto, considerando suas opiniões e sentimentos, podendo significar uma mudança no planejamento no projeto, para melhor se adequar às necessidades dos participantes.';
+  String get tip31 =>
+      'O retorno contínuo dos participantes permite entender melhor como está sendo a experiência deles no projeto, considerando suas opiniões e sentimentos, podendo significar uma mudança no planejamento no projeto, para melhor se adequar às necessidades dos participantes.';
 }
