@@ -52,12 +52,18 @@ class SuggestionCard extends StatelessWidget {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Flexible(child: Text(title)),
-              IconButton(
-                icon: const Icon(Icons.open_in_new_rounded),
-                onPressed: () {
-                  open();
-                },
+              Expanded(
+                child: InkWell(
+                  child: Text(title),
+                  onTap: () => open(),
+                ),
+              ),
+              SizedBox(
+                width: 30,
+                child: IconButton(
+                  icon: const Icon(Icons.open_in_new_rounded),
+                  onPressed: () => open(),
+                ),
               ),
             ],
           ),
