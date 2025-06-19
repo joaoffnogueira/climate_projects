@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class ThemeHelper {
   int? theme;
-  randomTheme() {
+  void randomTheme() {
     theme = Random().nextInt(13);
   }
 
