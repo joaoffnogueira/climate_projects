@@ -30,7 +30,7 @@ class SectionCard extends StatelessWidget {
             ),
           ),
           backgroundColor: WidgetStateProperty.all<Color>(
-              Theme.of(context).colorScheme.surface.withOpacity(0.9)),
+              Theme.of(context).colorScheme.surface.withValues(alpha: 0.9)),
         ),
         onPressed: () {
           onPressed();
