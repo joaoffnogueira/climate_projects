@@ -913,5 +913,124 @@ class LibraryDatabinding {
       lang: SuggestionLangEnum.pt,
       category: [SuggestionCategoryEnum.environmentalEducation],
     ),
+    SuggestionModel(
+      title:
+          "Educação Ambiental e os sete saberes de uma educação do futuro: noções introdutórias",
+      subtitle: "",
+      url:
+          "https://tede.unicentro.br/jspui/bitstream/jspui/1249/3/Produto%20Educacional%20-%20Juliana%20Mara%20Antonio.pdf",
+      type: SuggestionTypeEnum.text,
+      lang: SuggestionLangEnum.pt,
+      category: [SuggestionCategoryEnum.environmentalEducation],
+    ),
+    SuggestionModel(
+      title: "A Educação Ambiental nos materiais e práticas escolares",
+      subtitle: "",
+      url:
+          "https://tede.unicentro.br/jspui/bitstream/jspui/1048/3/Produto-regiane-MF.pdf",
+      type: SuggestionTypeEnum.text,
+      lang: SuggestionLangEnum.pt,
+      category: [SuggestionCategoryEnum.environmentalEducation],
+    ),
+    SuggestionModel(
+      title: "Educomunicação socioambiental: no contexto escolar",
+      subtitle: "",
+      url:
+          "https://tede.unicentro.br/jspui/bitstream/tede/547/3/Produto%20educacional_Elizabete.pdf",
+      type: SuggestionTypeEnum.text,
+      lang: SuggestionLangEnum.pt,
+      category: [SuggestionCategoryEnum.environmentalEducation],
+    ),
+    SuggestionModel(
+      title:
+          "Indivíduo, sociedade e natureza: como refletir, agir e transformar a realidade?",
+      subtitle: "",
+      url:
+          "https://cdn.shopify.com/s/files/1/0490/1715/9829/files/2024_INDIVIDUO_SOCIEDADE_NATUREZA_E-BOOK_C.pdf?v=1738854538",
+      type: SuggestionTypeEnum.text,
+      lang: SuggestionLangEnum.pt,
+      category: [SuggestionCategoryEnum.environmentalEducation],
+    ),
+    SuggestionModel(
+      title: "Histórico da educação ambiental no Brasil e no mundo",
+      subtitle: "",
+      url:
+          "https://repositorio.ufba.br/bitstream/ri/34024/1/eBook-Historico%20da%20educacao%20ambiental%20no%20Brasil%20e%20no%20mundo.pdf",
+      type: SuggestionTypeEnum.text,
+      lang: SuggestionLangEnum.pt,
+      category: [SuggestionCategoryEnum.environmentalEducation],
+    ),
+    SuggestionModel(
+      title:
+          "As macrotendências político-pedagógicas da educação ambiental brasileira",
+      subtitle: "",
+      url:
+          "https://www.scielo.br/j/asoc/a/8FP6nynhjdZ4hYdqVFdYRtx/?fomat=pdf&lang=pt",
+      type: SuggestionTypeEnum.text,
+      lang: SuggestionLangEnum.pt,
+      category: [SuggestionCategoryEnum.environmentalEducation],
+    ),
+    SuggestionModel(
+      title: "Identidades da Educação Ambiental Brasileira",
+      subtitle: "",
+      url:
+          "https://cursosextensao.usp.br/pluginfile.php/630775/mod_resource/content/4/Identidades%20da%20EA%20brasileira.pdf#page=67",
+      type: SuggestionTypeEnum.text,
+      lang: SuggestionLangEnum.pt,
+      category: [SuggestionCategoryEnum.environmentalEducation],
+    ),
+    SuggestionModel(
+      title:
+          "Vamos cuidar do Brasil: conceitos e práticas em educação ambiental na escola",
+      subtitle: "",
+      url: "https://unesdoc.unesco.org/ark:/48223/pf0000183079",
+      type: SuggestionTypeEnum.text,
+      lang: SuggestionLangEnum.pt,
+      category: [SuggestionCategoryEnum.environmentalEducation],
+    ),
+    SuggestionModel(
+      title: "Educação Ambiental Freiriana",
+      subtitle: "",
+      url:
+          "https://www.researchgate.net/publication/349957130_Educacao_Ambiental_Freiriana",
+      type: SuggestionTypeEnum.text,
+      lang: SuggestionLangEnum.pt,
+      category: [SuggestionCategoryEnum.environmentalEducation],
+    ),
+    SuggestionModel(
+      title:
+          "Guia educacional e metodológico: engajamento e participação social no enfrentamento das problemáticas socioambientais",
+      subtitle: "",
+      url:
+          "https://tede.unicentro.br/jspui/bitstream/jspui/2172/3/Produto_Educacional_Mariane.pdf",
+      type: SuggestionTypeEnum.text,
+      lang: SuggestionLangEnum.pt,
+      category: [SuggestionCategoryEnum.environmentalEducation],
+    ),
+    SuggestionModel(
+      title: "Política Nacional de Educação Ambiental",
+      subtitle: "",
+      url: "https://www.planalto.gov.br/ccivil_03/leis/l9795.htm",
+      type: SuggestionTypeEnum.text,
+      lang: SuggestionLangEnum.pt,
+      category: [SuggestionCategoryEnum.environmentalEducation],
+    ),
+    SuggestionModel(
+      title: "Alteração na Política Nacional de Educação Ambiental",
+      subtitle: "",
+      url:
+          "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2024/Lei/L14926.htm#art2",
+      type: SuggestionTypeEnum.text,
+      lang: SuggestionLangEnum.pt,
+      category: [SuggestionCategoryEnum.environmentalEducation],
+    ),
+    SuggestionModel(
+      title: "Diretrizes Curriculares para a Educação Ambiental",
+      subtitle: "",
+      url: "https://portal.mec.gov.br/dmdocuments/rcp002_12.pdf",
+      type: SuggestionTypeEnum.text,
+      lang: SuggestionLangEnum.pt,
+      category: [SuggestionCategoryEnum.environmentalEducation],
+    ),
   ];
 }
