@@ -30,7 +30,7 @@ class SuggestionCard extends StatelessWidget {
       case SuggestionTypeEnum.video:
         icon = Icons.video_collection_rounded;
       case SuggestionTypeEnum.image:
-        icon = Icons.auto_graph_rounded;
+        icon = Icons.web_asset_rounded;
       case SuggestionTypeEnum.game:
         icon = Icons.videogame_asset_rounded;
       default:
@@ -46,7 +46,7 @@ class SuggestionCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 4),
       child: Card(
-        color: Theme.of(context).colorScheme.surface.withOpacity(0.9),
+        color: Theme.of(context).colorScheme.surface.withValues(alpha: 0.9),
         child: ListTile(
           isThreeLine: true,
           title: Text(title),
