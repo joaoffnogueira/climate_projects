@@ -72,7 +72,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   top: 10,
                   child: SizedBox(
                     width: size.width * 0.95,
-                    height: size.height * 0.85,
+                    height: size.height * 0.9,
                     child: Column(
                       children: <Widget>[
                         Card(
@@ -121,7 +121,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                       ),
                                     ],
                                   ),
-                                  const SizedBox(height: 10),
+                                  const SizedBox(height: 5),
                                   Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -192,7 +192,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                       ),
                                     ],
                                   ),
-                                  const SizedBox(height: 10),
+                                  const SizedBox(height: 5),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
@@ -225,12 +225,11 @@ class _SearchScreenState extends State<SearchScreen> {
                             ),
                           ),
                         ),
-                        const SizedBox(height: 5),
                         Expanded(
                           child: SizedBox(
                             width: size.width * 0.95,
                             child: Padding(
-                              padding: const EdgeInsets.all(10.0),
+                              padding: const EdgeInsets.all(5.0),
                               child: Scrollbar(
                                 thumbVisibility: true,
                                 trackVisibility: true,
