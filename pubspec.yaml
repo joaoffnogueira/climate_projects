@@ -1,7 +1,7 @@
 name: climate_change_projects
 description: "A new Flutter project."
 publish_to: 'none'
-version: 1.2.1+11
+version: 1.2.1+12
 
 environment:
   sdk: '>=3.5.3 <4.0.0'
@@ -21,6 +21,7 @@ dependencies:
   cloud_firestore: ^6.0.0
   firebase_crashlytics: ^5.0.0
   firebase_analytics: ^12.0.0
+  firebase_performance: ^0.11.0
 
 design_system:
   path: ./packages/design_system
