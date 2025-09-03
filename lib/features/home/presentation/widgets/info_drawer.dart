@@ -6,6 +6,7 @@ class InfoDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
+    final devicePixelRatio = MediaQuery.of(context).devicePixelRatio;
     return Material(
       child: SizedBox(
         width: size.width * 0.9,
@@ -39,7 +40,9 @@ class InfoDrawer extends StatelessWidget {
                     child: Image.asset(
                       'assets/lab.png',
                       width: size.width * 0.20,
-                      filterQuality: FilterQuality.high,
+                      filterQuality: FilterQuality.low,
+                      cacheWidth:
+                          (size.width * 0.20 * devicePixelRatio).round(),
                     ),
                   ),
                   Tooltip(
@@ -47,7 +50,9 @@ class InfoDrawer extends StatelessWidget {
                     child: Image.asset(
                       'assets/nea.png',
                       width: size.width * 0.20,
-                      filterQuality: FilterQuality.high,
+                      filterQuality: FilterQuality.low,
+                      cacheWidth:
+                          (size.width * 0.20 * devicePixelRatio).round(),
                     ),
                   ),
                 ],
@@ -60,7 +65,9 @@ class InfoDrawer extends StatelessWidget {
                     child: Image.asset(
                       'assets/gycp.png',
                       width: size.width * 0.25,
-                      filterQuality: FilterQuality.high,
+                      filterQuality: FilterQuality.low,
+                      cacheWidth:
+                          (size.width * 0.25 * devicePixelRatio).round(),
                     ),
                   ),
                   Tooltip(
@@ -69,7 +76,9 @@ class InfoDrawer extends StatelessWidget {
                     child: Image.asset(
                       'assets/napi.png',
                       width: size.width * 0.25,
-                      filterQuality: FilterQuality.high,
+                      filterQuality: FilterQuality.low,
+                      cacheWidth:
+                          (size.width * 0.25 * devicePixelRatio).round(),
                     ),
                   ),
                 ],
@@ -83,7 +92,9 @@ class InfoDrawer extends StatelessWidget {
                     child: Image.asset(
                       'assets/ppgen.png',
                       width: size.width * 0.15,
-                      filterQuality: FilterQuality.high,
+                      filterQuality: FilterQuality.low,
+                      cacheWidth:
+                          (size.width * 0.15 * devicePixelRatio).round(),
                     ),
                   ),
                   Tooltip(
@@ -92,7 +103,9 @@ class InfoDrawer extends StatelessWidget {
                     child: Image.asset(
                       'assets/unicentro.png',
                       width: size.width * 0.20,
-                      filterQuality: FilterQuality.high,
+                      filterQuality: FilterQuality.low,
+                      cacheWidth:
+                          (size.width * 0.20 * devicePixelRatio).round(),
                     ),
                   ),
                 ],

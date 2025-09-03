@@ -8,16 +8,27 @@ class BackgroundWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Precache background to avoid first-frame jank when switching screens
+    final mediaQuery = MediaQuery.of(context);
+    final targetCacheWidth =
+        (mediaQuery.size.width * mediaQuery.devicePixelRatio).round();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      precacheImage(
+        ResizeImage(AssetImage(image), width: targetCacheWidth),
+        context,
+      );
+    });
     return Stack(
       alignment: Alignment.bottomRight,
       children: [
         Image.asset(
           image,
-          fit: BoxFit.fitHeight,
+          fit: BoxFit.cover,
           height: double.infinity,
           width: double.infinity,
           alignment: Alignment.center,
-          filterQuality: FilterQuality.high,
+          filterQuality: FilterQuality.low,
+          cacheWidth: targetCacheWidth,
         ),
         Container(
           decoration: BoxDecoration(

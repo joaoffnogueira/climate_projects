@@ -71,9 +71,11 @@ class _FormScreenState extends State<FormScreen> {
             body: Stack(
               alignment: Alignment.topCenter,
               children: [
-                BackgroundWidget(
-                    image: MyApp.themeHelper.image,
-                    credit: MyApp.themeHelper.credit),
+                RepaintBoundary(
+                  child: BackgroundWidget(
+                      image: MyApp.themeHelper.image,
+                      credit: MyApp.themeHelper.credit),
+                ),
                 Positioned(
                   top: 0,
                   width: size.width,

@@ -15,12 +15,13 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   FlutterError.onError = (errorDetails) {
-      FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
-    };
-    PlatformDispatcher.instance.onError = (error, stack) {
-      FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
-      return true;
-    };
+    FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
+  };
+  PlatformDispatcher.instance.onError = (error, stack) {
+    FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
+    return true;
+  };
+  MyApp.themeHelper.randomTheme();
   runApp(const MyApp());
 }
 
@@ -34,7 +35,6 @@ class MyApp extends StatelessWidget {
   static final themeHelper = ThemeHelper();
   @override
   Widget build(BuildContext context) {
-    themeHelper.randomTheme();
     return MaterialApp(
       title: 'EmergeClima',
       navigatorKey: NavigationKeys.navigatorKey,
