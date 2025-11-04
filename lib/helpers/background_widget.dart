@@ -8,7 +8,6 @@ class BackgroundWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Precache background to avoid first-frame jank when switching screens
     final mediaQuery = MediaQuery.of(context);
     final targetCacheWidth =
         (mediaQuery.size.width * mediaQuery.devicePixelRatio).round();
