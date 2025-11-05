@@ -1,9 +1,14 @@
 import 'dart:ui' as ui;
 import 'package:climate_change_projects/main.dart';
+import 'package:climate_change_projects/core/di/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
+  setUpAll(() async {
+    await ServiceLocator.initTest();
+  });
+
   testWidgets('HomeScreen renders actions and navigates to FormScreen',
       (tester) async {
     tester.view.physicalSize = const ui.Size(1080, 1920);

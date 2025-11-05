@@ -6,6 +6,7 @@ import 'package:climate_change_projects/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:climate_change_projects/core/di/service_locator.dart';
 
 Widget _localizedApp(Widget child) {
   return MaterialApp(
@@ -23,6 +24,9 @@ Widget _localizedApp(Widget child) {
 }
 
 void main() {
+  setUpAll(() async {
+    await ServiceLocator.initTest();
+  });
   testWidgets('FormState.initial sets expected defaults', (tester) async {
     await tester.pumpWidget(_localizedApp(const SizedBox.shrink()));
     final state = fstate.FormState.initial();

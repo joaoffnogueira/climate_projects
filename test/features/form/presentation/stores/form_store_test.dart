@@ -6,6 +6,7 @@ import 'package:climate_change_projects/helpers/base_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:climate_change_projects/core/di/service_locator.dart';
 import 'package:climate_change_projects/l10n/app_localizations.dart';
 
 Widget _bootstrap(Widget child) {
@@ -24,6 +25,9 @@ Widget _bootstrap(Widget child) {
 }
 
 void main() {
+  setUpAll(() async {
+    await ServiceLocator.initTest();
+  });
   testWidgets('onChangeRadio sets answer and keywords', (tester) async {
     tester.view.physicalSize = const ui.Size(1080, 1920);
     addTearDown(() => tester.view.resetPhysicalSize());

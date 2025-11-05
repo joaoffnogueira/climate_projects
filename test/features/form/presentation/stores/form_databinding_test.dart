@@ -3,6 +3,7 @@ import 'package:climate_change_projects/features/form/data/models/tense_enum.dar
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:climate_change_projects/core/di/service_locator.dart';
 import 'package:climate_change_projects/l10n/app_localizations.dart';
 import 'package:climate_change_projects/main.dart';
 
@@ -22,6 +23,9 @@ Widget _localizedApp(Widget child) {
 }
 
 void main() {
+  setUpAll(() async {
+    await ServiceLocator.initTest();
+  });
   testWidgets('FormDatabinding builds default form and recommended keywords',
       (tester) async {
     await tester.pumpWidget(_localizedApp(const SizedBox.shrink()));

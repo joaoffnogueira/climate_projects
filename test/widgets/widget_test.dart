@@ -1,9 +1,14 @@
 import 'dart:ui' as ui;
 import 'package:climate_change_projects/main.dart';
+import 'package:climate_change_projects/core/di/service_locator.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  setUpAll(() async {
+    await ServiceLocator.initTest();
+  });
+
   testWidgets('App boots and shows home with primary CTA', (tester) async {
     tester.view.physicalSize = const ui.Size(1080, 1920);
     tester.view.devicePixelRatio = 3.0;
@@ -25,7 +30,7 @@ void main() {
     await tester.pumpWidget(const MyApp());
     await tester.pumpAndSettle();
 
-    expect(find.text('EmergeClima'), findsWidgets);
+    expect(find.text('EmergeClima'), findsOneWidget);
     expect(find.text('Analisar projeto'), findsOneWidget);
   });
 }
