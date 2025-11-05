@@ -1,3 +1,4 @@
+import 'package:climate_change_projects/features/library/domain/entities/suggestion.dart';
 import 'package:climate_change_projects/features/library/data/models/suggestion_category_enum.dart';
 import 'suggestion_lang_enum.dart';
 import 'suggestion_type_enum.dart';
@@ -18,4 +19,15 @@ class SuggestionModel {
     required this.lang,
     required this.category,
   });
+
+  Suggestion toDomain() {
+    return Suggestion(
+      title: title,
+      subtitle: subtitle,
+      url: url,
+      type: type,
+      lang: lang,
+      category: category,
+    );
+  }
 }
