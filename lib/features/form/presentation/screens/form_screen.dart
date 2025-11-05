@@ -212,17 +212,21 @@ class _FormScreenState extends State<FormScreen> {
                                     }
                                     if (currentQuestion.type ==
                                         QuestionTypeEnum.multipleChoice) {
-                                      return RadioListTile<int>(
+                                      final optionId =
+                                          currentQuestion.options![index].id;
+                                      final isSelected =
+                                          currentAnswer.answers.first ==
+                                              optionId;
+                                      return ListTile(
+                                        leading: Icon(isSelected
+                                            ? Icons.radio_button_checked
+                                            : Icons.radio_button_off),
                                         title: Text(currentQuestion
                                             .options![index].option),
-                                        value:
-                                            currentQuestion.options![index].id,
-                                        groupValue: currentAnswer.answers.first,
-                                        onChanged: (value) =>
-                                            controller.onChangeRadio(
-                                                value,
-                                                currentQuestion
-                                                    .options![index].keywords),
+                                        onTap: () => controller.onChangeRadio(
+                                            optionId,
+                                            currentQuestion
+                                                .options![index].keywords),
                                       );
                                     }
                                     if (currentQuestion.type ==
