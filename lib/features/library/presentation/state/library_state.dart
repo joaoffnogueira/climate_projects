@@ -1,5 +1,5 @@
 import 'package:climate_change_projects/features/library/data/models/suggestion_category_enum.dart';
-import 'package:climate_change_projects/features/library/presentation/stores/library_databinding.dart';
+import 'package:climate_change_projects/features/library/presentation/state/library_databinding.dart';
 import 'package:flutter/material.dart';
 import '../../../../helpers/base_state.dart';
 import '../../data/models/suggestion_lang_enum.dart';

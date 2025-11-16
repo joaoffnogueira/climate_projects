@@ -76,8 +76,11 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Stack(
         children: [
-          BackgroundWidget(
-              image: MyApp.themeHelper.image, credit: MyApp.themeHelper.credit),
+          RepaintBoundary(
+            child: BackgroundWidget(
+                image: MyApp.themeHelper.image,
+                credit: MyApp.themeHelper.credit),
+          ),
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,

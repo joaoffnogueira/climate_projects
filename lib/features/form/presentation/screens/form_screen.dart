@@ -6,7 +6,7 @@ import '../../../results/presentation/results_screen.dart';
 import '../../data/models/question_type_enum.dart';
 import 'package:flutter/material.dart';
 
-import '../stores/form_store.dart';
+import '../state/form_viewmodel.dart';
 
 class FormScreen extends StatefulWidget {
   const FormScreen({super.key});
@@ -16,13 +16,13 @@ class FormScreen extends StatefulWidget {
 }
 
 class _FormScreenState extends State<FormScreen> {
-  late final FormStore controller;
+  late final FormViewModel controller;
   late final ScrollController _scrollController;
   @override
   void initState() {
     super.initState();
     _scrollController = ScrollController();
-    controller = FormStore();
+    controller = FormViewModel();
   }
 
   @override
@@ -71,9 +71,11 @@ class _FormScreenState extends State<FormScreen> {
             body: Stack(
               alignment: Alignment.topCenter,
               children: [
-                BackgroundWidget(
-                    image: MyApp.themeHelper.image,
-                    credit: MyApp.themeHelper.credit),
+                RepaintBoundary(
+                  child: BackgroundWidget(
+                      image: MyApp.themeHelper.image,
+                      credit: MyApp.themeHelper.credit),
+                ),
                 Positioned(
                   top: 0,
                   width: size.width,
@@ -210,17 +212,21 @@ class _FormScreenState extends State<FormScreen> {
                                     }
                                     if (currentQuestion.type ==
                                         QuestionTypeEnum.multipleChoice) {
-                                      return RadioListTile<int>(
+                                      final optionId =
+                                          currentQuestion.options![index].id;
+                                      final isSelected =
+                                          currentAnswer.answers.first ==
+                                              optionId;
+                                      return ListTile(
+                                        leading: Icon(isSelected
+                                            ? Icons.radio_button_checked
+                                            : Icons.radio_button_off),
                                         title: Text(currentQuestion
                                             .options![index].option),
-                                        value:
-                                            currentQuestion.options![index].id,
-                                        groupValue: currentAnswer.answers.first,
-                                        onChanged: (value) =>
-                                            controller.onChangeRadio(
-                                                value,
-                                                currentQuestion
-                                                    .options![index].keywords),
+                                        onTap: () => controller.onChangeRadio(
+                                            optionId,
+                                            currentQuestion
+                                                .options![index].keywords),
                                       );
                                     }
                                     if (currentQuestion.type ==

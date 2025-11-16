@@ -1,16 +1,21 @@
-import 'package:climate_change_projects/core/db_local/db_local.dart';
-import 'package:climate_change_projects/features/form/data/models/history_model.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart' show ScrollController, Curves;
-
-import '../../../../core/db_local/db_local_realm.dart';
+import '../../../../core/di/service_locator.dart';
+import 'package:climate_change_projects/features/form/domain/usecases/save_form_usecase.dart';
+import 'package:climate_change_projects/features/form/domain/usecases/save_suggestion_usecase.dart';
+import 'package:climate_change_projects/features/form/domain/usecases/save_history_usecase.dart';
+import 'package:climate_change_projects/features/form/domain/entities/form.dart';
+import 'package:climate_change_projects/features/form/domain/entities/suggestion.dart';
+import 'package:climate_change_projects/features/form/domain/entities/history.dart';
 import '../../../../helpers/base_state.dart';
 import '../../../../helpers/base_store.dart';
 import 'form_state.dart';
 
-class FormStore extends NotifyBaseStore<FormState> {
-  FormStore() : super(FormState.initial());
-  final DbLocal dbLocal = DbLocalRealm([HistoryModel.schema]);
+class FormViewModel extends NotifyBaseStore<FormState> {
+  FormViewModel() : super(FormState.initial());
+  // Use cases (injected via service locator)
+  final SaveFormUseCase _saveForm = getIt<SaveFormUseCase>();
+  final SaveSuggestionUseCase _saveSuggestion = getIt<SaveSuggestionUseCase>();
+  final SaveHistoryUseCase _saveHistory = getIt<SaveHistoryUseCase>();
   void onChangeRadio(int? value, List<String>? keywords) {
     state.answers[state.currentQuestionId - 1].questionText =
         state.formDatabinding.defaultForm[state.currentQuestionId]!.question;
@@ -205,13 +210,15 @@ class FormStore extends NotifyBaseStore<FormState> {
   }
 
   void _saveAnswers(List<Map> keywords, Set<String> recommendedKeywords) {
-    dbLocal.openConection();
-    dbLocal.add(HistoryModel(
-        DateTime.now().toString(),
-        _keywordsString(keywords),
-        _recommendedKeywordsString(recommendedKeywords),
-        answers: getQuestionOptions()));
-    dbLocal.close();
+    // Persist to local Realm via use case
+    final history = HistoryEntity(
+      title: DateTime.now().toString(),
+      keywords: _keywordsString(keywords),
+      recommendedKeywords: _recommendedKeywordsString(recommendedKeywords),
+      answers: getQuestionOptions(),
+    );
+
+    _saveHistory.execute(history);
   }
 
   String _keywordsString(List<Map> keywords) {
@@ -239,25 +246,20 @@ class FormStore extends NotifyBaseStore<FormState> {
   }
 
   Future<void> sendForm() async {
-    final db = FirebaseFirestore.instance;
-    final Map<String, dynamic> form = {
-      "date": DateTime.now().toString(),
-    };
-    form.addAll(getQuestionOptions());
-    form.removeWhere((key, value) => key.isEmpty);
-    db.collection("form-answers").add(form);
+    final formEntity = FormEntity(
+        date: DateTime.now().toString(), answers: getQuestionOptions());
+    await _saveForm.execute(formEntity);
   }
 
   Future<void> sendSuggestions() async {
     if (state.finalSuggestionsController.text.isEmpty) {
       return;
     }
-    final db = FirebaseFirestore.instance;
-    final suggestion = {
-      "date": DateTime.now().toString(),
-      "suggestion": state.finalSuggestionsController.text,
-    };
-    db.collection("suggestions").add(suggestion);
+    final suggestion = SuggestionEntity(
+      date: DateTime.now().toString(),
+      suggestion: state.finalSuggestionsController.text,
+    );
+    await _saveSuggestion.execute(suggestion);
   }
 
   void dispose() {
