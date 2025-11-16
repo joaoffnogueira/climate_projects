@@ -4,8 +4,8 @@ import '../../data/models/suggestion_lang_enum.dart';
 import '../../data/models/suggestion_type_enum.dart';
 import 'library_state.dart';
 
-class LibraryStore extends NotifyBaseStore<LibraryState> {
-  LibraryStore(SuggestionCategoryEnum categoryFilter)
+class LibraryViewModel extends NotifyBaseStore<LibraryState> {
+  LibraryViewModel(SuggestionCategoryEnum categoryFilter)
       : super(LibraryState.initial(categoryFilter));
 
   void filterSuggestions() {

@@ -1,4 +1,4 @@
-import 'package:climate_change_projects/features/form/presentation/stores/tips_databinding.dart';
+import 'package:climate_change_projects/features/form/presentation/state/tips_databinding.dart';
 import 'package:flutter/material.dart';
 import '../../data/models/tense_enum.dart';
 import 'form_databinding.dart';

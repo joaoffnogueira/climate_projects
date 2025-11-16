@@ -1,6 +1,6 @@
 import 'dart:ui' as ui;
 
-import 'package:climate_change_projects/features/form/presentation/stores/form_store.dart';
+import 'package:climate_change_projects/features/form/presentation/state/form_viewmodel.dart';
 import 'package:climate_change_projects/main.dart';
 import 'package:climate_change_projects/helpers/base_state.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +32,7 @@ void main() {
     tester.view.physicalSize = const ui.Size(1080, 1920);
     addTearDown(() => tester.view.resetPhysicalSize());
     await tester.pumpWidget(_bootstrap(const SizedBox.shrink()));
-    final store = FormStore();
+    final store = FormViewModel();
     expect(store.state.answers[0].answers, [0]);
     store.onChangeRadio(1, ['k1', 'k2']);
     expect(store.state.answers[0].answers, [1]);
@@ -42,7 +42,7 @@ void main() {
   testWidgets('onChangeCheckbox toggles selection and maintains texts',
       (tester) async {
     await tester.pumpWidget(_bootstrap(const SizedBox.shrink()));
-    final store = FormStore();
+    final store = FormViewModel();
     // choose a valid option id from q1 (1..3)
     store.onChangeCheckbox(1, ['a']);
     expect(store.state.answers[0].answers.contains(1), true);
@@ -53,7 +53,7 @@ void main() {
   testWidgets('nextQuestion advances and sets loaded state', (tester) async {
     await tester.pumpWidget(
         _bootstrap(const SingleChildScrollView(child: SizedBox(height: 1000))));
-    final store = FormStore();
+    final store = FormViewModel();
     final controller = PrimaryScrollController.of(
         tester.element(find.byType(SingleChildScrollView)));
     final initialId = store.state.currentQuestionId;
@@ -65,7 +65,7 @@ void main() {
 
   testWidgets('getResults aggregates keywords counts', (tester) async {
     await tester.pumpWidget(_bootstrap(const SizedBox.shrink()));
-    final store = FormStore();
+    final store = FormViewModel();
     store.state.answers[0].keywords.addAll(['x', 'y', 'x']);
     final results = store.getResults();
     expect(results.any((e) => e['word'] == 'x' && e['value'] == 2), true);
@@ -75,7 +75,7 @@ void main() {
   testWidgets('getRecommendedKeywords suggests items not present',
       (tester) async {
     await tester.pumpWidget(_bootstrap(const SizedBox.shrink()));
-    final store = FormStore();
+    final store = FormViewModel();
     final recommended = store.getRecommendedKeywords(const [
       {'word': 'Participação', 'value': 1},
     ]);

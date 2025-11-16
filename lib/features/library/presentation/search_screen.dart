@@ -1,6 +1,6 @@
 import 'package:climate_change_projects/features/library/data/models/suggestion_lang_enum.dart';
 import 'package:climate_change_projects/features/library/data/models/suggestion_type_enum.dart';
-import 'package:climate_change_projects/features/library/presentation/stores/library_store.dart';
+import 'package:climate_change_projects/features/library/presentation/state/library_viewmodel.dart';
 import 'package:flutter/material.dart';
 
 import '../../../helpers/background_widget.dart';
@@ -17,13 +17,13 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
-  late final LibraryStore controller;
+  late final LibraryViewModel controller;
   late final ScrollController _scrollController;
 
   @override
   void initState() {
     super.initState();
-    controller = LibraryStore(widget.categoryFilter);
+    controller = LibraryViewModel(widget.categoryFilter);
     _scrollController = ScrollController();
   }
 

@@ -1,4 +1,4 @@
-import 'package:climate_change_projects/features/form/presentation/stores/form_state.dart'
+import 'package:climate_change_projects/features/form/presentation/state/form_state.dart'
     as fstate;
 import 'package:climate_change_projects/helpers/base_state.dart';
 import 'package:climate_change_projects/l10n/app_localizations.dart';

@@ -6,7 +6,7 @@ import '../../../results/presentation/results_screen.dart';
 import '../../data/models/question_type_enum.dart';
 import 'package:flutter/material.dart';
 
-import '../stores/form_store.dart';
+import '../state/form_viewmodel.dart';
 
 class FormScreen extends StatefulWidget {
   const FormScreen({super.key});
@@ -16,13 +16,13 @@ class FormScreen extends StatefulWidget {
 }
 
 class _FormScreenState extends State<FormScreen> {
-  late final FormStore controller;
+  late final FormViewModel controller;
   late final ScrollController _scrollController;
   @override
   void initState() {
     super.initState();
     _scrollController = ScrollController();
-    controller = FormStore();
+    controller = FormViewModel();
   }
 
   @override

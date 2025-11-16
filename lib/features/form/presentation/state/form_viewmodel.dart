@@ -10,8 +10,8 @@ import '../../../../helpers/base_state.dart';
 import '../../../../helpers/base_store.dart';
 import 'form_state.dart';
 
-class FormStore extends NotifyBaseStore<FormState> {
-  FormStore() : super(FormState.initial());
+class FormViewModel extends NotifyBaseStore<FormState> {
+  FormViewModel() : super(FormState.initial());
   // Use cases (injected via service locator)
   final SaveFormUseCase _saveForm = getIt<SaveFormUseCase>();
   final SaveSuggestionUseCase _saveSuggestion = getIt<SaveSuggestionUseCase>();
