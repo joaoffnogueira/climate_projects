@@ -732,21 +732,6 @@ class FormDatabinding {
           OptionsModel(id: 2, option: Localization.tr.option33_2),
         ],
       ),
-      QuestionTopicEnum.shareResponses.id: QuestionModel(
-        id: QuestionTopicEnum.shareResponses.id,
-        question: Localization.tr.question34,
-        type: QuestionTypeEnum.multipleChoice,
-        options: [
-          OptionsModel(id: 1, option: Localization.tr.option34_1),
-          OptionsModel(id: 2, option: Localization.tr.option34_2),
-        ],
-      ),
-      QuestionTopicEnum.suggestions.id: QuestionModel(
-        id: QuestionTopicEnum.suggestions.id,
-        question: Localization.tr.question35,
-        type: QuestionTypeEnum.text,
-        options: [OptionsModel(id: 1, option: '')],
-      ),
     };
     defaultForm.forEach((key, value) {
       value.options?.forEach((element) {

@@ -255,25 +255,24 @@ class _FormScreenState extends State<FormScreen> {
                                             loading: BaseLoadingState.error,
                                           ),
                                         )
-                                      : controller.state.currentQuestionId == 35
-                                          ? controller.sendSuggestions().then(
-                                              (value) => Navigator.of(context,
-                                                          rootNavigator: true)
-                                                      .push(
-                                                    MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          ResultsScreen(
-                                                        keywords: controller
-                                                            .getResults(),
-                                                        recommendedKeywords: controller
-                                                            .getRecommendedKeywords(
-                                                                controller
-                                                                    .getResults()),
-                                                        answersFromDb: controller
-                                                            .getQuestionOptions(),
-                                                      ),
-                                                    ),
-                                                  ))
+                                      : controller.state.currentQuestionId == 33
+                                          ? Navigator.of(context,
+                                                  rootNavigator: true)
+                                              .push(
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    ResultsScreen(
+                                                  keywords:
+                                                      controller.getResults(),
+                                                  recommendedKeywords: controller
+                                                      .getRecommendedKeywords(
+                                                          controller
+                                                              .getResults()),
+                                                  answersFromDb: controller
+                                                      .getQuestionOptions(),
+                                                ),
+                                              ),
+                                            )
                                           : controller.state.tipsDatabinding
                                                   .tips.keys
                                                   .contains(controller

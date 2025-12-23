@@ -6,12 +6,9 @@ import 'package:climate_change_projects/features/library/data/datasources/sugges
 import 'package:climate_change_projects/features/library/data/repositories/suggestion_repository_impl.dart';
 import 'package:climate_change_projects/features/library/domain/repositories/suggestion_repository.dart';
 import 'package:climate_change_projects/features/library/domain/usecases/get_suggestions_usecase.dart';
-import 'package:climate_change_projects/core/datasources/firestore_data_source.dart';
 import 'package:climate_change_projects/core/datasources/realm_data_source.dart';
 import 'package:climate_change_projects/features/form/domain/repositories/form_repository.dart';
 import 'package:climate_change_projects/features/form/data/repositories/form_repository_impl.dart';
-import 'package:climate_change_projects/features/form/domain/usecases/save_form_usecase.dart';
-import 'package:climate_change_projects/features/form/domain/usecases/save_suggestion_usecase.dart';
 import 'package:climate_change_projects/features/form/domain/usecases/save_history_usecase.dart';
 import 'package:climate_change_projects/core/db_local/db_local_realm.dart';
 import 'package:climate_change_projects/core/db_local/db_local.dart';
@@ -41,15 +38,9 @@ class ServiceLocator {
     getIt
         .registerLazySingleton<RealmDataSource>(() => RealmDataSource(getIt()));
 
-    getIt.registerLazySingleton<FirestoreDataSource>(
-        () => FirestoreDataSource());
-
     getIt.registerLazySingleton<FormRepository>(
-        () => FormRepositoryImpl(getIt(), getIt(), getIt()));
-    getIt
-        .registerLazySingleton<SaveFormUseCase>(() => SaveFormUseCase(getIt()));
-    getIt.registerLazySingleton<SaveSuggestionUseCase>(
-        () => SaveSuggestionUseCase(getIt()));
+        () => FormRepositoryImpl(getIt(), getIt()));
+
     getIt.registerLazySingleton<SaveHistoryUseCase>(
         () => SaveHistoryUseCase(getIt()));
 
@@ -64,15 +55,11 @@ class ServiceLocator {
   /// platform-backed services (Firestore, Realm, Crashlytics) so unit and
   /// widget tests can run without native bindings.
   static Future<void> initTest({
-    FirestoreDataSource? firestoreOverride,
     RealmDataSource? realmOverride,
     CrashlyticsService? crashlyticsOverride,
     AnalyticsService? analyticsOverride,
     ThemeHelper? themeOverride,
   }) async {
-    if (getIt.isRegistered<FirestoreDataSource>()) {
-      getIt.unregister<FirestoreDataSource>();
-    }
     if (getIt.isRegistered<RealmDataSource>()) {
       getIt.unregister<RealmDataSource>();
     }
@@ -89,12 +76,6 @@ class ServiceLocator {
     }
     if (getIt.isRegistered<FormRepository>()) {
       getIt.unregister<FormRepository>();
-    }
-    if (getIt.isRegistered<SaveFormUseCase>()) {
-      getIt.unregister<SaveFormUseCase>();
-    }
-    if (getIt.isRegistered<SaveSuggestionUseCase>()) {
-      getIt.unregister<SaveSuggestionUseCase>();
     }
     if (getIt.isRegistered<SaveHistoryUseCase>()) {
       getIt.unregister<SaveHistoryUseCase>();
@@ -117,15 +98,10 @@ class ServiceLocator {
     getIt.registerLazySingleton<DbLocal>(() => _FakeDbLocal());
     getIt.registerLazySingleton<RealmDataSource>(
         () => realmOverride ?? _FakeRealm(getIt()));
-    getIt.registerLazySingleton<FirestoreDataSource>(
-        () => firestoreOverride ?? _FakeFirestore());
 
     getIt.registerLazySingleton<FormRepository>(
-        () => FormRepositoryImpl(getIt(), getIt(), getIt()));
-    getIt
-        .registerLazySingleton<SaveFormUseCase>(() => SaveFormUseCase(getIt()));
-    getIt.registerLazySingleton<SaveSuggestionUseCase>(
-        () => SaveSuggestionUseCase(getIt()));
+        () => FormRepositoryImpl(getIt(), getIt()));
+
     getIt.registerLazySingleton<SaveHistoryUseCase>(
         () => SaveHistoryUseCase(getIt()));
 
@@ -133,21 +109,6 @@ class ServiceLocator {
         () => SuggestionRepositoryImpl(getIt()));
     getIt.registerLazySingleton<GetSuggestionsUseCase>(
         () => GetSuggestionsUseCase(getIt()));
-  }
-}
-
-class _FakeFirestore implements FirestoreDataSource {
-  bool addFormCalled = false;
-  bool addSuggestionCalled = false;
-
-  @override
-  Future<void> addFormAnswers(Map<String, dynamic> form) async {
-    addFormCalled = true;
-  }
-
-  @override
-  Future<void> addSuggestion(Map<String, dynamic> suggestion) async {
-    addSuggestionCalled = true;
   }
 }
 

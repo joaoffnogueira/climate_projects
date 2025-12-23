@@ -13,7 +13,7 @@ class InfoDrawer extends StatelessWidget {
         height: size.height,
         child: LicensePage(
           applicationName: 'EmergeClima',
-          applicationVersion: 'Versão atual: 1.2.0+10',
+          applicationVersion: 'Versão atual: 2.1.0+15',
           applicationIcon: Column(
             children: [
               Text(
