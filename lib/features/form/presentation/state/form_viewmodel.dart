@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart' show ScrollController, Curves;
 import '../../../../core/di/service_locator.dart';
-import 'package:climate_change_projects/features/form/domain/usecases/save_form_usecase.dart';
-import 'package:climate_change_projects/features/form/domain/usecases/save_suggestion_usecase.dart';
 import 'package:climate_change_projects/features/form/domain/usecases/save_history_usecase.dart';
-import 'package:climate_change_projects/features/form/domain/entities/form.dart';
-import 'package:climate_change_projects/features/form/domain/entities/suggestion.dart';
 import 'package:climate_change_projects/features/form/domain/entities/history.dart';
 import '../../../../helpers/base_state.dart';
 import '../../../../helpers/base_store.dart';
@@ -12,10 +8,8 @@ import 'form_state.dart';
 
 class FormViewModel extends NotifyBaseStore<FormState> {
   FormViewModel() : super(FormState.initial());
-  // Use cases (injected via service locator)
-  final SaveFormUseCase _saveForm = getIt<SaveFormUseCase>();
-  final SaveSuggestionUseCase _saveSuggestion = getIt<SaveSuggestionUseCase>();
   final SaveHistoryUseCase _saveHistory = getIt<SaveHistoryUseCase>();
+
   void onChangeRadio(int? value, List<String>? keywords) {
     state.answers[state.currentQuestionId - 1].questionText =
         state.formDatabinding.defaultForm[state.currentQuestionId]!.question;
@@ -105,9 +99,6 @@ class FormViewModel extends NotifyBaseStore<FormState> {
         }
         break;
       case 34:
-        if (state.answers[33].answers.contains(1)) {
-          sendForm();
-        }
         state.answers[34].answers.remove(0);
         state.answers[34].answers.add(1);
         nextQuestionId = 35;
@@ -243,23 +234,6 @@ class FormViewModel extends NotifyBaseStore<FormState> {
       questionOptions[answer.questionText] = answer.answerTexts.join(', ');
     }
     return questionOptions;
-  }
-
-  Future<void> sendForm() async {
-    final formEntity = FormEntity(
-        date: DateTime.now().toString(), answers: getQuestionOptions());
-    await _saveForm.execute(formEntity);
-  }
-
-  Future<void> sendSuggestions() async {
-    if (state.finalSuggestionsController.text.isEmpty) {
-      return;
-    }
-    final suggestion = SuggestionEntity(
-      date: DateTime.now().toString(),
-      suggestion: state.finalSuggestionsController.text,
-    );
-    await _saveSuggestion.execute(suggestion);
   }
 
   void dispose() {
